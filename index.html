@@ -5,219 +5,424 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StaySmart Portfolio</title>
     <style>
-        :root {
-            --bg-color: #0a1128;
-            --text-color: #ffffff;
-            --accent-blue: #00f2fe;
-            --accent-coral: #ff6b6b;
-            --accent-green: #2ecc71;
-        }
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 30%, #102a45 0%, #050c14 70%);
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
+
+        /* Efecto de líneas de red de fondo simulado */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(rgba(0, 242, 254, 0.05) 2px, transparent 4px),
+                radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 3px);
+            background-size: 80px 80px, 40px 40px;
+            background-position: 0 0, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Brillo central detrás del logo */
+        .glow-bg {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
+            padding: 25px 50px;
+            z-index: 10;
+            width: 100%;
         }
-        .logo-container {
+
+        .nav-links {
             display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
+            gap: 30px;
         }
-        .logo-container span {
-            color: var(--accent-blue);
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
         }
+
+        .nav-links a:hover {
+            color: #00f2fe;
+        }
+
         .lang-selector {
             display: flex;
-            gap: 10px;
+            gap: 8px;
+            margin-left: 20px;
         }
+
         .lang-btn {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #fff;
-            padding: 5px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 4px 10px;
             cursor: pointer;
             border-radius: 4px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: all 0.3s;
         }
+
         .lang-btn.active, .lang-btn:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
+            border-color: #00f2fe;
+            color: #00f2fe;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
         }
-        .main-container {
+
+        .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 20px;
+            z-index: 5;
         }
-        h1 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
+
+        /* Contenedor del Logo de las dos S en el centro superior */
+        .brand-logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 35px;
             text-align: center;
         }
-        h1 span.s1 { color: #00f2fe; }
-        h1 span.s2 { color: #ff6b6b; }
-        .cards-grid {
+
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 15px;
+            border: 3px solid #00f2fe;
+            border-radius: 18px;
             display: flex;
-            gap: 30px;
-            max-width: 1000px;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            background: rgba(10, 27, 45, 0.6);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px; right: -5px; bottom: -5px; left: -5px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 22px;
+            pointer-events: none;
+        }
+
+        .brand-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Título del Portafolio */
+        .portfolio-title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .portfolio-title span.s1 { color: #00f2fe; font-weight: 700; }
+        .portfolio-title span.s2 { color: #00f2fe; font-weight: 700; }
+
+        /* Contenedor de Tarjetas Estilo Cristal (Glassmorphism) */
+        .cards-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1100px;
             width: 100%;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 40px;
         }
-        .card {
-            background: rgba(255, 255, 255, 0.03);
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            width: 460px;
+            min-height: 320px;
             padding: 40px;
-            width: 400px;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .card:hover {
-            transform: translateY(-5px);
+
+        /* Resplandor sutil interno en las tarjetas */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 10%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
-        .card.travel:hover { border-color: var(--accent-coral); }
-        .card.properties:hover { border-color: var(--accent-green); }
-        .card h2 {
-            font-size: 1.8rem;
-            margin-top: 0;
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 242, 254, 0.15);
+        }
+
+        .card-content h2 {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .card-content .main-section-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
-        .card p {
-            color: #b0b3b8;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            min-height: 80px;
-        }
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .btn-travel {
-            background: var(--accent-coral);
-            color: #fff;
-        }
-        .btn-travel:hover { background: #ff5252; }
-        .btn-properties {
-            background: var(--accent-green);
-            color: #fff;
-        }
-        .btn-properties:hover { background: #27ae60; }
-        .notice {
-            color: #a0a0a0;
-            font-size: 0.85rem;
+
+        /* Área de botones de acción inferiores */
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-top: 15px;
-            line-height: 1.4;
         }
+
+        /* Estilo para los botones de acción principales */
+        .action-link {
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .action-link:hover {
+            color: #00f2fe;
+        }
+
+        .action-link::after {
+            content: ' →';
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .action-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Botón Secundario de "Ver Más" Estilo Minimalista */
+        .btn-see-more {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .btn-see-more:hover {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: #00f2fe;
+            color: #00f2fe;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+        }
+
+        /* Mensajes de advertencia u observación pequeños */
+        .card-notice {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
+            padding: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        @media (max-width: 980px) {
+            .glass-card { width: 100%; min-height: auto; padding: 30px; }
+            header { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="glow-bg"></div>
+
     <header>
-        <div class="logo-container">
-            <span style="color:#00f2fe;">S</span>TAY <span style="color:#ff6b6b;">S</span>MART
+        <div class="nav-links">
+            <a href="#" id="nav-about">ABOUT</a>
+            <a href="#" id="nav-services">SERVICES</a>
+            <a href="#" id="nav-contact">CONTACT</a>
         </div>
         <div class="lang-selector">
-            <button class="lang-btn active" onclick="setLanguage('es')">ES</button>
-            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn active" onclick="setLanguage('es', event)">ES</button>
+            <button class="lang-btn" onclick="setLanguage('en', event)">EN</button>
         </div>
     </header>
 
-    <div class="main-container">
-        <h1 id="main-title"><span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO</h1>
-        
-        <div class="cards-grid">
-            <div class="card travel">
-                <h2 id="travel-title">STAY SMART VIAJES</h2>
-                <p id="travel-desc">Accede a las mejores opciones de hospedajes, vuelos, rental car y tours disponibles para ti a precios inigualables.</p>
-                <a href="https://tally.so/r/b58aK0" target="_blank" class="btn btn-travel" id="travel-btn">Inscribirse / Registrarse</a>
+    <div class="main-content">
+        <div class="brand-logo-area">
+            <div class="logo-icon">
+                <span style="color: #ffffff;">S</span><span style="color: #00f2fe; margin-left:-5px;">S</span>
+            </div>
+            <div class="brand-name">STAY<span style="color: #00f2fe;">SMART</span></div>
+            <div class="brand-sub">MANAGEMENT & REAL ESTATE SOLUTIONS</div>
+        </div>
+
+        <h1 class="portfolio-title" id="portfolio-title">
+            <span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO
+        </h1>
+
+        <div class="cards-container">
+            <div class="glass-card">
+                <div class="card-content">
+                    <h2 id="travel-tag">STAY SMART</h2>
+                    <div class="main-section-name" id="travel-main-name">VIAJES</div>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://tally.so/r/b58aK0" target="_blank" class="action-link" id="travel-btn">INSCRIBIRSE A VIAJES</a>
+                    <a href="https://staysmartrealty.com/booking" class="btn-see-more" id="travel-more">VER MÁS OPCIONES</a>
+                </div>
             </div>
 
-            <div class="card properties">
-                <h2 id="properties-title">STAY SMART PROPIEDADES</h2>
-                <p id="properties-desc">Maximiza la rentabilidad de tus inmuebles con nuestro ecosistema tecnológico impulsado por Inteligencia Artificial.</p>
-                <a href="https://tally.so/r/MeLWGp" target="_blank" class="btn btn-properties" id="properties-btn">Registrar Propiedad</a>
-                <p class="notice" id="properties-notice">⚠️ Estamos trabajando para ofrecerte importantes oportunidades para tus propiedades. Regístrate hoy y asegura tu lugar.</p>
+            <div class="glass-card">
+                <div class="card-content">
+                    <h2 id="prop-tag">STAY SMART</h2>
+                    <div class="main-section-name" id="prop-main-name">PROPIEDADES</div>
+                </div>
+                <div class="buttons-group">
+                    <a href="https://tally.so/r/MeLWGp" target="_blank" class="action-link" id="prop-btn">REGISTRAR PROPIEDAD</a>
+                    <a href="https://staysmartrealty.com/brochure.pdf" target="_blank" class="btn-see-more" id="prop-more">VER BENEFICIOS (BROCHURE)</a>
+                    <div class="card-notice" id="prop-notice">⚠️ Asegura tu lugar en nuestro portafolio exclusivo.</div>
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        Copyright &copy; STAYSMART All rights reserved
+        COPYRIGHT &copy; STAYSMART ALL RIGHTS RESERVED
     </footer>
 
     <script>
-        // Lógica automática para controlar el cambio de idioma completo
+        // Diccionario completo de idiomas para cambiar dinámicamente todo el contenido
         const translations = {
             es: {
-                title: '<span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO',
-                travelTitle: 'STAY SMART VIAJES',
-                travelDesc: 'Accede a las mejores opciones de hospedajes, vuelos, rental car y tours disponibles para ti a precios inigualables.',
-                travelBtn: 'Inscribirse / Registrarse',
+                portfolioTitle: '<span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO',
+                travelTag: 'STAY SMART',
+                travelMainName: 'VIAJES',
+                travelBtn: 'INSCRIBIRSE A VIAJES',
                 travelLink: 'https://tally.so/r/b58aK0',
-                propTitle: 'STAY SMART PROPIEDADES',
-                propDesc: 'Maximiza la rentabilidad de tus inmuebles con nuestro ecosistema tecnológico impulsado por Inteligencia Artificial.',
-                propBtn: 'Registrar Propiedad',
-                propNotice: '⚠️ Estamos trabajando para ofrecerte importantes oportunidades para tus propiedades. Regístrate hoy y asegura tu lugar.'
+                travelMore: 'VER MÁS OPCIONES',
+                propTag: 'STAY SMART',
+                propMainName: 'PROPIEDADES',
+                propBtn: 'REGISTRAR PROPIEDAD',
+                propMore: 'VER BENEFICIOS (BROCHURE)',
+                propNotice: '⚠️ Asegura tu lugar en nuestro portafolio exclusivo.'
             },
             en: {
-                title: '<span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO',
-                travelTitle: 'STAY SMART TRAVEL',
-                travelDesc: 'Access the best accommodation, flight, rental car, and tour options available for you at unbeatable prices.',
-                travelBtn: 'Register / Sign Up',
+                portfolioTitle: '<span class="s1">S</span>TAY <span class="s2">S</span>MART PORTFOLIO',
+                travelTag: 'STAY SMART',
+                travelMainName: 'PROPERTIES',
+                travelBtn: 'REGISTER / SIGN UP PROPERTY',
                 travelLink: 'https://tally.so/r/KYgrRX',
-                propTitle: 'STAY SMART PROPERTIES',
-                propDesc: 'Maximize your property returns with our tech ecosystem powered by Artificial Intelligence.',
-                propBtn: 'Register Property',
-                propNotice: '⚠️ We are working to bring you outstanding opportunities for your properties. Register today and secure your spot.'
+                travelMore: 'SEE MORE OPTIONS',
+                propTag: 'STAY SMART',
+                propMainName: 'PROPERTIES',
+                propBtn: 'REGISTER PROPERTY',
+                propMore: 'VIEW BENEFITS (BROCHURE)',
+                propNotice: '⚠️ Secure your spot in our exclusive portfolio.'
             }
         };
 
-        function setLanguage(lang) {
-            document.getElementById('main-title').innerHTML = translations[lang].title;
-            document.getElementById('travel-title').textContent = translations[lang].travelTitle;
-            document.getElementById('travel-desc').textContent = translations[lang].travelDesc;
+        function setLanguage(lang, event) {
+            document.getElementById('portfolio-title').innerHTML = translations[lang].portfolioTitle;
+            
+            document.getElementById('travel-tag').textContent = translations[lang].travelTag;
+            document.getElementById('travel-main-name').textContent = translations[lang].travelMainName;
             document.getElementById('travel-btn').textContent = translations[lang].travelBtn;
             document.getElementById('travel-btn').href = translations[lang].travelLink;
+            document.getElementById('travel-more').textContent = translations[lang].travelMore;
             
-            document.getElementById('properties-title').textContent = translations[lang].propTitle;
-            document.getElementById('properties-desc').textContent = translations[lang].propDesc;
-            document.getElementById('properties-btn').textContent = translations[lang].propBtn;
-            document.getElementById('properties-notice').textContent = translations[lang].propNotice;
+            document.getElementById('prop-tag').textContent = translations[lang].propTag;
+            document.getElementById('prop-main-name').textContent = translations[lang].propMainName;
+            document.getElementById('prop-btn').textContent = translations[lang].propBtn;
+            document.getElementById('prop-more').textContent = translations[lang].propMore;
+            document.getElementById('prop-notice').textContent = translations[lang].propNotice;
 
-            // Actualizar estado visual de los botones de idioma
+            // Cambiar el estado activo del botón de idioma superior
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
