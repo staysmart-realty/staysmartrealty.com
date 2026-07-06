@@ -107,10 +107,12 @@
             justify-content: center;
         }
 
+        /* DISEÑO DE SEMICÍRCULO INTEGRADO PARA TU NUEVO LOGO */
         .logo-icon img {
             height: 100%;
             width: auto;
             object-fit: contain;
+            border-radius: 50% 50% 0 0; /* Corta la parte superior en una curva perfecta */
             filter: drop-shadow(0 0 20px rgba(0,242,254,0.3));
         }
 
@@ -246,7 +248,7 @@
     <header>
         <div class="nav-links">
             <a onclick="showSection('about')" id="menu-about">About</a>
-            <a href="presentacion.html" id="menu-deck">¿Qué Somos?</a>
+            <a href="portfolio.html" id="menu-deck">¿Qué Somos?</a>
             <a onclick="resetToHome()" id="menu-services">Nuestros Servicios</a>
             <a onclick="showSection('contact')" id="menu-contact">Contáctenos</a>
         </div>
@@ -284,7 +286,7 @@
 
         <div class="info-section" id="about-section">
             <h2 id="about-title">Quiénes Somos</h2>
-            <p id="about-desc"><strong>StaySmart</strong> Es un ecosistema tecnológico diseñado para redefinir la interacción global entre la gestión inmobiliaria de alto rendimiento y las soluciones de viaje corporativas. No somos una agencia tradicional; somos el puente operativo e inteligente que automatiza flujos de datos, elimina la fricción burocrática y garantiza comunicación bilingüe continua en tiempo real, maximizando la rentabilidad y escalabilidad de los activos de nuestros socios en la era digital.</p>
+            <p id="about-desc"><strong>StaySmart</strong> es un ecosistema tecnológico diseñado para redefinir la interacción global entre la gestión inmobiliaria de alto rendimiento y las soluciones de viaje corporativas. No somos una agencia tradicional; somos el puente operativo e inteligente que automatiza flujos de datos, elimina la fricción burocrática y garantiza comunicación bilingüe continua en tiempo real, maximizando la rentabilidad y escalabilidad de los activos de nuestros socios en la era digital.</p>
             <button class="close-btn" onclick="resetToHome()" id="about-close">Cerrar Vista</button>
         </div>
 
@@ -314,7 +316,7 @@
                         <p>Enviar SMS</p>
                     </div>
                 </a>
-                <a href="mailto:contact@staysmartrealty.com" class="contact-item">
+                <a href="mailto:ceo@staysmartrealty.com" class="contact-item">
                     <i class="fa-solid fa-envelope"></i>
                     <div>
                         <h4>Correo Electrónico</h4>
