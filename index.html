@@ -37,7 +37,6 @@
             z-index: 0; pointer-events: none;
         }
 
-        /* INTEGRACIÓN DEL MENÚ SUPERIOR RESPETANDO TU ESTILO */
         header {
             display: flex;
             justify-content: space-between;
@@ -107,12 +106,11 @@
             justify-content: center;
         }
 
-        /* DISEÑO DE SEMICÍRCULO INTEGRADO PARA TU NUEVO LOGO */
         .logo-icon img {
             height: 100%;
             width: auto;
             object-fit: contain;
-            border-radius: 50% 50% 0 0; /* Corta la parte superior en una curva perfecta */
+            border-radius: 50% 50% 0 0;
             filter: drop-shadow(0 0 20px rgba(0,242,254,0.3));
         }
 
@@ -148,7 +146,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 40px 30px;
-            width: 450px;
+            width: 480px;
             text-align: center;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -174,30 +172,50 @@
             font-size: 0.95rem;
             color: rgba(255,255,255,0.6);
             line-height: 1.6;
-            margin-bottom: 30px;
-            flex-grow: 1;
+            margin-bottom: 25px;
+        }
+
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin-top: auto;
         }
 
         .action-btn {
-            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            color: #050c14;
-            border: none;
-            padding: 14px 28px;
+            background: linear-gradient(135deg, #102a45 0%, #1a3d60 100%);
+            color: #ffffff;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 12px 20px;
             border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s;
-            display: inline-block;
+            display: block;
+            text-align: center;
         }
 
         .action-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(0,242,254,0.4);
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            color: #050c14;
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0,242,254,0.3);
+            border-color: transparent;
         }
 
-        /* SECCIONES DINÁMICAS ADAPTADAS A TU ESTILO */
+        .action-btn.primary-highlight {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            color: #050c14;
+            border: none;
+        }
+        .action-btn.primary-highlight:hover {
+            box-shadow: 0 0 25px rgba(0,242,254,0.5);
+            transform: scale(1.03);
+        }
+
         .info-section {
             display: none;
             max-width: 800px;
@@ -273,13 +291,16 @@
             <div class="card">
                 <h2 id="travel-title">StaySmart Travel</h2>
                 <p id="travel-desc">Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.</p>
-                <a href="URL_TALLY_VIAJES_ESPANOL" id="travel-link" class="action-btn">Buscar Viajes</a>
+                <div class="btn-stack">
+                    <a href="https://tally.so/r/3y969B" id="travel-link" class="action-btn primary-highlight">Buscar Viajes</a>
+                </div>
             </div>
 
             <div class="card">
                 <h2 id="props-title">StaySmart Properties</h2>
-                <p id="props-desc">Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.</p>
-                <a href="URL_TALLY_PROPIEDADES_ESPANOL" id="props-link" class="action-btn">¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella</a>
+                <p id="props-desc">Conectamos de forma directa a clientes con propietarios sin intermediarios tradicionales. Soluciones ágiles con tecnología avanzada.</p>
+                <div class="btn-stack" id="props-links-container">
+                    </div>
             </div>
 
         </div>
@@ -336,14 +357,18 @@
                 travelTitle: "StaySmart Travel",
                 travelDesc: "Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.",
                 travelBtn: "Buscar Viajes",
-                travelUrl: "URL_TALLY_VIAJES_ESPANOL",
+                travelUrl: "https://tally.so/r/3y969B",
                 
                 propsTitle: "StaySmart Properties",
-                propsDesc: "Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.",
-                propsBtn: "¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella",
-                propsUrl: "URL_TALLY_PROPIEDADES_ESPANOL",
+                propsDesc: "Publicación directa y base de datos optimizada. Conectamos al cliente con el propietario de forma ágil y transparente, sin intermediarios de campo tradicionales.",
+                
+                propsButtons: [
+                    { text: "Opción 1: Publicación Directa ($1 por 8 días)", url: "https://tally.so/r/mO5X9o", isPrimary: false },
+                    { text: "Opción 2: Administración Estándar", url: "opcion2_administracion.html", isPrimary: false },
+                    { text: "Opción 3: Administración Avanzada", url: "opcion3_avanzada.html", isPrimary: false },
+                    { text: "Ver Inmuebles Publicados (Ventas)", url: "inmuebles_publicados.html", isPrimary: true }
+                ],
 
-                // Traducción del menú e interactivos
                 menuAbout: "About",
                 menuDeck: "¿Qué Somos?",
                 menuServices: "Nuestros Servicios",
@@ -359,14 +384,16 @@
                 travelTitle: "StaySmart Travel",
                 travelDesc: "Find tailored accommodation, flights, and smart travel solutions to fit your needs.",
                 travelBtn: "Search Trips",
-                travelUrl: "URL_TALLY_VIAJES_INGLES",
+                travelUrl: "https://tally.so/r/wAdX9v",
                 
                 propsTitle: "StaySmart Properties",
-                propsDesc: "Advanced real estate management and exclusive property portfolios optimized through technology.",
-                propsBtn: "Want to learn more about your property's potential? Tell us about your property",
-                propsUrl: "URL_TALLY_PROPIEDADES_INGLES",
+                propsDesc: "Direct connection between buyers and owners without traditional intermediaries. Optimized property database matching solutions.",
+                
+                propsButtons: [
+                    { text: "Option 1: Direct Publication ($1 for 8 days)", url: "option1_publication.html", isPrimary: false },
+                    { text: "View Published Properties (Sales)", url: "published_properties.html", isPrimary: true }
+                ],
 
-                // Traducción del menú e interactivos
                 menuAbout: "About",
                 menuDeck: "What We Are",
                 menuServices: "Our Services",
@@ -380,7 +407,6 @@
         };
 
         function setLanguage(lang) {
-            // Cambiar tus textos originales en pantalla
             document.getElementById('sub-title').innerText = content[lang].sub;
             document.getElementById('travel-title').innerText = content[lang].travelTitle;
             document.getElementById('travel-desc').innerText = content[lang].travelDesc;
@@ -389,10 +415,24 @@
             
             document.getElementById('props-title').innerText = content[lang].propsTitle;
             document.getElementById('props-desc').innerText = content[lang].propsDesc;
-            document.getElementById('props-link').innerText = content[lang].propsBtn;
-            document.getElementById('props-link').setAttribute('href', content[lang].propsUrl);
 
-            // Cambiar textos del menú dinámicamente
+            const linksContainer = document.getElementById('props-links-container');
+            linksContainer.innerHTML = '';
+
+            content[lang].propsButtons.forEach(btnInfo => {
+                const btnElement = document.createElement('a');
+                btnElement.setAttribute('href', btnInfo.url);
+                btnElement.innerText = btnInfo.text;
+                
+                if (btnInfo.isPrimary) {
+                    btnElement.className = "action-btn primary-highlight";
+                } else {
+                    btnElement.className = "action-btn";
+                }
+                
+                linksContainer.appendChild(btnElement);
+            });
+
             document.getElementById('menu-about').innerText = content[lang].menuAbout;
             document.getElementById('menu-deck').innerText = content[lang].menuDeck;
             document.getElementById('menu-services').innerText = content[lang].menuServices;
@@ -403,12 +443,16 @@
             document.getElementById('contact-close').innerText = content[lang].contactClose;
             document.getElementById('contact-desc').innerText = content[lang].contactDesc;
 
-            // Cambiar estado visual de los botones de idioma
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target && event.target.classList) {
+                event.target.classList.add('active');
+            }
         }
 
-        // Controladores de visibilidad de secciones
+        window.onload = function() {
+            setLanguage('es');
+        };
+
         function showSection(section) {
             document.getElementById('services-container').style.display = 'none';
             document.getElementById('about-section').style.display = 'none';
