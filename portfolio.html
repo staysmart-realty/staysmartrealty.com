@@ -103,12 +103,15 @@
             border-radius: 12px;
             padding: 30px;
             flex: 1;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
+        /* CORRECCIÓN DE HOVER PARA LAS TARJETAS */
         .tile:hover {
             border-color: #00f2fe;
-            background: rgba(0, 242, 254, 0.02);
+            background: rgba(0, 242, 254, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.1);
         }
 
         .tile .icon { color: #00f2fe; font-size: 40px; margin-bottom: 15px; }
@@ -171,7 +174,7 @@
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 8px; border-left: 4px solid #00f2fe;">
                 <h3 style="color: #00f2fe; margin-bottom: 15px;"><i class="fa-solid fa-bullseye"></i> Misión</h3>
                 <p style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
-                    Optimizar la conexión entre propietarios globales y canales de distribución mediante una infraestructura tecnológica bilingüe y automatizada, eliminando la fricción administrativa y maximizando el rendimiento financiero de cada activo sin intermediación física directa.
+                    Optimizar la conexión entre propietarios globales y canales de distribution mediante una infraestructura tecnológica bilingüe y automatizada, eliminando la fricción administrativa y maximizando el rendimiento financiero de cada activo sin intermediación física directa.
                 </p>
             </div>
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 8px; border-left: 4px solid #4facfe;">
@@ -221,7 +224,7 @@
                     <li>Captación automatizada de leads mediante formularios inteligentes.</li>
                 </ul>
             </div>
-            <div class="tile" style="border-color: #00f2fe;">
+            <div class="tile">
                 <div class="icon"><i class="fa-solid fa-chart-simple"></i></div>
                 <h3>Plan Management</h3>
                 <h4 style="font-size: 0.8rem; color: #00f2fe; margin-bottom: 15px;">Control de Operación</h4>
