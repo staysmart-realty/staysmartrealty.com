@@ -146,7 +146,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 40px 30px;
-            width: 480px;
+            width: 450px;
             text-align: center;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -172,48 +172,27 @@
             font-size: 0.95rem;
             color: rgba(255,255,255,0.6);
             line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .btn-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            margin-top: auto;
+            margin-bottom: 30px;
+            flex-grow: 1;
         }
 
         .action-btn {
-            background: linear-gradient(135deg, #102a45 0%, #1a3d60 100%);
-            color: #ffffff;
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            text-align: center;
-        }
-
-        .action-btn:hover {
-            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            color: #050c14;
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(0,242,254,0.3);
-            border-color: transparent;
-        }
-
-        .action-btn.primary-highlight {
             background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
             color: #050c14;
             border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
         }
-        .action-btn.primary-highlight:hover {
-            box-shadow: 0 0 25px rgba(0,242,254,0.5);
+
+        .action-btn:hover {
             transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0,242,254,0.4);
         }
 
         .info-section {
@@ -231,8 +210,9 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .info-section h2 { font-size: 1.8rem; color: #00f2fe; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
-        .info-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.8); }
+        .info-section h2 { font-size: 1.8rem; color: #00f2fe; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
+        .info-section h3 { font-size: 1.2rem; color: #ffffff; margin-top: 20px; margin-bottom: 8px; letter-spacing: 1px; }
+        .info-section p { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 15px; }
 
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
         .contact-item {
@@ -280,7 +260,7 @@
         
         <div class="brand-logo-area">
             <div class="logo-icon">
-                <img src="logo.png" alt="StaySmart Logo">
+                <img src="Logo - StaySmart.png" alt="StaySmart Logo">
             </div>
             <div class="brand-name">StaySmart</div>
             <div class="brand-sub" id="sub-title">Portafolio</div>
@@ -291,23 +271,26 @@
             <div class="card">
                 <h2 id="travel-title">StaySmart Travel</h2>
                 <p id="travel-desc">Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.</p>
-                <div class="btn-stack">
-                    <a href="https://tally.so/r/3y969B" id="travel-link" class="action-btn primary-highlight">Buscar Viajes</a>
-                </div>
+                <a href="https://tally.so/r/3y969B" id="travel-link" class="action-btn">Buscar Viajes</a>
             </div>
 
             <div class="card">
                 <h2 id="props-title">StaySmart Properties</h2>
-                <p id="props-desc">Conectamos de forma directa a clientes con propietarios sin intermediarios tradicionales. Soluciones ágiles con tecnología avanzada.</p>
-                <div class="btn-stack" id="props-links-container">
-                    </div>
+                <p id="props-desc">Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.</p>
+                <a href="https://tally.so/r/mO5X9o" id="props-link" class="action-btn">¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella</a>
             </div>
 
         </div>
 
         <div class="info-section" id="about-section">
             <h2 id="about-title">Quiénes Somos</h2>
-            <p id="about-desc"><strong>StaySmart</strong> es un ecosistema tecnológico diseñado para redefinir la interacción global entre la gestión inmobiliaria de alto rendimiento y las soluciones de viaje corporativas. No somos una agencia tradicional; somos el puente operativo e inteligente que automatiza flujos de datos, elimina la fricción burocrática y garantiza comunicación bilingüe continua en tiempo real, maximizando la rentabilidad y escalabilidad de los activos de nuestros socios en la era digital.</p>
+            
+            <h3 id="mission-title">Misión</h3>
+            <p id="mission-desc">Transformar la gestión de activos inmobiliarios y soluciones de viaje mediante un ecosistema digital inteligente que elimina la fricción operativa y burocrática. Actuamos exclusivamente como un puente de comunicación y automatización bilingüe entre propietarios y clientes globales, garantizando la optimización de flujos de datos en tiempo real y maximizando la rentabilidad sin la intervención de intermediarios tradicionales de campo.</p>
+            
+            <h3 id="vision-title">Visión</h3>
+            <p id="vision-desc">Consolidarnos como la plataforma tecnológica líder en la optimización estratégica y conectividad global de propiedades y viajes corporativos. Proyectamos un entorno automatizado donde la desintermediación digital, la escalabilidad multi-región y el procesamiento inteligente de datos conviertan cada propiedad administrada en un activo de alto rendimiento dentro de la era digital global.</p>
+            
             <button class="close-btn" onclick="resetToHome()" id="about-close">Cerrar Vista</button>
         </div>
 
@@ -360,21 +343,22 @@
                 travelUrl: "https://tally.so/r/3y969B",
                 
                 propsTitle: "StaySmart Properties",
-                propsDesc: "Publicación directa y base de datos optimizada. Conectamos al cliente con el propietario de forma ágil y transparente, sin intermediarios de campo tradicionales.",
-                
-                propsButtons: [
-                    { text: "Opción 1: Publicación Directa ($1 por 8 días)", url: "https://tally.so/r/mO5X9o", isPrimary: false },
-                    { text: "Opción 2: Administración Estándar", url: "opcion2_administracion.html", isPrimary: false },
-                    { text: "Opción 3: Administración Avanzada", url: "opcion3_avanzada.html", isPrimary: false },
-                    { text: "Ver Inmuebles Publicados (Ventas)", url: "inmuebles_publicados.html", isPrimary: true }
-                ],
+                propsDesc: "Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.",
+                propsBtn: "¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella",
+                propsUrl: "https://tally.so/r/mO5X9o",
 
                 menuAbout: "About",
                 menuDeck: "¿Qué Somos?",
                 menuServices: "Nuestros Servicios",
                 menuContact: "Contáctenos",
+                
                 aboutTitle: "Quiénes Somos",
+                missionTitle: "Misión",
+                missionDesc: "Transformar la gestión de activos inmobiliarios y soluciones de viaje mediante un ecosistema digital inteligente que elimina la fricción operativa y burocrática. Actuamos exclusivamente como un puente de comunicación y automatización bilingüe entre propietarios y clientes globales, garantizando la optimización de flujos de datos en tiempo real y maximizando la rentabilidad sin la intervención de intermediarios tradicionales de campo.",
+                visionTitle: "Visión",
+                visionDesc: "Consolidarnos como la plataforma tecnológica líder en la optimización estratégica y conectividad global de propiedades y viajes corporativos. Proyectamos un entorno automatizado donde la desintermediación digital, la escalabilidad multi-región y el procesamiento inteligente de datos conviertan cada propiedad administrada en un activo de alto rendimiento dentro de la era digital global.",
                 aboutClose: "Cerrar Vista",
+                
                 contactTitle: "Centro de Contacto",
                 contactClose: "Cerrar Vista",
                 contactDesc: "Conéctate al instante con nuestra mesa de soluciones inteligentes a través del canal de tu preferencia:"
@@ -387,19 +371,22 @@
                 travelUrl: "https://tally.so/r/wAdX9v",
                 
                 propsTitle: "StaySmart Properties",
-                propsDesc: "Direct connection between buyers and owners without traditional intermediaries. Optimized property database matching solutions.",
-                
-                propsButtons: [
-                    { text: "Option 1: Direct Publication ($1 for 8 days)", url: "option1_publication.html", isPrimary: false },
-                    { text: "View Published Properties (Sales)", url: "published_properties.html", isPrimary: true }
-                ],
+                propsDesc: "Advanced real estate management and exclusive property portfolios optimized through technology.",
+                propsBtn: "Want to learn more about your property's potential? Tell us about your property",
+                propsUrl: "https://tally.so/r/mO5X9o",
 
                 menuAbout: "About",
                 menuDeck: "What We Are",
                 menuServices: "Our Services",
                 menuContact: "Contact Us",
+                
                 aboutTitle: "About Us",
+                missionTitle: "Mission",
+                missionDesc: "To transform real estate asset management and travel solutions through a smart digital ecosystem that eliminates operational and bureaucratic friction. We act exclusively as a bilingual communication and automation bridge between owners and global clients, guaranteeing real-time data workflow optimization and maximizing profitability without traditional on-field intermediaries.",
+                visionTitle: "Vision",
+                visionDesc: "To become the leading technological platform in strategic optimization and global connectivity for properties and corporate travel. We envision an automated environment where digital disintermediation, multi-regional scalability, and intelligent data processing turn every managed property into a high-performance asset in the global digital era.",
                 aboutClose: "Close View",
+                
                 contactTitle: "Contact Center",
                 contactClose: "Close View",
                 contactDesc: "Connect instantly with our smart solutions desk through your preferred channel:"
@@ -415,30 +402,21 @@
             
             document.getElementById('props-title').innerText = content[lang].propsTitle;
             document.getElementById('props-desc').innerText = content[lang].propsDesc;
-
-            const linksContainer = document.getElementById('props-links-container');
-            linksContainer.innerHTML = '';
-
-            content[lang].propsButtons.forEach(btnInfo => {
-                const btnElement = document.createElement('a');
-                btnElement.setAttribute('href', btnInfo.url);
-                btnElement.innerText = btnInfo.text;
-                
-                if (btnInfo.isPrimary) {
-                    btnElement.className = "action-btn primary-highlight";
-                } else {
-                    btnElement.className = "action-btn";
-                }
-                
-                linksContainer.appendChild(btnElement);
-            });
+            document.getElementById('props-link').innerText = content[lang].propsBtn;
+            document.getElementById('props-link').setAttribute('href', content[lang].propsUrl);
 
             document.getElementById('menu-about').innerText = content[lang].menuAbout;
             document.getElementById('menu-deck').innerText = content[lang].menuDeck;
             document.getElementById('menu-services').innerText = content[lang].menuServices;
             document.getElementById('menu-contact').innerText = content[lang].menuContact;
+            
             document.getElementById('about-title').innerText = content[lang].aboutTitle;
+            document.getElementById('mission-title').innerText = content[lang].missionTitle;
+            document.getElementById('mission-desc').innerText = content[lang].missionDesc;
+            document.getElementById('vision-title').innerText = content[lang].visionTitle;
+            document.getElementById('vision-desc').innerText = content[lang].visionDesc;
             document.getElementById('about-close').innerText = content[lang].aboutClose;
+            
             document.getElementById('contact-title').innerText = content[lang].contactTitle;
             document.getElementById('contact-close').innerText = content[lang].contactClose;
             document.getElementById('contact-desc').innerText = content[lang].contactDesc;
@@ -448,10 +426,6 @@
                 event.target.classList.add('active');
             }
         }
-
-        window.onload = function() {
-            setLanguage('es');
-        };
 
         function showSection(section) {
             document.getElementById('services-container').style.display = 'none';
