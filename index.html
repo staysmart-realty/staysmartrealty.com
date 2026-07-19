@@ -195,6 +195,38 @@
             box-shadow: 0 0 20px rgba(0,242,254,0.4);
         }
 
+        /* PANEL DE BÚSQUEDA TRAVELPAYOUTS (aparece al pasar el mouse sobre la card de Travel) */
+        #travel-card {
+            position: relative;
+        }
+
+        .tp-hover-panel {
+            position: absolute;
+            top: calc(100% - 10px);
+            left: 0;
+            right: 0;
+            margin-top: 10px;
+            background: rgba(5, 12, 20, 0.97);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 12px;
+            padding: 18px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 20;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        #travel-card:hover .tp-hover-panel {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
         /* SECCIONES DINÁMICAS */
         .info-section {
             display: none;
@@ -267,10 +299,15 @@
 
         <div class="cards-container" id="services-container">
             
-            <div class="card">
+            <div class="card" id="travel-card">
                 <h2 id="travel-title">StaySmart Travel</h2>
                 <p id="travel-desc">Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.</p>
                 <a href="https://tally.so/r/b58aK0" id="travel-link" class="action-btn">Buscar Viajes</a>
+
+                <!-- Panel de Travelpayouts: se revela solo al pasar el mouse sobre la card -->
+                <div class="tp-hover-panel" id="tp-hover-panel">
+                    <div id="tp-widget-545303"></div>
+                </div>
             </div>
 
             <div class="card">
@@ -318,6 +355,25 @@
         </div>
 
     </main>
+
+    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
+        // Carga el widget de Travelpayouts solo la primera vez que el usuario
+        // pasa el mouse sobre la card "StaySmart Travel" (no afecta el botón de Tally).
+        (function () {
+            var loaded = false;
+            var travelCard = document.getElementById('travel-card');
+            if (!travelCard) return;
+
+            travelCard.addEventListener('mouseenter', function () {
+                if (loaded) return;
+                loaded = true;
+                var tpScript = document.createElement('script');
+                tpScript.async = 1;
+                tpScript.src = 'https://emrldtp.cc/NTQ1MzAz.js?t=545303';
+                document.head.appendChild(tpScript);
+            });
+        })();
+    </script>
 
     <script>
         const content = {
