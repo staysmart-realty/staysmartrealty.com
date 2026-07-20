@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
         body {
-            background: radial-gradient(circle at 50% 30%, #102a45 0%, #050c14 70%);
+            background: radial-gradient(circle at 50% 30%, #0b1e36 0%, #03080e 85%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -18,37 +18,38 @@
             position: relative;
         }
 
-        /* FONDO 1: Cuadrícula tecnológica sutil */
+        /* FONDO 1: Malla Cyber / Grid de datos */
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(rgba(0,242,254,0.05) 2px, transparent 4px), radial-gradient(rgba(255,255,255,0.02) 1px, transparent 3px);
-            background-size: 80px 80px, 40px 40px;
-            background-position: 0 0, 20px 20px;
+            background: 
+                linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
             z-index: 0;
             pointer-events: none;
         }
 
-        /* FONDO 2: Red Global de Líneas Blancas, Nodos de IA y Conectividad (SVG Vectorial) */
+        /* FONDO 2: Globo Mundial Tecnológico + Anillos de IA + Nodos de Conectividad en Líneas Blancas */
         body::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' fill='none'%3E%3Cg stroke='rgba(255,255,255,0.08)' stroke-width='1.2'%3E%3Ccircle cx='720' cy='450' r='320' stroke-dasharray='4 8'/%3E%3Ccircle cx='720' cy='450' r='240' stroke-dasharray='2 4'/%3E%3Cellipse cx='720' cy='450' rx='320' ry='120'/%3E%3Cellipse cx='720' cy='450' rx='120' ry='320'/%3E%3Cpath d='M400,450 Q720,200 1040,450 T400,450'/%3E%3Cpath d='M200,200 L450,350 L720,250 L1000,380 L1250,220' stroke-dasharray='6 6'/%3E%3Cpath d='M150,700 L380,550 L720,650 L1050,520 L1300,720' stroke-dasharray='6 6'/%3E%3C/g%3E%3Cg fill='rgba(255,255,255,0.25)'%3E%3Ccircle cx='450' cy='350' r='4'/%3E%3Ccircle cx='720' cy='250' r='5'/%3E%3Ccircle cx='1000' cy='380' r='4'/%3E%3Ccircle cx='380' cy='550' r='4'/%3E%3Ccircle cx='720' cy='650' r='5'/%3E%3Ccircle cx='1050' cy='520' r='4'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='lineGlow' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(255,255,255,0.45)' /%3E%3Cstop offset='50%25' stop-color='rgba(0,242,254,0.3)' /%3E%3Cstop offset='100%25' stop-color='rgba(255,255,255,0.1)' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23lineGlow)' stroke-width='1.5'%3E%3C!-- GLOBO TERRAQUEO Y COORDENADAS DIGITALES --%3E%3Ccircle cx='960' cy='540' r='420' stroke-dasharray='4 8' opacity='0.5' /%3E%3Ccircle cx='960' cy='540' r='380' stroke-width='1' opacity='0.3' /%3E%3Ccircle cx='960' cy='540' r='280' stroke-dasharray='12 6' opacity='0.6' /%3E%3Cellipse cx='960' cy='540' rx='420' ry='160' stroke-width='1.2' opacity='0.6' /%3E%3Cellipse cx='960' cy='540' rx='420' ry='80' stroke-width='1' opacity='0.4' /%3E%3Cellipse cx='960' cy='540' rx='160' ry='420' stroke-width='1.2' opacity='0.6' /%3E%3Cellipse cx='960' cy='540' rx='80' ry='420' stroke-width='1' opacity='0.4' /%3E%3C!-- ANILLOS ORBITALES DE IA --%3E%3Cpath d='M400,200 Q960,50 1520,200 T400,200' stroke-dasharray='10 10' stroke-width='1.8' opacity='0.7' /%3E%3Cpath d='M300,880 Q960,1030 1620,880 T300,880' stroke-dasharray='8 8' stroke-width='1.8' opacity='0.7' /%3E%3C!-- RED DE NODOS E INTERCONEXION IA --%3E%3Cpath d='M250,300 L550,420 L960,250 L1370,420 L1670,300' stroke-width='1.5' stroke-dasharray='5 5' /%3E%3Cpath d='M200,750 L520,620 L960,830 L1400,620 L1720,750' stroke-width='1.5' stroke-dasharray='5 5' /%3E%3Cpath d='M550,420 L520,620 M1370,420 L1400,620 M960,250 L960,830' stroke-width='1' opacity='0.4' /%3E%3C/g%3E%3C!-- NODOS Y PULSOS DE INTELIGENCIA --%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='550' cy='420' r='5' opacity='0.9' /%3E%3Ccircle cx='960' cy='250' r='7' opacity='0.95' /%3E%3Ccircle cx='1370' cy='420' r='5' opacity='0.9' /%3E%3Ccircle cx='520' cy='620' r='5' opacity='0.9' /%3E%3Ccircle cx='960' cy='830' r='7' opacity='0.95' /%3E%3Ccircle cx='1400' cy='620' r='5' opacity='0.9' /%3E%3Ccircle cx='960' cy='540' r='8' fill='%2300f2fe' opacity='0.8' /%3E%3C/g%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
-            opacity: 0.85;
+            background-size: contain;
+            opacity: 0.65;
             z-index: 0;
             pointer-events: none;
         }
 
         .glow-bg {
-            position: absolute; top: 15%; left: 50%;
+            position: absolute; top: 20%; left: 50%;
             transform: translate(-50%,-50%);
-            width: 500px; height: 250px;
-            background: radial-gradient(circle, rgba(0,242,254,0.12) 0%, transparent 70%);
+            width: 600px; height: 300px;
+            background: radial-gradient(circle, rgba(0,242,254,0.15) 0%, transparent 70%);
             z-index: 0; pointer-events: none;
         }
 
@@ -61,9 +62,9 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            background: rgba(5, 12, 20, 0.4);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(3, 8, 14, 0.5);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1);
         }
 
         .nav-links { display: flex; gap: 30px; align-items: center; }
@@ -150,14 +151,14 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(3, 8, 14, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
             padding: 40px 30px;
             width: 450px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -167,7 +168,7 @@
         .card:hover {
             transform: translateY(-5px);
             border-color: #00f2fe;
-            box-shadow: 0 15px 40px rgba(0,242,254,0.1);
+            box-shadow: 0 15px 40px rgba(0,242,254,0.15);
         }
 
         .card h2 {
@@ -228,7 +229,7 @@
             display: none;
             max-width: 850px;
             width: 100%;
-            background: rgba(5, 12, 20, 0.95);
+            background: rgba(3, 8, 14, 0.92);
             border: 1px solid rgba(0, 242, 254, 0.3);
             border-radius: 12px;
             padding: 40px;
@@ -335,6 +336,7 @@
                 <a href="experiencias.html" id="exp-link" class="action-btn">Descubre Experiencias de Viaje</a>
             </div>
 
+            <!-- BANNER DE GO CITY INTEGRADO -->
             <section class="staysmart-gocity-banner">
                 <style>
                     .staysmart-gocity-banner {
@@ -344,11 +346,11 @@
                         padding: 40px 30px;
                         margin: 40px auto 0 auto;
                         width: 100%;
-                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
                         position: relative;
                         font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
                         box-sizing: border-box;
-                        border: 1px solid rgba(0, 209, 178, 0.3);
+                        border: 1px solid rgba(0, 209, 178, 0.4);
                     }
 
                     .gocity-header-bar {
@@ -486,15 +488,17 @@
             </section>
         </div>
 
+        <!-- SECCIÓN QUIÉNES SOMOS -->
         <div class="info-section" id="about-section">
             <h2 id="about-title">Quiénes Somos</h2>
-            <p id="about-p1"><strong>StaySmart</strong> es una plataforma tecnológica creada para conectar a las personas con oportunidades inteligentes de viaje e inversión inmobiliaria. Nuestro propósito es democratizar el acceso a opciones globales de excelente calidad que muchas veces quedan fuera del radar principal, permitiéndote descubrir alternativas altamente competitivas y transparentes en un solo lugar.</p>
+            <p id="about-p1"><strong>StaySmart</strong> es una plataforma tecnológica creada para conectar a las personas con oportunidades inteligentes de viaje e inversión inmobiliaria. Nuestro propósito es democratizar el acceso a opciones globales de excelente calidad que muchas veces quedan fuera del radar principal, permitiéndote descubrir alternativas highly competitivas y transparentes en un solo lugar.</p>
 
             <p id="about-p2">A través de nuestro ecosistema, facilitamos la conexión con estos aliados estratégicos garantizando tarifas preferenciales, automatización sin complicaciones y una gestión bilingüe fluida. Te acercamos herramientas de alto valor que simplifican tus decisiones, dándote más opciones de ahorro y mayor control en cada paso.</p>
             
             <button class="close-btn" onclick="resetToHome()" id="about-close">Cerrar Vista</button>
         </div>
 
+        <!-- SECCIÓN CONTACTO -->
         <div class="info-section" id="contact-section">
             <h2 id="contact-title">Centro de Contacto</h2>
             <p id="contact-desc">Conéctate al instante con nuestra mesa de soluciones inteligentes a través del canal de tu preferencia:</p>
