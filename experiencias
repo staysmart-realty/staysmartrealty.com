@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StaySmart Experiences — Tours y Actividades</title>
+    <title>StaySmart Experiencias — Tours y Actividades</title>
     <link rel="stylesheet" href="https://www.staysmartrealty.com">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -184,7 +184,7 @@
             </a>
         </div>
 
-        <p class="note">Al hacer clic entrarás a la plataforma correspondiente, donde podrás elegir tu destino, fecha y reservar directamente.</p>
+        <p class="note">Al hacer clic podrás elegir tu destino, fecha y reservar directamente.</p>
     </div>
 
 </body>
