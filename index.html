@@ -43,6 +43,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 25px 50px;
+            position: relative;
             z-index: 10;
             width: 100%;
             background: rgba(5, 12, 20, 0.3);
@@ -195,6 +196,27 @@
             box-shadow: 0 0 20px rgba(0,242,254,0.4);
         }
 
+        /* BOTÓN SECUNDARIO: abre la búsqueda de Travelpayouts en pestaña nueva */
+        .tp-btn {
+            background: transparent;
+            color: #00f2fe;
+            border: 1px solid rgba(0, 242, 254, 0.5);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        .tp-btn:hover {
+            background: rgba(0, 242, 254, 0.1);
+            box-shadow: 0 0 15px rgba(0,242,254,0.25);
+        }
+
         /* PANEL DE BÚSQUEDA TRAVELPAYOUTS (aparece al pasar el mouse sobre la card de Travel) */
         #travel-card {
             position: relative;
@@ -273,6 +295,28 @@
 </head>
 <body>
 
+    <script>
+        // Cualquier elemento que un script de terceros (ej. Travelpayouts) agregue
+        // directo a <body> se fuerza a mostrarse POR ENCIMA del menú ES/EN y del resto
+        // del contenido, para que no quede tapado.
+        (function () {
+            var observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (m) {
+                    m.addedNodes.forEach(function (node) {
+                        if (node.nodeType === 1 && node.parentNode === document.body) {
+                            node.style.setProperty('z-index', '999999', 'important');
+                            var pos = window.getComputedStyle(node).position;
+                            if (pos === 'static') {
+                                node.style.setProperty('position', 'relative', 'important');
+                            }
+                        }
+                    });
+                });
+            });
+            observer.observe(document.body, { childList: true });
+        })();
+    </script>
+
     <div class="glow-bg"></div>
 
     <header>
@@ -303,17 +347,20 @@
                 <h2 id="travel-title">StaySmart Travel</h2>
                 <p id="travel-desc">Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.</p>
                 <a href="https://tally.so/r/b58aK0" id="travel-link" class="action-btn">Buscar Viajes</a>
-
-                <!-- Panel de Travelpayouts: se revela solo al pasar el mouse sobre la card -->
-                <div class="tp-hover-panel" id="tp-hover-panel">
-                    <div id="tp-widget-545303"></div>
-                </div>
+                <br>
+                <a href="vuelos-transporte.html" id="tp-search-btn" class="tp-btn">Buscar vuelos y transporte</a>
             </div>
 
             <div class="card">
                 <h2 id="props-title">StaySmart Properties</h2>
                 <p id="props-desc">Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.</p>
                 <a href="https://tally.so/r/MeLWGp" id="props-link" class="action-btn">¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella</a>
+            </div>
+
+            <div class="card">
+                <h2 id="exp-title">StaySmart Experiences</h2>
+                <p id="exp-desc">Descubre experiencias, tours y actividades emocionantes en los mejores destinos del mundo.</p>
+                <a href="experiencias.html" id="exp-link" class="action-btn">Descubre Experiencias de Viaje</a>
             </div>
 
         </div>
@@ -357,21 +404,13 @@
     </main>
 
     <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-        // Carga el widget de Travelpayouts solo la primera vez que el usuario
-        // pasa el mouse sobre la card "StaySmart Travel" (no afecta el botón de Tally).
+        // Travelpayouts Drive: corre en segundo plano en toda la página
+        // (no depende de ningún clic ni botón).
         (function () {
-            var loaded = false;
-            var travelCard = document.getElementById('travel-card');
-            if (!travelCard) return;
-
-            travelCard.addEventListener('mouseenter', function () {
-                if (loaded) return;
-                loaded = true;
-                var tpScript = document.createElement('script');
-                tpScript.async = 1;
-                tpScript.src = 'https://emrldtp.cc/NTQ1MzAz.js?t=545303';
-                document.head.appendChild(tpScript);
-            });
+            var tpScript = document.createElement('script');
+            tpScript.async = 1;
+            tpScript.src = 'https://emrldtp.cc/NTQ1MzAz.js?t=545303';
+            document.head.appendChild(tpScript);
         })();
     </script>
 
@@ -388,6 +427,10 @@
                 propsDesc: "Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.",
                 propsBtn: "¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella",
                 propsUrl: "https://tally.so/r/MeLWGp",
+
+                expTitle: "StaySmart Experiences",
+                expDesc: "Descubre experiencias, tours y actividades emocionantes en los mejores destinos del mundo.",
+                expBtn: "Descubre Experiencias de Viaje",
 
                 menuAbout: "About",
                 menuDeck: "¿Qué Somos?",
@@ -410,6 +453,10 @@
                 propsDesc: "Advanced real estate management and exclusive property portfolios optimized through technology.",
                 propsBtn: "Want to learn more about your property's potential? Tell us about your property",
                 propsUrl: "https://tally.so/r/MeLWGp",
+
+                expTitle: "StaySmart Experiences",
+                expDesc: "Discover exciting experiences, tours, and activities in the world's best destinations.",
+                expBtn: "Discover Travel Experiences",
 
                 menuAbout: "About",
                 menuDeck: "What We Are",
@@ -434,6 +481,10 @@
             document.getElementById('props-desc').innerText = content[lang].propsDesc;
             document.getElementById('props-link').innerText = content[lang].propsBtn;
             document.getElementById('props-link').setAttribute('href', content[lang].propsUrl);
+
+            document.getElementById('exp-title').innerText = content[lang].expTitle;
+            document.getElementById('exp-desc').innerText = content[lang].expDesc;
+            document.getElementById('exp-link').innerText = content[lang].expBtn;
 
             document.getElementById('menu-about').innerText = content[lang].menuAbout;
             document.getElementById('menu-deck').innerText = content[lang].menuDeck;
