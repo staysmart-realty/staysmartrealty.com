@@ -362,7 +362,227 @@
                 <p id="exp-desc">Descubre experiencias, tours y actividades emocionantes en los mejores destinos del mundo.</p>
                 <a href="experiencias.html" id="exp-link" class="action-btn">Descubre Experiencias de Viaje</a>
             </div>
+<!-- INICIO DE BANNER GO CITY PARA EL MAIN PRINCIPAL -->
+<section class="staysmart-gocity-banner">
+  <style>
+    .staysmart-gocity-banner {
+      background: linear-gradient(135deg, #002D62 0%, #001F44 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 40px auto;
+      max-width: 1100px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
 
+    .gocity-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 15px;
+    }
+
+    .gocity-brand {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .gocity-brand span {
+      color: #00D1B2;
+    }
+
+    .gocity-lang-switcher select {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .gocity-lang-switcher select option {
+      background-color: #002D62;
+      color: #FFFFFF;
+    }
+
+    .gocity-content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .gocity-text-side h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      color: #FFFFFF;
+    }
+
+    .gocity-text-side p {
+      font-size: 15px;
+      color: #E2E8F0;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .gocity-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+    }
+
+    .gocity-bullets li {
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #CBD5E1;
+    }
+
+    .gocity-cta-btn {
+      display: inline-block;
+      background-color: #FF5A5F;
+      color: #FFFFFF !important;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 90, 95, 0.4);
+      text-align: center;
+    }
+
+    .gocity-cta-btn:hover {
+      background-color: #E0484D;
+      transform: translateY(-2px);
+    }
+
+    .gocity-badge-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .gocity-badge-box .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .gocity-badge-box h4 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #00D1B2;
+    }
+
+    .gocity-badge-box p {
+      font-size: 13px;
+      color: #94A3B8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .gocity-content-grid {
+        grid-template-columns: 1fr;
+      }
+      .staysmart-gocity-banner {
+        padding: 25px 20px;
+      }
+      .gocity-text-side h2 {
+        font-size: 22px;
+      }
+      .gocity-cta-btn {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!-- BARRA DE ENCABEZADO Y SELECTOR -->
+  <div class="gocity-header-bar">
+    <div class="gocity-brand">Go <span>City</span> & StaySmart</div>
+    <div class="gocity-lang-switcher">
+      <select id="gocityLangSelect" onchange="switchGoCityLang(this.value)">
+        <option value="es" selected>Español</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL DEL BANNER -->
+  <div class="gocity-content-grid">
+    <div class="gocity-text-side">
+      <h2 id="gc-title">Ahorra en las mejores atracciones de cada ciudad</h2>
+      <p id="gc-desc">Accede a las mejores experiencias, tours y monumentos en más de 30 destinos globales con un solo pase digital en tu teléfono.</p>
+      
+      <ul class="gocity-bullets">
+        <li id="gc-b1">✔ 100% Digital: Código QR directo en tu smartphone.</li>
+        <li id="gc-b2">✔ Flexibilidad total: Elige pases por días o por atracciones.</li>
+        <li id="gc-b3">✔ Tarifas preferenciales vs. taquilla individual.</li>
+      </ul>
+
+      <a href="https://gocity.tpk.lv/j1ZSLU1I" target="_blank" rel="noopener" class="gocity-cta-btn" id="gc-btn">Ver Pases y Destinos Oficiales</a>
+    </div>
+
+    <div class="gocity-badge-box">
+      <div class="icon">🎟️</div>
+      <h4 id="gc-box-title">Aliado Oficial de Viajes</h4>
+      <p id="gc-box-desc">Explora pases para Nueva York, Londres, París, Orlando y más con la garantía oficial de Go City.</p>
+    </div>
+  </div>
+
+  <!-- SCRIPT DE CAMBIO DE IDIOMA LOCAL -->
+  <script>
+    const gcTexts = {
+      es: {
+        title: "Ahorra en las mejores atracciones de cada ciudad",
+        desc: "Accede a las mejores experiencias, tours y monumentos en más de 30 destinos globales con un solo pase digital en tu teléfono.",
+        b1: "✔ 100% Digital: Código QR directo en tu smartphone.",
+        b2: "✔ Flexibilidad total: Elige pases por días o por atracciones.",
+        b3: "✔ Tarifas preferenciales vs. taquilla individual.",
+        btn: "Ver Pases y Destinos Oficiales",
+        boxTitle: "Aliado Oficial de Viajes",
+        boxDesc: "Explora pases para Nueva York, Londres, París, Orlando y más con la garantía oficial de Go City."
+      },
+      en: {
+        title: "Save on top city attractions worldwide",
+        desc: "Access top experiences, tours, and landmarks in over 30 global destinations with one digital pass on your phone.",
+        b1: "✔ 100% Digital: QR code directly on your smartphone.",
+        b2: "✔ Total flexibility: Choose day-based or attraction-based passes.",
+        b3: "✔ Better rates vs. individual gate prices.",
+        btn: "View Official Passes & Destinations",
+        boxTitle: "Official Travel Partner",
+        boxDesc: "Explore passes for New York, London, Paris, Orlando, and more with Go City official coverage."
+      }
+    };
+
+    function switchGoCityLang(lang) {
+      document.getElementById('gc-title').innerText = gcTexts[lang].title;
+      document.getElementById('gc-desc').innerText = gcTexts[lang].desc;
+      document.getElementById('gc-b1').innerText = gcTexts[lang].b1;
+      document.getElementById('gc-b2').innerText = gcTexts[lang].b2;
+      document.getElementById('gc-b3').innerText = gcTexts[lang].b3;
+      document.getElementById('gc-btn').innerText = gcTexts[lang].btn;
+      document.getElementById('gc-box-title').innerText = gcTexts[lang].boxTitle;
+      document.getElementById('gc-box-desc').innerText = gcTexts[lang].boxDesc;
+    }
+  </script>
+</section>
+<!-- FIN DE BANNER GO CITY -->
         </div>
 
         <div class="info-section" id="about-section">
