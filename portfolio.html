@@ -15,15 +15,82 @@
 
         body {
             background-color: #050c14;
-            display: grid;
-            gap: 40px;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 0;
             min-height: 100vh;
-            padding: 40px 0;
-            place-items: center;
+            padding: 100px 0 40px 0; /* Espacio superior para compensar el header fijo */
+            gap: 40px;
         }
 
+        /* HEADERESTILIZADO HOMOLOGADO CON VUELOS-TRANSPORTE.HTML */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px;
+            z-index: 100;
+            background: rgba(3, 8, 14, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            background: rgba(0, 242, 254, 0.05);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .back-link:hover {
+            color: #00f2fe;
+            border-color: #00f2fe;
+            background: rgba(0, 242, 254, 0.15);
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+            transform: translateX(-3px);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            border-color: #00f2fe;
+            color: #00f2fe;
+            background: rgba(0, 242, 254, 0.1);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        }
+
+        /* SLIDES */
         .slide-container {
             background-color: #050c14;
             border: 1px solid rgba(0, 242, 254, 0.2);
@@ -38,9 +105,9 @@
             position: relative;
             width: 1280px;
             color: #ffffff;
+            border-radius: 8px;
         }
 
-        /* DISEÑO DE FONDO - Brillo Radial StaySmart */
         .slide-container::before {
             content: '';
             position: absolute;
@@ -106,7 +173,6 @@
             transition: all 0.3s ease;
         }
 
-        /* EFECTO HOVER REPARADO Y HOMOLOGADO PARA TODOS LOS CUADROS */
         .tile:hover {
             border-color: #00f2fe;
             background: rgba(0, 242, 254, 0.03);
@@ -117,15 +183,6 @@
         .tile .icon { color: #00f2fe; font-size: 40px; margin-bottom: 15px; }
         .tile h3 { font-size: 20px; margin-bottom: 15px; color: #00f2fe; }
         .tile ul { padding-left: 18px; color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.5; }
-
-        .image-wrapper {
-            border-radius: 12px;
-            overflow: hidden;
-            height: 400px;
-            border: 1px solid rgba(0, 242, 254, 0.3);
-        }
-
-        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
         .highlight-number {
             font-size: 110px;
@@ -158,35 +215,40 @@
     </style>
 </head>
 <body>
-    
-    <div class="glow-bg"></div>
 
+    <!-- BARRA NAVEGACIÓN SUPERIOR HOMOLOGADA -->
     <header>
-        <a href="index.html" class="back-link">&larr; Volver a StaySmart</a>
+        <a href="index.html" class="back-link" id="back-btn-text">
+            <i class="fa-solid fa-arrow-left"></i> Volver a StaySmart
+        </a>
+        <div class="lang-selector">
+            <button class="lang-btn active" id="btn-es" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+        </div>
     </header>
 
 <div class="slide-container" id="slide1">
     <div style="text-align: center;">
-        <div style="font-size: 18px; letter-spacing: 5px; color: #00f2fe; margin-bottom: 10px;">SOLUCIONES INTELIGENTES</div>
+        <div id="s1-tag" style="font-size: 18px; letter-spacing: 5px; color: #00f2fe; margin-bottom: 10px;">SOLUCIONES INTELIGENTES</div>
         <h1 style="font-size: 80px; line-height: 1.1;">StaySmart<br><span style="color: #00f2fe;">Realty & Travel</span></h1>
-        <p class="subtitle" style="max-width: 800px; margin: 30px auto;">Ecosistema unificado de gestión e integración tecnológica para el sector inmobiliario corporativo y de viajes.</p>
+        <p class="subtitle" id="s1-desc" style="max-width: 800px; margin: 30px auto;">Ecosistema unificado de gestión e integración tecnológica para el sector inmobiliario corporativo y de viajes.</p>
     </div>
 </div>
 
 <div class="slide-container" id="slide2">
-    <h2 class="slide-title">Direccionamiento Estratégico</h2>
+    <h2 class="slide-title" id="s2-title">Direccionamiento Estratégico</h2>
     <div class="content-area">
         <div class="two-column">
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 8px; border-left: 4px solid #00f2fe;">
-                <h3 style="color: #00f2fe; margin-bottom: 15px;"><i class="fa-solid fa-bullseye"></i> Misión</h3>
-                <p style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
+                <h3 style="color: #00f2fe; margin-bottom: 15px;"><i class="fa-solid fa-bullseye"></i> <span id="s2-m-title">Misión</span></h3>
+                <p id="s2-m-desc" style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
                     Optimizar la conexión entre propietarios globales y canales de distribución mediante una infraestructura tecnológica bilingüe y automatizada, eliminando la fricción administrativa y maximizando el rendimiento financiero de cada activo sin intermediación física directa.
                 </p>
             </div>
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 8px; border-left: 4px solid #4facfe;">
-                <h3 style="color: #4facfe; margin-bottom: 15px;"><i class="fa-solid fa-eye"></i> Visión Estratégica</h3>
-                <p style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
-                    Consolidar en los próximos 4 años un ecosistema automatizado de referencia internacional en el mercado corporativo, expandiendo en un horizon a 10 años una red de integración de datos capaz de predecir tendencias de ocupación y rentabilidad inmobiliaria global.
+                <h3 style="color: #4facfe; margin-bottom: 15px;"><i class="fa-solid fa-eye"></i> <span id="s2-v-title">Visión Estratégica</span></h3>
+                <p id="s2-v-desc" style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
+                    Consolidar en los próximos 4 años un ecosistema automatizado de referencia internacional en el mercado corporativo, expandiendo en un horizonte a 10 años una red de integración de datos capaz de predecir tendencias de ocupación y rentabilidad inmobiliaria global.
                 </p>
             </div>
         </div>
@@ -194,37 +256,37 @@
 </div>
 
 <div class="slide-container" id="slide3">
-    <h2 class="slide-title">Ecosistema Integrado</h2>
+    <h2 class="slide-title" id="s3-title">Ecosistema Integrado</h2>
     <div class="content-area">
         <div class="tiled-content">
             <div class="tile">
                 <div class="icon"><i class="fa-solid fa-hotel"></i></div>
                 <h3>StaySmart Properties</h3>
-                <p>Canal de administración digital y puente de comunicación bilingüe para estructurar y mercadear activos inmobiliarios.</p>
+                <p id="s3-t1">Canal de administración digital y puente de comunicación bilingüe para estructurar y mercadear activos inmobiliarios.</p>
             </div>
             <div class="tile">
                 <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
                 <h3>StaySmart Travel</h3>
-                <p>Portal inteligente de reservas conectado a redes globales de afiliados para soluciones corporativas y turísticas.</p>
+                <p id="s3-t2">Portal inteligente de reservas conectado a redes globales de afiliados para soluciones corporativas y turísticas.</p>
             </div>
             <div class="tile">
                 <div class="icon"><i class="fa-solid fa-circle-nodes"></i></div>
-                <h3>Integración Tech</h3>
-                <p>Infraestructura basada en flujos automatizados que conecta bases de datos, scoring de leads y respuestas en tiempo real.</p>
+                <h3 id="s3-t3-title">Integración Tech</h3>
+                <p id="s3-t3">Infraestructura basada en flujos automatizados que conecta bases de datos, scoring de leads y respuestas en tiempo real.</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="slide-container" id="slide4">
-    <h2 class="slide-title">Estructura de Servicios Escalonados</h2>
+    <h2 class="slide-title" id="s4-title">Estructura de Servicios Escalonados</h2>
     <div class="content-area">
         <div class="tiled-content">
             <div class="tile">
                 <div class="icon" style="color: #a5f3fc;"><i class="fa-solid fa-sliders"></i></div>
                 <h3>Plan Smart</h3>
-                <h4 style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 15px;">Sincronización Base</h4>
-                <ul>
+                <h4 id="s4-p1-sub" style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 15px;">Sincronización Base</h4>
+                <ul id="s4-p1-list">
                     <li>Estructuración técnica de anuncios en canales globales.</li>
                     <li>Sincronización automatizada de calendarios para evitar duplicidad.</li>
                     <li>Captación automatizada de leads mediante formularios inteligentes.</li>
@@ -234,8 +296,8 @@
             <div class="tile">
                 <div class="icon"><i class="fa-solid fa-chart-simple"></i></div>
                 <h3>Plan Management</h3>
-                <h4 style="font-size: 0.8rem; color: #00f2fe; margin-bottom: 15px;">Control de Operación</h4>
-                <ul>
+                <h4 id="s4-p2-sub" style="font-size: 0.8rem; color: #00f2fe; margin-bottom: 15px;">Control de Operación</h4>
+                <ul id="s4-p2-list">
                     <li>Todo lo incluido en el Plan Smart.</li>
                     <li>Puente de comunicación bilingüe directo (24/7) con el cliente final.</li>
                     <li>Coordinación automatizada de flujos de confirmación y alertas de reserva.</li>
@@ -245,8 +307,8 @@
             <div class="tile">
                 <div class="icon" style="color: #4facfe;"><i class="fa-solid fa-gem"></i></div>
                 <h3>Plan Full Elite</h3>
-                <h4 style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 15px;">Optimización Avanzada</h4>
-                <ul>
+                <h4 id="s4-p3-sub" style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 15px;">Optimización Avanzada</h4>
+                <ul id="s4-p3-list">
                     <li>Todo lo incluido en los planes anteriores.</li>
                     <li>Evaluación y scoring automatizado de rentabilidad del activo.</li>
                     <li>Optimización dinámica de tarifas mediante inteligencia analítica.</li>
@@ -254,59 +316,59 @@
                 </ul>
             </div>
         </div>
-        <p style="margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.4); text-align: center; width: 100%;">
+        <p id="s4-note" style="margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.4); text-align: center; width: 100%;">
             *Nota: StaySmart gestiona exclusivamente la infraestructura digital y de comunicación. No proveemos servicios físicos de campo (limpieza, llaves o reparaciones).
         </p>
     </div>
 </div>
 
 <div class="slide-container" id="slide5">
-    <h2 class="slide-title">Matriz de Responsabilidad Digital</h2>
+    <h2 class="slide-title" id="s5-title">Matriz de Responsabilidad Digital</h2>
     <div class="table-layout">
         <table>
             <thead>
                 <tr>
-                    <th>Funcionalidad Tecnológica</th>
+                    <th id="th-1">Funcionalidad Tecnológica</th>
                     <th>Plan Smart</th>
                     <th>Plan Management</th>
                     <th>Plan Full Elite</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Canales de Distribución Web</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> Básica</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> Avanzada</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> Premium</td></tr>
-                <tr><td>Filtro Automático de Formularios</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td></tr>
-                <tr><td>Puente Bilingüe de Comunicación</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes y Aliados</td></tr>
-                <tr><td>Análisis de Rentabilidad Continuo</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ (Modelos Predictivos)</td></tr>
+                <tr><td id="td-1">Canales de Distribución Web</td><td id="v1"><i class="fa-solid fa-check" style="color:#00f2fe"></i> Básica</td><td id="v2"><i class="fa-solid fa-check" style="color:#00f2fe"></i> Avanzada</td><td id="v3"><i class="fa-solid fa-check" style="color:#00f2fe"></i> Premium</td></tr>
+                <tr><td id="td-2">Filtro Automático de Formularios</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td><td><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ</td></tr>
+                <tr><td id="td-3">Puente Bilingüe de Comunicación</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td id="v4"><i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes</td><td id="v5"><i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes y Aliados</td></tr>
+                <tr><td id="td-4">Análisis de Rentabilidad Continuo</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td><i class="fa-solid fa-minus" style="color:rgba(255,255,255,0.2)"></i> NO</td><td id="v6"><i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ (Modelos Predictivos)</td></tr>
             </tbody>
         </table>
     </div>
 </div>
 
 <div class="slide-container" id="slide6">
-    <h2 class="slide-title">Métricas de Éxito e Impacto</h2>
+    <h2 class="slide-title" id="s6-title">Métricas de Éxito e Impacto</h2>
     <div class="content-area">
         <div class="two-column">
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
-                    <h4 style="color: #00f2fe; font-size: 1.1rem; margin-bottom: 5px;">Para Propietarios</h4>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Reducción del tiempo de inactividad de las propiedades mediante algoritmos de sincronización y visibilidad cross-channel inmediata.</p>
+                    <h4 id="s6-m1-title" style="color: #00f2fe; font-size: 1.1rem; margin-bottom: 5px;">Para Propietarios</h4>
+                    <p id="s6-m1-desc" style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Reducción del tiempo de inactividad de las propiedades mediante algoritmos de sincronización y visibilidad cross-channel inmediata.</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px;">
-                    <h4 style="color: #4facfe; font-size: 1.1rem; margin-bottom: 5px;">Eficiencia de Respuesta</h4>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Tiempos de procesamiento e inscripción de leads inferiores a 15 minutos gracias a la automatización de flujos de datos.</p>
+                    <h4 id="s6-m2-title" style="color: #4facfe; font-size: 1.1rem; margin-bottom: 5px;">Eficiencia de Respuesta</h4>
+                    <p id="s6-m2-desc" style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Tiempos de procesamiento e inscripción de leads inferiores a 15 minutos gracias a la automatización de flujos de datos.</p>
                 </div>
             </div>
             <div style="text-align: center; background: rgba(0,242,254,0.02); padding: 40px; border-radius: 12px; border: 1px dashed rgba(0,242,254,0.3);">
                 <div class="highlight-number">100%</div>
-                <div style="color: #ffffff; font-weight: bold; letter-spacing: 2px; margin-top: 15px; font-size: 1.1rem;">OPERACIÓN DIGITAL CENTRALIZADA</div>
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 10px; margin-bottom: 0;">Cero dependencia de infraestructura física, permitiendo una escalabilidad geográfica sin límites.</p>
+                <div id="s6-kpi-title" style="color: #ffffff; font-weight: bold; letter-spacing: 2px; margin-top: 15px; font-size: 1.1rem;">OPERACIÓN DIGITAL CENTRALIZADA</div>
+                <p id="s6-kpi-desc" style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 10px; margin-bottom: 0;">Cero dependencia de infraestructura física, permitiendo una escalabilidad geográfica sin límites.</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="slide-container" id="slide7">
-    <h2 class="slide-title">Proyección de Crecimiento del Ecosistema</h2>
+    <h2 class="slide-title" id="s7-title">Proyección de Crecimiento del Ecosistema</h2>
     <div class="content-area">
         <svg class="area-chart-svg" viewBox="0 0 1000 320">
             <path class="area-fill" d="M0,280 Q250,260 500,180 T1000,40 L1000,320 L0,320 Z"></path>
@@ -316,16 +378,16 @@
             <circle cx="500" cy="180" r="6" fill="#00f2fe"></circle>
             <circle cx="1000" cy="40" r="6" fill="#4facfe"></circle>
             
-            <text x="0" y="310" fill="white" font-weight="bold">Año 0</text>
-            <text x="0" y="260" fill="rgba(255,255,255,0.5)" font-size="12">Lanzamiento & Base</text>
+            <text x="0" y="310" fill="white" font-weight="bold" id="c-t1">Año 0</text>
+            <text x="0" y="260" fill="rgba(255,255,255,0.5)" font-size="12" id="c-s1">Lanzamiento & Base</text>
             
-            <text x="460" y="215" fill="#00f2fe" font-weight="bold">Año 4 (Misión)</text>
-            <text x="430" y="235" fill="rgba(255,255,255,0.5)" font-size="12">Consolidación Internacional</text>
+            <text x="460" y="215" fill="#00f2fe" font-weight="bold" id="c-t2">Año 4 (Misión)</text>
+            <text x="430" y="235" fill="rgba(255,255,255,0.5)" font-size="12" id="c-s2">Consolidación Internacional</text>
             
-            <text x="880" y="30" fill="#4facfe" font-weight="bold">Año 10+ (Visión)</text>
-            <text x="850" y="75" fill="rgba(255,255,255,0.5)" font-size="12">Predicción de Datos Global</text>
+            <text x="880" y="30" fill="#4facfe" font-weight="bold" id="c-t3">Año 10+ (Visión)</text>
+            <text x="850" y="75" fill="rgba(255,255,255,0.5)" font-size="12" id="c-s3">Predicción de Datos Global</text>
         </svg>
-        <p style="margin-top: 25px; font-style: italic; color: rgba(255,255,255,0.4); font-size: 0.9rem; text-align: center;">
+        <p id="s7-note" style="margin-top: 25px; font-style: italic; color: rgba(255,255,255,0.4); font-size: 0.9rem; text-align: center;">
             Escalabilidad proyectada del volumen de activos bajo gestión automatizada e integraciones del hub de viajes.
         </p>
     </div>
@@ -334,12 +396,188 @@
 <div class="slide-container" id="slide8">
     <div style="text-align: center;">
         <h2 style="color: #00f2fe; font-size: 45px; margin-bottom: 25px;">StaySmart</h2>
-        <p style="font-size: 22px; color: rgba(255,255,255,0.7);">La evolución tecnológica de la gestión de activos y soluciones de viaje.</p>
-        <div style="margin-top: 60px; font-size: 16px; letter-spacing: 3px; color: rgba(255,255,255,0.4);">
+        <p id="s8-desc" style="font-size: 22px; color: rgba(255,255,255,0.7);">La evolución tecnológica de la gestión de activos y soluciones de viaje.</p>
+        <div id="s8-sub" style="margin-top: 60px; font-size: 16px; letter-spacing: 3px; color: rgba(255,255,255,0.4);">
             INTEGRACIÓN | AUTOMATIZACIÓN | RENTABILIDAD
         </div>
     </div>
 </div>
+
+<script>
+    const content = {
+        es: {
+            backBtn: '<i class="fa-solid fa-arrow-left"></i> Volver a StaySmart',
+            s1Tag: "SOLUCIONES INTELIGENTES",
+            s1Desc: "Ecosistema unificado de gestión e integración tecnológica para el sector inmobiliario corporativo y de viajes.",
+            s2Title: "Direccionamiento Estratégico",
+            s2MTitle: "Misión",
+            s2MDesc: "Optimizar la conexión entre propietarios globales y canales de distribución mediante una infraestructura tecnológica bilingüe y automatizada, eliminando la fricción administrativa y maximizando el rendimiento financiero de cada activo sin intermediación física directa.",
+            s2VTitle: "Visión Estratégica",
+            s2VDesc: "Consolidar en los próximos 4 años un ecosistema automatizado de referencia internacional en el mercado corporativo, expandiendo en un horizonte a 10 años una red de integración de datos capaz de predecir tendencias de ocupación y rentabilidad inmobiliaria global.",
+            s3Title: "Ecosistema Integrado",
+            s3T1: "Canal de administración digital y puente de comunicación bilingüe para estructurar y mercadear activos inmobiliarios.",
+            s3T2: "Portal inteligente de reservas conectado a redes globales de afiliados para soluciones corporativas y turísticas.",
+            s3T3Title: "Integración Tech",
+            s3T3: "Infraestructura basada en flujos automatizados que conecta bases de datos, scoring de leads y respuestas en tiempo real.",
+            s4Title: "Estructura de Servicios Escalonados",
+            s4P1Sub: "Sincronización Base",
+            s4P1List: "<li>Estructuración técnica de anuncios en canales globales.</li><li>Sincronización automatizada de calendarios para evitar duplicidad.</li><li>Captación automatizada de leads mediante formularios inteligentes.</li>",
+            s4P2Sub: "Control de Operación",
+            s4P2List: "<li>Todo lo incluido en el Plan Smart.</li><li>Puente de comunicación bilingüe directo (24/7) con el cliente final.</li><li>Coordinación automatizada de flujos de confirmación y alertas de reserva.</li>",
+            s4P3Sub: "Optimización Avanzada",
+            s4P3List: "<li>Todo lo incluido en los planes anteriores.</li><li>Evaluación y scoring automatizado de rentabilidad del activo.</li><li>Optimización dinámica de tarifas mediante inteligencia analítica.</li><li>Dashboards financieros de rendimiento mensual consolidados.</li>",
+            s4Note: "*Nota: StaySmart gestiona exclusivamente la infraestructura digital y de comunicación. No proveemos servicios físicos de campo (limpieza, llaves o reparaciones).",
+            s5Title: "Matriz de Responsabilidad Digital",
+            th1: "Funcionalidad Tecnológica",
+            td1: "Canales de Distribución Web",
+            td2: "Filtro Automático de Formularios",
+            td3: "Puente Bilingüe de Comunicación",
+            td4: "Análisis de Rentabilidad Continuo",
+            v1: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Básica',
+            v2: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Avanzada',
+            v3: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Premium',
+            v4: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes',
+            v5: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Huéspedes y Aliados',
+            v6: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> SÍ (Modelos Predictivos)',
+            s6Title: "Métricas de Éxito e Impacto",
+            s6M1Title: "Para Propietarios",
+            s6M1Desc: "Reducción del tiempo de inactividad de las propiedades mediante algoritmos de sincronización y visibilidad cross-channel inmediata.",
+            s6M2Title: "Eficiencia de Respuesta",
+            s6M2Desc: "Tiempos de procesamiento e inscripción de leads inferiores a 15 minutos gracias a la automatización de flujos de datos.",
+            s6KpiTitle: "OPERACIÓN DIGITAL CENTRALIZADA",
+            s6KpiDesc: "Cero dependencia de infraestructura física, permitiendo una escalabilidad geográfica sin límites.",
+            s7Title: "Proyección de Crecimiento del Ecosistema",
+            cT1: "Año 0", cS1: "Lanzamiento & Base",
+            cT2: "Año 4 (Misión)", cS2: "Consolidación Internacional",
+            cT3: "Año 10+ (Visión)", cS3: "Predicción de Datos Global",
+            s7Note: "Escalabilidad proyectada del volumen de activos bajo gestión automatizada e integraciones del hub de viajes.",
+            s8Desc: "La evolución tecnológica de la gestión de activos y soluciones de viaje.",
+            s8Sub: "INTEGRACIÓN | AUTOMATIZACIÓN | RENTABILIDAD"
+        },
+        en: {
+            backBtn: '<i class="fa-solid fa-arrow-left"></i> Back to StaySmart',
+            s1Tag: "SMART SOLUTIONS",
+            s1Desc: "Unified management and technology integration ecosystem for corporate real estate and travel sectors.",
+            s2Title: "Strategic Direction",
+            s2MTitle: "Mission",
+            s2MDesc: "To optimize the connection between global property owners and distribution channels through an automated, bilingual tech infrastructure, eliminating administrative friction and maximizing financial yield without direct physical intervention.",
+            s2VTitle: "Strategic Vision",
+            s2VDesc: "To consolidate an automated ecosystem of international reference in the corporate market within 4 years, expanding into a data integration network capable of predicting global occupancy and real estate profitability trends over 10 years.",
+            s3Title: "Integrated Ecosystem",
+            s3T1: "Digital management channel and bilingual communication bridge to structure and market real estate assets.",
+            s3T2: "Smart booking portal connected to global affiliate networks for corporate and travel solutions.",
+            s3T3Title: "Tech Integration",
+            s3T3: "Automated workflow infrastructure connecting databases, lead scoring, and real-time responses.",
+            s4Title: "Tiered Service Structure",
+            s4P1Sub: "Base Synchronization",
+            s4P1List: "<li>Technical setup of listings across global channels.</li><li>Automated calendar synchronization to prevent double-bookings.</li><li>Automated lead capturing via smart forms.</li>",
+            s4P2Sub: "Operational Control",
+            s4P2List: "<li>Everything included in the Smart Plan.</li><li>24/7 direct bilingual communication bridge with end clients.</li><li>Automated booking confirmations and alert workflows.</li>",
+            s4P3Sub: "Advanced Optimization",
+            s4P3List: "<li>Everything included in previous plans.</li><li>Automated property profitability scoring and evaluation.</li><li>Dynamic pricing optimization powered by analytics.</li><li>Consolidated monthly financial performance dashboards.</li>",
+            s4Note: "*Note: StaySmart exclusively manages digital and communication infrastructure. We do not provide physical field services (cleaning, keys, or repairs).",
+            s5Title: "Digital Responsibility Matrix",
+            th1: "Technology Feature",
+            td1: "Web Distribution Channels",
+            td2: "Automated Form Screening",
+            td3: "Bilingual Communication Bridge",
+            td4: "Continuous Profitability Analysis",
+            v1: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Basic',
+            v2: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Advanced',
+            v3: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Premium',
+            v4: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Guests',
+            v5: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> Guests & Partners',
+            v6: '<i class="fa-solid fa-check" style="color:#00f2fe"></i> YES (Predictive Models)',
+            s6Title: "Success Metrics & Impact",
+            s6M1Title: "For Owners",
+            s6M1Desc: "Reduction of property downtime through synchronization algorithms and immediate cross-channel visibility.",
+            s6M2Title: "Response Efficiency",
+            s6M2Desc: "Lead processing and onboarding times under 15 minutes thanks to automated data workflows.",
+            s6KpiTitle: "CENTRALIZED DIGITAL OPERATION",
+            s6KpiDesc: "Zero reliance on physical infrastructure, enabling borderless geographic scalability.",
+            s7Title: "Ecosystem Growth Projection",
+            cT1: "Year 0", cS1: "Launch & Base",
+            cT2: "Year 4 (Mission)", cS2: "International Consolidation",
+            cT3: "Year 10+ (Vision)", cS3: "Global Predictive Data",
+            s7Note: "Projected scalability of asset volume under automated management and travel hub integrations.",
+            s8Desc: "The technological evolution of asset management and travel solutions.",
+            s8Sub: "INTEGRATION | AUTOMATION | PROFITABILITY"
+        }
+    };
+
+    function setLanguage(lang) {
+        document.getElementById('back-btn-text').innerHTML = content[lang].backBtn;
+        
+        // Slide 1
+        document.getElementById('s1-tag').innerText = content[lang].s1Tag;
+        document.getElementById('s1-desc').innerText = content[lang].s1Desc;
+        
+        // Slide 2
+        document.getElementById('s2-title').innerText = content[lang].s2Title;
+        document.getElementById('s2-m-title').innerText = content[lang].s2MTitle;
+        document.getElementById('s2-m-desc').innerText = content[lang].s2MDesc;
+        document.getElementById('s2-v-title').innerText = content[lang].s2VTitle;
+        document.getElementById('s2-v-desc').innerText = content[lang].s2VDesc;
+
+        // Slide 3
+        document.getElementById('s3-title').innerText = content[lang].s3Title;
+        document.getElementById('s3-t1').innerText = content[lang].s3T1;
+        document.getElementById('s3-t2').innerText = content[lang].s3T2;
+        document.getElementById('s3-t3-title').innerText = content[lang].s3T3Title;
+        document.getElementById('s3-t3').innerText = content[lang].s3T3;
+
+        // Slide 4
+        document.getElementById('s4-title').innerText = content[lang].s4Title;
+        document.getElementById('s4-p1-sub').innerText = content[lang].s4P1Sub;
+        document.getElementById('s4-p1-list').innerHTML = content[lang].s4P1List;
+        document.getElementById('s4-p2-sub').innerText = content[lang].s4P2Sub;
+        document.getElementById('s4-p2-list').innerHTML = content[lang].s4P2List;
+        document.getElementById('s4-p3-sub').innerText = content[lang].s4P3Sub;
+        document.getElementById('s4-p3-list').innerHTML = content[lang].s4P3List;
+        document.getElementById('s4-note').innerText = content[lang].s4Note;
+
+        // Slide 5
+        document.getElementById('s5-title').innerText = content[lang].s5Title;
+        document.getElementById('th-1').innerText = content[lang].th1;
+        document.getElementById('td-1').innerText = content[lang].td1;
+        document.getElementById('td-2').innerText = content[lang].td2;
+        document.getElementById('td-3').innerText = content[lang].td3;
+        document.getElementById('td-4').innerText = content[lang].td4;
+        document.getElementById('v1').innerHTML = content[lang].v1;
+        document.getElementById('v2').innerHTML = content[lang].v2;
+        document.getElementById('v3').innerHTML = content[lang].v3;
+        document.getElementById('v4').innerHTML = content[lang].v4;
+        document.getElementById('v5').innerHTML = content[lang].v5;
+        document.getElementById('v6').innerHTML = content[lang].v6;
+
+        // Slide 6
+        document.getElementById('s6-title').innerText = content[lang].s6Title;
+        document.getElementById('s6-m1-title').innerText = content[lang].s6M1Title;
+        document.getElementById('s6-m1-desc').innerText = content[lang].s6M1Desc;
+        document.getElementById('s6-m2-title').innerText = content[lang].s6M2Title;
+        document.getElementById('s6-m2-desc').innerText = content[lang].s6M2Desc;
+        document.getElementById('s6-kpi-title').innerText = content[lang].s6KpiTitle;
+        document.getElementById('s6-kpi-desc').innerText = content[lang].s6KpiDesc;
+
+        // Slide 7
+        document.getElementById('s7-title').innerText = content[lang].s7Title;
+        document.getElementById('c-t1').textContent = content[lang].cT1;
+        document.getElementById('c-s1').textContent = content[lang].cS1;
+        document.getElementById('c-t2').textContent = content[lang].cT2;
+        document.getElementById('c-s2').textContent = content[lang].cS2;
+        document.getElementById('c-t3').textContent = content[lang].cT3;
+        document.getElementById('c-s3').textContent = content[lang].cS3;
+        document.getElementById('s7-note').innerText = content[lang].s7Note;
+
+        // Slide 8
+        document.getElementById('s8-desc').innerText = content[lang].s8Desc;
+        document.getElementById('s8-sub').innerText = content[lang].s8Sub;
+
+        // Botones activos
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
