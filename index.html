@@ -27,17 +27,17 @@
             background-position: center;
             background-repeat: no-repeat;
             z-index: 0;
-            opacity: 0.25; /* Transparencia equilibrada para mantener la lectura */
+            opacity: 0.35;
             pointer-events: none;
         }
 
-        /* 2. OVERLAY / DEGRADADO Y MALLA CIBERNÉTICA */
+        /* 2. OVERLAY Y MALLA CIBERNÉTICA */
         .bg-layer-glow {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background: 
-                radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.15) 0%, transparent 65%),
-                linear-gradient(180deg, rgba(3, 8, 14, 0.7) 0%, rgba(3, 8, 14, 0.95) 100%);
+                radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.2) 0%, transparent 65%),
+                linear-gradient(180deg, rgba(3, 8, 14, 0.65) 0%, rgba(3, 8, 14, 0.95) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -46,8 +46,8 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: 
-                linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(0, 242, 254, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: 2;
             pointer-events: none;
@@ -288,7 +288,7 @@
 </head>
 <body>
 
-    <!-- CAPAS DEL FONDO CON IMAGEN Y GLOW TECNOLÓGICO -->
+    <!-- CAPAS DE FONDO -->
     <div class="bg-layer-image"></div>
     <div class="bg-layer-glow"></div>
     <div class="bg-layer-grid"></div>
@@ -296,7 +296,7 @@
     <header>
         <div class="nav-links">
             <a onclick="showSection('about')" id="menu-about">About</a>
-            <!-- ENLACE DIRECTO A PORTFOLIO.HTML RESTAURADO -->
+            <!-- ¿QUÉ SOMOS? ENLAZADO DIRECTAMENTE A PORTFOLIO.HTML -->
             <a href="portfolio.html" id="menu-deck">¿Qué Somos?</a>
             <a onclick="resetToHome()" id="menu-services">Nuestros Servicios</a>
             <a onclick="showSection('contact')" id="menu-contact">Contáctenos</a>
@@ -316,7 +316,7 @@
             <div class="brand-sub" id="sub-title">Portafolio</div>
         </div>
 
-        <!-- CONTENEDOR DE SERVICIOS / TARJETAS PRINCIPALES -->
+        <!-- CONTENEDOR DE TARJETAS PRINCIPALES -->
         <div class="cards-container" id="services-container">
             
             <div class="card" id="travel-card">
