@@ -17,12 +17,6 @@
             background-size: cover;
             background-position: center;
         }
-        .partner-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
-                              url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
         .no-copy {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -43,7 +37,6 @@
                 <a href="#viajes" class="hover:text-blue-400 transition"><span data-key="nav_viajes">Viajes Globales</span></a>
                 <a href="#vender" class="hover:text-blue-400 transition"><span data-key="nav_vender">Publicar / Vender</span></a>
                 <a href="#gestion" class="hover:text-blue-400 transition"><span data-key="nav_gestion">Gestión VIP (25%)</span></a>
-                <a href="#partner" class="hover:text-blue-400 transition"><span data-key="nav_partner">Socio Estratégico</span></a>
                 <a href="#journal" class="hover:text-blue-400 transition"><span data-key="nav_journal">Journal & Guías</span></a>
             </nav>
 
@@ -168,41 +161,6 @@
         </div>
     </section>
 
-    <section id="partner" class="partner-bg text-white py-20 px-4">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div class="space-y-4">
-                <span class="bg-blue-500/30 text-blue-300 border border-blue-400/40 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-                    <span data-key="partner_badge">Alianza Estratégica Colombia-Canadá</span>
-                </span>
-                <h2 class="text-3xl md:text-4xl font-extrabold leading-tight"><span data-key="partner_title">¿Eres Agente Inmobiliario o Gestor Local en el Caribe Colombiano?</span></h2>
-                <p class="text-slate-300 leading-relaxed"><span data-key="partner_desc">StaySmart™ combina tecnología de automatización (IA, captación y gestión de leads) con operación legal y logística en terreno. Buscamos aliados en Santa Marta, Cartagena y Barranquilla para expandir la red bajo un esquema de comisión compartida.</span></p>
-                <ul class="space-y-2 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point1">Tecnología de captación y automatización ya operativa</span></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point2">Soporte legal y logístico en terreno a cargo del aliado local</span></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point3">Modelo freemium con comisión del 1% sobre transacciones cerradas</span></li>
-                </ul>
-                <button onclick="contactarWhatsApp('Hola, quiero información sobre la Alianza Estratégica de StaySmart.')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3.5 rounded-xl transition inline-flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> <span data-key="btn_partner">Conversemos (WhatsApp)</span>
-                </button>
-            </div>
-            <div class="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur-sm space-y-4">
-                <h3 class="font-bold text-lg"><span data-key="partner_box_title">Cómo funciona la alianza</span></h3>
-                <div class="flex gap-3 text-sm text-slate-200">
-                    <span class="font-black text-blue-400">01</span>
-                    <p><span data-key="partner_step1">StaySmart™ capta y califica clientes vía web, IA y redes.</span></p>
-                </div>
-                <div class="flex gap-3 text-sm text-slate-200">
-                    <span class="font-black text-blue-400">02</span>
-                    <p><span data-key="partner_step2">El aliado local gestiona la visita, el cierre legal y la entrega.</span></p>
-                </div>
-                <div class="flex gap-3 text-sm text-slate-200">
-                    <span class="font-black text-blue-400">03</span>
-                    <p><span data-key="partner_step3">La comisión se distribuye conforme al acuerdo de alianza firmado.</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="journal" class="max-w-6xl mx-auto py-16 px-4">
         <div class="mb-10">
             <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">StaySmart™ Journal</span>
@@ -313,7 +271,6 @@
                 nav_viajes: "Viajes Globales",
                 nav_vender: "Publicar / Vender",
                 nav_gestion: "Gestión VIP (25%)",
-                nav_partner: "Socio Estratégico",
                 nav_journal: "Journal & Guías",
                 hero_badge: "Ecosistema Inteligente de Turismo e Inmuebles",
                 hero_title: "Gestión Inmobiliaria Premium y Viajes Globales",
@@ -358,17 +315,6 @@
                 art3_desc: "Análisis financiero: Maximiza el ROI de tu propiedad en el modelo de Renta Vacacional al 25%.",
                 read_more: "Leer Artículo Completo ➔",
                 btn_close: "Cerrar",
-                partner_badge: "Alianza Estratégica Colombia-Canadá",
-                partner_title: "¿Eres Agente Inmobiliario o Gestor Local en el Caribe Colombiano?",
-                partner_desc: "StaySmart™ combina tecnología de automatización (IA, captación y gestión de leads) con operación legal y logística en terreno. Buscamos aliados en Santa Marta, Cartagena y Barranquilla para expandir la red bajo un esquema de comisión compartida.",
-                partner_point1: "Tecnología de captación y automatización ya operativa",
-                partner_point2: "Soporte legal y logístico en terreno a cargo del aliado local",
-                partner_point3: "Modelo freemium con comisión del 1% sobre transacciones cerradas",
-                btn_partner: "Conversemos (WhatsApp)",
-                partner_box_title: "Cómo funciona la alianza",
-                partner_step1: "StaySmart™ capta y califica clientes vía web, IA y redes.",
-                partner_step2: "El aliado local gestiona la visita, el cierre legal y la entrega.",
-                partner_step3: "La comisión se distribuye conforme al acuerdo de alianza firmado.",
                 mandato_modal_title: "Contrato de Mandato para Venta",
                 mandato_p1: "Este documento autoriza a StaySmart™ y a su aliado operativo en Colombia a promocionar, mostrar y gestionar la venta de tu inmueble ante interesados, actuando en tu representación durante el proceso comercial.",
                 mandato_p2: "Incluye: publicación en canales digitales, coordinación de visitas presenciales, negociación de oferta y acompañamiento legal hasta la firma de la escritura pública.",
@@ -378,13 +324,13 @@
                 promesa_p1: "Documento marco que protege al propietario dentro del esquema de Administración Turística Integral (25%), estableciendo los términos de entrega, uso, y responsabilidad del inmueble durante la gestión de renta vacacional.",
                 promesa_p2: "Incluye: póliza de respaldo ante daños, condiciones de terminación anticipada, y periodicidad de la rendición de cuentas al propietario.",
                 promesa_p3: "Solicita el documento completo en PDF, listo para firma, por WhatsApp.",
-                btn_request_doc: "Solicitar Documento"
+                btn_request_doc: "Solicitar Documento",
+                footer_trademark: "StaySmart™ es una marca en proceso de registro. Todos los derechos reservados."
             },
             en: {
                 nav_viajes: "Global Travel",
                 nav_vender: "List / Sell",
                 nav_gestion: "VIP Management (25%)",
-                nav_partner: "Strategic Partner",
                 nav_journal: "Journal & Guides",
                 hero_badge: "Smart Tourism & Real Estate Ecosystem",
                 hero_title: "Premium Real Estate & Global Travel",
@@ -429,17 +375,6 @@
                 art3_desc: "Financial analysis: Maximize your ROI with the 25% Vacation Rental model.",
                 read_more: "Read Full Article ➔",
                 btn_close: "Close",
-                partner_badge: "Colombia-Canada Strategic Alliance",
-                partner_title: "Are You a Real Estate Agent or Local Manager on the Colombian Caribbean Coast?",
-                partner_desc: "StaySmart™ combines automation technology (AI, lead capture and management) with legal and on-ground logistics operations. We're looking for partners in Santa Marta, Cartagena and Barranquilla to expand the network under a shared-commission model.",
-                partner_point1: "Lead capture and automation technology already operating",
-                partner_point2: "On-ground legal and logistics support handled by the local partner",
-                partner_point3: "Freemium model with a 1% commission on closed transactions",
-                btn_partner: "Let's Talk (WhatsApp)",
-                partner_box_title: "How the alliance works",
-                partner_step1: "StaySmart™ captures and qualifies clients via web, AI and social media.",
-                partner_step2: "The local partner handles the showing, legal closing and delivery.",
-                partner_step3: "Commission is split according to the signed alliance agreement.",
                 mandato_modal_title: "Sales Mandate Agreement",
                 mandato_p1: "This document authorizes StaySmart™ and its operating partner in Colombia to promote, show, and manage the sale of your property to interested buyers, acting on your behalf during the commercial process.",
                 mandato_p2: "Includes: listing across digital channels, coordinating in-person showings, offer negotiation, and legal support through the signing of the public deed.",
@@ -449,7 +384,8 @@
                 promesa_p1: "Framework document that protects the owner under the Full Vacation Rental Management (25%) model, setting out the terms of handover, use, and liability for the property during rental management.",
                 promesa_p2: "Includes: damage-coverage policy, early-termination conditions, and the frequency of financial reporting to the owner.",
                 promesa_p3: "Request the full signable PDF document via WhatsApp.",
-                btn_request_doc: "Request Document"
+                btn_request_doc: "Request Document",
+                footer_trademark: "StaySmart™ is a trademark pending registration. All rights reserved."
             }
         };
 
@@ -473,7 +409,11 @@
         }
 
         // Ejecutar al cargar la página para asegurar la sincronización inicial
-        document.addEventListener('DOMContentLoaded', changeLanguage);
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage();
+            const yearEl = document.getElementById('footerYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
 
         function contactarWhatsApp(msg) {
             window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -623,6 +563,10 @@
             }
             abrirModal('modalBlog');
         }
-    </script>
+    </script>    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-8 px-4 text-center text-xs">
+        <p class="text-white font-bold text-sm mb-1">StaySmart<span class="text-blue-500">™</span></p>
+        <p><span data-key="footer_trademark">StaySmart™ es una marca en proceso de registro. Todos los derechos reservados.</span> © <span id="footerYear"></span> StaySmart.</p>
+    </footer>
+
 </body>
 </html>
