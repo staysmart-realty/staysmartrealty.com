@@ -3,602 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StaySmart — Management & Real Estate Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>StaySmart™ | Global Travel & Colombian Real Estate</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsensescript.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-        body {
-            background-color: #03080e;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* 1. IMAGEN DE FONDO HD (Red global/Tecnología) */
-        .bg-layer-image {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 0;
-            opacity: 0.35;
-            pointer-events: none;
-        }
-
-        /* 2. OVERLAY Y MALLA CIBERNÉTICA */
-        .bg-layer-glow {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.2) 0%, transparent 65%),
-                linear-gradient(180deg, rgba(3, 8, 14, 0.65) 0%, rgba(3, 8, 14, 0.95) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .bg-layer-grid {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                linear-gradient(rgba(0, 242, 254, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        /* MENÚ SUPERIOR */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 50px;
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            background: rgba(3, 8, 14, 0.75);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(0, 242, 254, 0.15);
-        }
-
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        
-        .nav-links a {
-            color: rgba(255,255,255,0.75);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        .nav-links a:hover { color: #00f2fe; text-shadow: 0 0 12px rgba(0,242,254,0.6); }
-
-        .lang-selector { display: flex; gap: 8px; margin-left: 20px; }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.7);
-            padding: 4px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .lang-btn.active, .lang-btn:hover {
-            border-color: #00f2fe;
-            color: #00f2fe;
-            box-shadow: 0 0 10px rgba(0,242,254,0.3);
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .brand-logo-area {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 35px;
-            text-align: center;
-        }
-
-        .logo-icon {
-            height: 140px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon img {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 0 25px rgba(0,242,254,0.4));
-        }
-
-        .brand-sub {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
-            color: rgba(255,255,255,0.6);
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-
-        .cards-container {
-            display: flex;
-            gap: 40px;
-            max-width: 1100px;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            margin-bottom: 60px;
-        }
-
-        .card {
-            background: rgba(3, 8, 14, 0.82);
-            border: 1px solid rgba(0, 242, 254, 0.2);
-            border-radius: 12px;
-            padding: 40px 30px;
-            width: 450px;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #00f2fe;
-            box-shadow: 0 15px 40px rgba(0,242,254,0.2);
-        }
-
-        .card h2 { font-size: 1.8rem; margin-bottom: 15px; letter-spacing: 1px; }
-        .card p { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 30px; flex-grow: 1; }
-
-        .action-btn {
-            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            color: #050c14;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .action-btn:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(0,242,254,0.4); }
-
-        .tp-btn {
-            background: transparent;
-            color: #00f2fe;
-            border: 1px solid rgba(0, 242, 254, 0.5);
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            margin-top: 12px;
-        }
-
-        .tp-btn:hover { background: rgba(0, 242, 254, 0.1); box-shadow: 0 0 15px rgba(0,242,254,0.25); }
-
-        /* SECCIONES DINÁMICAS (About y Contacto) */
-        .info-section {
-            display: none;
-            max-width: 850px;
-            width: 100%;
-            background: rgba(3, 8, 14, 0.92);
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            border-radius: 12px;
-            padding: 40px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 30px rgba(0,242,254,0.2);
-            animation: fadeIn 0.4s ease forwards;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .info-section h2 { font-size: 1.8rem; color: #00f2fe; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
-        .info-section p { font-size: 1.02rem; line-height: 1.7; color: rgba(255,255,255,0.88); margin-bottom: 18px; }
-
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
-        .contact-item {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 20px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: 0.3s;
-        }
-        .contact-item:hover { border-color: #00f2fe; background: rgba(0,242,254,0.02); }
-        .contact-item i { font-size: 22px; color: #00f2fe; }
-        .contact-item div h4 { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; }
-        .contact-item div p { font-size: 1rem; color: #ffffff; margin: 0; }
-
-        .back-action-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            color: #050c14;
-            border: none;
-            padding: 12px 26px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            margin-top: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,242,254,0.3);
-        }
-        .back-action-btn:hover {
-            transform: translateX(-3px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(0,242,254,0.5);
-        }
-
-        /* FOOTER CON DERECHOS RESERVADOS */
-        footer {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            background: rgba(3, 8, 14, 0.85);
-            border-top: 1px solid rgba(0, 242, 254, 0.12);
-            padding: 20px 15px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.5px;
-        }
-
-        footer strong {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .accent-gradient { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <!-- CAPAS DE FONDO -->
-    <div class="bg-layer-image"></div>
-    <div class="bg-layer-glow"></div>
-    <div class="bg-layer-grid"></div>
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-tight text-slate-900">StaySmart<span class="text-blue-600">™</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
+                <a href="#viajes" class="hover:text-blue-600">Viajes Globales</a>
+                <a href="#inmuebles" class="hover:text-blue-600">Comprar / Alquilar</a>
+                <a href="#vender" class="hover:text-blue-600">Publicar ($2/mes)</a>
+                <a href="#gestion" class="hover:text-blue-600">Gestión VIP (25%)</a>
+                <a href="#journal" class="hover:text-blue-600">Journal & Guías</a>
+            </nav>
 
-    <header>
-        <div class="nav-links">
-            <a onclick="showSection('about')" id="menu-about">About</a>
-            <!-- ¿QUÉ SOMOS? ENLAZADO DIRECTAMENTE A PORTFOLIO.HTML -->
-            <a href="portfolio.html" id="menu-deck">¿Qué Somos?</a>
-            <a onclick="resetToHome()" id="menu-services">Nuestros Servicios</a>
-            <a onclick="showSection('contact')" id="menu-contact">Contáctenos</a>
-        </div>
-        <div class="lang-selector">
-            <button class="lang-btn active" id="btn-es" onclick="setLanguage('es')">ES</button>
-            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <div class="flex items-center gap-4 text-xs font-semibold">
+                <select class="bg-slate-100 border border-slate-300 rounded-lg px-2 py-1">
+                    <option value="es">🌐 ES</option>
+                    <option value="en">🌐 EN</option>
+                </select>
+                <select class="bg-slate-100 border border-slate-300 rounded-lg px-2 py-1">
+                    <option value="usd">💲 USD</option>
+                    <option value="cop">💲 COP</option>
+                </select>
+            </div>
         </div>
     </header>
 
-    <main class="main-content">
+    <section class="hero-gradient text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center space-y-6">
+            <span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                Ecosistema Inteligente de Turismo e Inmuebles
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                Gestión Inmobiliaria Premium y Viajes Globales
+            </h1>
+            <p class="text-slate-300 max-w-2xl mx-auto text-lg">
+                Reserva vuelos, hoteles y experiencias en cualquier parte del mundo. Publica o gestiona tu propiedad en Colombia con la tecnología de StaySmart™.
+            </p>
+
+            <div id="viajes" class="bg-white text-slate-900 rounded-2xl p-6 shadow-2xl max-w-4xl mx-auto text-left mt-8">
+                <div class="flex gap-4 border-b border-slate-200 pb-3 mb-4 text-sm font-bold">
+                    <button class="text-blue-600 border-b-2 border-blue-600 pb-1">🏨 Hoteles y Vuelos (Global)</button>
+                    <button class="text-slate-500 hover:text-slate-800 pb-1">🏡 Inmuebles (Colombia)</button>
+                </div>
+                
+                <div class="bg-slate-100 border border-dashed border-slate-300 rounded-xl p-8 text-center text-slate-500">
+                    <p class="font-semibold">[ Widget / Buscador Multitab de Travelpayouts ]</p>
+                    <p class="text-xs">Buscador global integrado con Booking, GetYourGuide y Rentcars.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto my-8 px-4 text-center">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section id="vender" class="max-w-6xl mx-auto py-12 px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Soluciones para Propietarios en Colombia</h2>
         
-        <div class="brand-logo-area">
-            <div class="logo-icon">
-                <img src="Logo-staysmart.png" alt="StaySmart Logo">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Toda Colombia</span>
+                <h3 class="text-2xl font-bold mt-2">Publicación Directa</h3>
+                <p class="text-slate-600 mt-2 text-sm">Publica tu inmueble en nuestro portal y recibe contactos directos a tu WhatsApp o correo.</p>
+                <div class="text-3xl font-black my-4 text-slate-900">$2 USD <span class="text-xs font-normal text-slate-500">/ mes</span></div>
+                <a href="#" class="block text-center bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">Publicar Mi Inmueble</a>
             </div>
-            <div class="brand-sub" id="sub-title">Portafolio</div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                <span class="text-xs font-bold text-purple-600 uppercase tracking-widest">Exclusivo Santa Marta</span>
+                <h3 class="text-2xl font-bold mt-2">Corretaje de Venta VIP</h3>
+                <p class="text-slate-600 mt-2 text-sm">Nos encargamos de fotos profesionales, promoción, muestras y cierre legal sin costos anticipados.</p>
+                <div class="text-3xl font-black my-4 text-slate-900">2% <span class="text-xs font-normal text-slate-500">de comisión al vender</span></div>
+                <a href="#" class="block text-center bg-purple-600 text-white font-bold py-3 rounded-xl hover:bg-purple-700">Solicitar Gestión de Venta</a>
+            </div>
         </div>
 
-        <!-- CONTENEDOR DE TARJETAS PRINCIPALES -->
-        <div class="cards-container" id="services-container">
+        <div id="gestion" class="mt-8 bg-slate-900 text-white rounded-2xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 max-w-xl">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Santa Marta · Renta Vacacional</span>
+                <h3 class="text-2xl md:text-3xl font-bold">Administración Turística Integral (25%)</h3>
+                <p class="text-slate-400 text-sm">Gestión 360° en Airbnb, Booking y canales directos. Obligación de póliza/seguro para respaldo total contra daños o pérdidas dentro del inmueble.</p>
+            </div>
+            <a href="#" class="bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 whitespace-nowrap">Delegar Mi Propiedad</a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
             
-            <div class="card" id="travel-card">
-                <h2 id="travel-title">StaySmart Travel</h2>
-                <p id="travel-desc">Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.</p>
-                <a href="https://tally.so/r/b58aK0" id="travel-link" class="action-btn">Buscar Viajes</a>
-                <br>
-                <a href="vuelos-transporte.html" id="tp-search-btn" class="tp-btn">Buscar vuelos y transporte</a>
-            </div>
-
-            <div class="card">
-                <h2 id="props-title">StaySmart Properties</h2>
-                <p id="props-desc">Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.</p>
-                <a href="https://tally.so/r/MeLWGp" id="props-link" class="action-btn">¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella</a>
-            </div>
-
-            <div class="card">
-                <h2 id="exp-title">StaySmart Experiences</h2>
-                <p id="exp-desc">Descubre experiencias, tours y actividades emocionantes en los mejores destinos del mundo.</p>
-                <a href="experiencias.html" id="exp-link" class="action-btn">Descubre Experiencias de Viaje</a>
-            </div>
-
-            <!-- BANNER DE GO CITY -->
-            <section class="staysmart-gocity-banner">
-                <style>
-                    .staysmart-gocity-banner {
-                        background: linear-gradient(135deg, #002D62 0%, #001F44 100%);
-                        color: #FFFFFF;
-                        border-radius: 16px;
-                        padding: 40px 30px;
-                        margin: 40px auto 0 auto;
-                        width: 100%;
-                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-                        position: relative;
-                        font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-                        box-sizing: border-box;
-                        border: 1px solid rgba(0, 209, 178, 0.4);
-                    }
-                    .gocity-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 15px; }
-                    .gocity-brand { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
-                    .gocity-brand span { color: #00D1B2; }
-                    .gocity-content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: center; }
-                    .gocity-text-side h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; line-height: 1.2; color: #FFFFFF; }
-                    .gocity-text-side p { font-size: 15px; color: #E2E8F0; margin-bottom: 20px; line-height: 1.5; }
-                    .gocity-bullets { list-style: none; padding: 0; margin: 0 0 25px 0; }
-                    .gocity-bullets li { font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #CBD5E1; }
-                    .gocity-cta-btn { display: inline-block; background-color: #FF5A5F; color: #FFFFFF !important; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 28px; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 90, 95, 0.4); text-align: center; }
-                    .gocity-cta-btn:hover { background-color: #E0484D; transform: translateY(-2px); }
-                    .gocity-badge-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 25px; text-align: center; }
-                    .gocity-badge-box .icon { font-size: 32px; margin-bottom: 10px; }
-                    .gocity-badge-box h4 { font-size: 16px; margin-bottom: 6px; color: #00D1B2; }
-                    .gocity-badge-box p { font-size: 13px; color: #94A3B8; margin: 0; }
-                    @media (max-width: 768px) { .gocity-content-grid { grid-template-columns: 1fr; } .staysmart-gocity-banner { padding: 25px 20px; } .gocity-text-side h2 { font-size: 22px; } .gocity-cta-btn { display: block; width: 100%; } }
-                </style>
-
-                <div class="gocity-header-bar">
-                    <div class="gocity-brand">Go <span>City</span> & Travelpayouts</div>
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                <div class="flex items-center gap-2">
+                    <span>🌐 [ ES / EN ]</span>
+                    <span>|</span>
+                    <span>💲 [ USD / COP ]</span>
                 </div>
-
-                <div class="gocity-content-grid">
-                    <div class="gocity-text-side">
-                        <h2 id="gc-title">Ahorra en las mejores atracciones de cada ciudad</h2>
-                        <p id="gc-desc">Accede a las mejores experiencias, tours y monumentos en más de 30 destinos globales con un solo pase digital en tu teléfono.</p>
-                        
-                        <ul class="gocity-bullets">
-                            <li id="gc-b1">✔ 100% Digital: Código QR directo en tu smartphone.</li>
-                            <li id="gc-b2">✔ Flexibilidad total: Elige pases por días o por atracciones.</li>
-                            <li id="gc-b3">✔ Tarifas preferenciales vs. taquilla individual.</li>
-                        </ul>
-
-                        <a href="https://gocity.tpk.lv/j1ZSLU1I" target="_blank" rel="noopener" class="gocity-cta-btn" id="gc-btn">Ver Pases y Destinos Oficiales</a>
-                    </div>
-
-                    <div class="gocity-badge-box">
-                        <div class="icon">🎟️</div>
-                        <h4 id="gc-box-title">Aliado Oficial de Viajes</h4>
-                        <p id="gc-box-desc">Explora pases para Nueva York, Londres, París, Orlando y más con la garantía oficial de Go City.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- SECCIÓN ABOUT -->
-        <div class="info-section" id="about-section">
-            <h2 id="about-title">Quiénes Somos</h2>
-            <p id="about-p1"><strong>StaySmart</strong> es una plataforma tecnológica creada para conectar a las personas con oportunidades inteligentes de viaje e inversión inmobiliaria. Nuestro propósito es democratizar el acceso a opciones globales de excelente calidad que muchas veces quedan fuera del radar principal, permitiéndote descubrir alternativas altamente competitivas y transparentes en un solo lugar.</p>
-            <p id="about-p2">A través de nuestro ecosistema, facilitamos la conexión con estos aliados estratégicos garantizando tarifas preferenciales, automatización sin complicaciones y una gestión bilingüe fluida. Te acercamos herramientas de alto valor que simplifican tus decisiones, dándote más opciones de ahorro y mayor control en cada paso.</p>
-            
-            <button class="back-action-btn" onclick="resetToHome()">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span id="about-back-btn">Volver a StaySmart</span>
-            </button>
-        </div>
-
-        <!-- SECCIÓN CONTACTO -->
-        <div class="info-section" id="contact-section">
-            <h2 id="contact-title">Centro de Contacto</h2>
-            <p id="contact-desc">Conéctate al instante con nuestra mesa de soluciones inteligentes a través del canal de tu preferencia:</p>
-            
-            <div class="contact-grid">
-                <a href="https://wa.me/14383688587" target="_blank" class="contact-item">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp Business</h4>
-                        <p>+1 (438) 368-8587</p>
-                    </div>
-                </a>
-                <a href="tel:+14383688587" class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <p>+1 (438) 368-8587</p>
-                    </div>
-                </a>
-                <a href="mailto:ceo@staysmartrealty.com" class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>Correo Electrónico</h4>
-                        <p>ceo@staysmartrealty.com</p>
-                    </div>
+                <a href="#" class="hover:text-white flex items-center gap-1">
+                    ⬅️ Volver a la página anterior
                 </a>
             </div>
 
-            <button class="back-action-btn" onclick="resetToHome()">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span id="contact-back-btn">Volver a StaySmart</span>
-            </button>
+            <p class="text-slate-300 font-medium text-sm">
+                © 2025-2026 StaySmartrealty Inc. StaySmart™ is the trademark of StaySmartrealty Inc. All rights reserved.
+            </p>
+
+            <div class="flex justify-center gap-6">
+                <a href="#" class="hover:text-white">Términos de Servicio</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Política de Privacidad</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Centro de Ayuda</a>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/50 space-y-1">
+                <p class="text-slate-300 font-semibold">Created by CEO StaySmart & Gemini (AI Partner)</p>
+                <p class="text-slate-400">Socio Estratégico: <span class="text-white">Luxury Vacation Rentals</span></p>
+                <p class="text-slate-500 text-[10px]">Powered by Make, Airtable & GitHub</p>
+            </div>
+
         </div>
-
-    </main>
-
-    <!-- FOOTER CON DERECHOS RESERVADOS -->
-    <footer>
-        © 2025-2026 StaySmartrealty Inc. <strong>StaySmart™</strong> is the trademark of StaySmartrealty Inc. All rights reserved.
     </footer>
-
-    <script>
-        const content = {
-            es: {
-                sub: "Portafolio",
-                travelTitle: "StaySmart Travel",
-                travelDesc: "Encuentra opciones de alojamiento, vuelos y soluciones de viaje a tu medida de forma inteligente.",
-                travelBtn: "Buscar Viajes",
-                travelUrl: "https://tally.so/r/b58aK0",
-                tpBtn: "Buscar vuelos y transporte",
-                
-                propsTitle: "StaySmart Properties",
-                propsDesc: "Gestión inmobiliaria avanzada y portafolio de propiedades exclusivas optimizadas con tecnología.",
-                propsBtn: "¿Quieres conocer más sobre las posibilidades que tiene tu propiedad? Cuéntanos sobre ella",
-                propsUrl: "https://tally.so/r/MeLWGp",
-
-                expTitle: "StaySmart Experiences",
-                expDesc: "Descubre experiencias, tours y actividades emocionantes en los mejores destinos del mundo.",
-                expBtn: "Descubre Experiencias de Viaje",
-
-                menuAbout: "About",
-                menuDeck: "¿Qué Somos?",
-                menuServices: "Nuestros Servicios",
-                menuContact: "Contáctenos",
-
-                aboutTitle: "Quiénes Somos",
-                aboutP1: "<strong>StaySmart</strong> es una plataforma tecnológica creada para conectar a las personas con oportunidades inteligentes de viaje e inversión inmobiliaria. Nuestro propósito es democratizar el acceso a opciones globales de excelente calidad que muchas veces quedan fuera del radar principal, permitiéndote descubrir alternativas altamente competitivas y transparentes en un solo lugar.",
-                aboutP2: "A través de nuestro ecosistema, facilitamos la conexión con estos aliados estratégicos garantizando tarifas preferenciales, automatización sin complicaciones y una gestión bilingüe fluida. Te acercamos herramientas de alto valor que simplifican tus decisiones, dándote más opciones de ahorro y mayor control en cada paso.",
-                aboutBackBtn: "Volver a StaySmart",
-                
-                contactTitle: "Centro de Contacto",
-                contactDesc: "Conéctate al instante con nuestra mesa de soluciones inteligentes a través del canal de tu preferencia:",
-                contactBackBtn: "Volver a StaySmart",
-
-                gcTitle: "Ahorra en las mejores atracciones de cada ciudad",
-                gcDesc: "Accede a las mejores experiencias, tours y monumentos en más de 30 destinos globales con un solo pase digital en tu teléfono.",
-                gcB1: "✔ 100% Digital: Código QR directo en tu smartphone.",
-                gcB2: "✔ Flexibilidad total: Elige pases por días o por atracciones.",
-                gcB3: "✔ Tarifas preferenciales vs. taquilla individual.",
-                gcBtn: "Ver Pases y Destinos Oficiales",
-                gcBoxTitle: "Aliado Oficial de Viajes",
-                gcBoxDesc: "Explora pases para Nueva York, Londres, París, Orlando y más con la garantía oficial de Go City."
-            },
-            en: {
-                sub: "Portfolio",
-                travelTitle: "StaySmart Travel",
-                travelDesc: "Find tailored accommodation, flights, and smart travel solutions to fit your needs.",
-                travelBtn: "Search Trips",
-                travelUrl: "https://tally.so/r/KYgrRX",
-                tpBtn: "Search flights and transport",
-                
-                propsTitle: "StaySmart Properties",
-                propsDesc: "Advanced real estate management and exclusive property portfolios optimized through technology.",
-                propsBtn: "Want to learn more about your property's potential? Tell us about your property",
-                propsUrl: "https://tally.so/r/MeLWGp",
-
-                expTitle: "StaySmart Experiences",
-                expDesc: "Discover exciting experiences, tours, and activities in the world's best destinations.",
-                expBtn: "Discover Travel Experiences",
-
-                menuAbout: "About",
-                menuDeck: "What We Are",
-                menuServices: "Our Services",
-                menuContact: "Contact Us",
-
-                aboutTitle: "About Us",
-                aboutP1: "<strong>StaySmart</strong> is a technology platform created to connect people with smart travel and real estate investment opportunities. Our purpose is to democratize access to high-quality global options that often stay off the main radar, allowing you to discover highly competitive and transparent alternatives all in one place.",
-                aboutP2: "Through our ecosystem, we facilitate connection with strategic partners ensuring preferential rates, hassle-free automation, and seamless bilingual management. We bring you high-value tools that simplify decisions, giving you more savings options and greater control at every step.",
-                aboutBackBtn: "Back to StaySmart",
-                
-                contactTitle: "Contact Center",
-                contactDesc: "Connect instantly with our smart solutions desk through your preferred channel:",
-                contactBackBtn: "Back to StaySmart",
-
-                gcTitle: "Save on top city attractions worldwide",
-                gcDesc: "Access top experiences, tours, and landmarks in over 30 global destinations with one digital pass on your phone.",
-                gcB1: "✔ 100% Digital: QR code directly on your smartphone.",
-                gcB2: "✔ Total flexibility: Choose day-based or attraction-based passes.",
-                gcB3: "✔ Better rates vs. individual gate prices.",
-                gcBtn: "View Official Passes & Destinations",
-                gcBoxTitle: "Official Travel Partner",
-                gcBoxDesc: "Explore passes for New York, London, Paris, Orlando, and more with Go City official coverage."
-            }
-        };
-
-        function setLanguage(lang) {
-            document.getElementById('sub-title').innerText = content[lang].sub;
-            document.getElementById('travel-title').innerText = content[lang].travelTitle;
-            document.getElementById('travel-desc').innerText = content[lang].travelDesc;
-            document.getElementById('travel-link').innerText = content[lang].travelBtn;
-            document.getElementById('travel-link').setAttribute('href', content[lang].travelUrl);
-            document.getElementById('tp-search-btn').innerText = content[lang].tpBtn;
-            
-            document.getElementById('props-title').innerText = content[lang].propsTitle;
-            document.getElementById('props-desc').innerText = content[lang].propsDesc;
-            document.getElementById('props-link').innerText = content[lang].propsBtn;
-            document.getElementById('props-link').setAttribute('href', content[lang].propsUrl);
-
-            document.getElementById('exp-title').innerText = content[lang].expTitle;
-            document.getElementById('exp-desc').innerText = content[lang].expDesc;
-            document.getElementById('exp-link').innerText = content[lang].expBtn;
-
-            document.getElementById('menu-about').innerText = content[lang].menuAbout;
-            document.getElementById('menu-deck').innerText = content[lang].menuDeck;
-            document.getElementById('menu-services').innerText = content[lang].menuServices;
-            document.getElementById('menu-contact').innerText = content[lang].menuContact;
-
-            document.getElementById('about-title').innerText = content[lang].aboutTitle;
-            document.getElementById('about-p1').innerHTML = content[lang].aboutP1;
-            document.getElementById('about-p2').innerHTML = content[lang].aboutP2;
-            document.getElementById('about-back-btn').innerText = content[lang].aboutBackBtn;
-            
-            document.getElementById('contact-title').innerText = content[lang].contactTitle;
-            document.getElementById('contact-desc').innerText = content[lang].contactDesc;
-            document.getElementById('contact-back-btn').innerText = content[lang].contactBackBtn;
-
-            document.getElementById('gc-title').innerText = content[lang].gcTitle;
-            document.getElementById('gc-desc').innerText = content[lang].gcDesc;
-            document.getElementById('gc-b1').innerText = content[lang].gcB1;
-            document.getElementById('gc-b2').innerText = content[lang].gcB2;
-            document.getElementById('gc-b3').innerText = content[lang].gcB3;
-            document.getElementById('gc-btn').innerText = content[lang].gcBtn;
-            document.getElementById('gc-box-title').innerText = content[lang].gcBoxTitle;
-            document.getElementById('gc-box-desc').innerText = content[lang].gcBoxDesc;
-
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
-        }
-
-        function showSection(section) {
-            document.getElementById('services-container').style.display = 'none';
-            document.getElementById('about-section').style.display = 'none';
-            document.getElementById('contact-section').style.display = 'none';
-            
-            if(section === 'about') {
-                document.getElementById('about-section').style.display = 'block';
-            } else if(section === 'contact') {
-                document.getElementById('contact-section').style.display = 'block';
-            }
-        }
-
-        function resetToHome() {
-            document.getElementById('about-section').style.display = 'none';
-            document.getElementById('contact-section').style.display = 'none';
-            document.getElementById('services-container').style.display = 'flex';
-        }
-    </script>
 
 </body>
 </html>
