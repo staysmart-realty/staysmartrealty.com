@@ -94,10 +94,6 @@
                             <i class="fa-solid fa-plane-departure"></i> <span data-key="btn_search_travel">Buscar Ofertas</span>
                         </button>
                     </div>
-                    <div id="resViajes" class="hidden mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900">
-                        <p class="font-bold mb-1"><i class="fa-solid fa-circle-info"></i> <span data-key="res_travel_title">Buscando disponibilidad en red global...</span></p>
-                        <p><span data-key="res_travel_desc">Mostrando las mejores tarifas disponibles para la búsqueda ingresada.</span></p>
-                    </div>
                 </div>
 
                 <div id="tabInmueblesContent" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-6 text-slate-700">
@@ -110,10 +106,6 @@
                         <button onclick="ejecutarBusquedaInmueble()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg p-2.5 text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-magnifying-glass"></i> <span data-key="btn_search_re">Consultar Portal</span>
                         </button>
-                    </div>
-                    <div id="resInmuebles" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
-                        <p class="font-bold mb-1"><i class="fa-solid fa-building"></i> <span data-key="res_re_title">Propiedades disponibles encontradas:</span></p>
-                        <p><span data-key="res_re_desc">Filtrando listados activos en el catálogo autogestionado StaySmart.</span></p>
                     </div>
                 </div>
             </div>
@@ -176,6 +168,41 @@
         </div>
     </section>
 
+    <section id="partner" class="partner-bg text-white py-20 px-4">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+                <span class="bg-blue-500/30 text-blue-300 border border-blue-400/40 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                    <span data-key="partner_badge">Alianza Estratégica Colombia-Canadá</span>
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold leading-tight"><span data-key="partner_title">¿Eres Agente Inmobiliario o Gestor Local en el Caribe Colombiano?</span></h2>
+                <p class="text-slate-300 leading-relaxed"><span data-key="partner_desc">StaySmart™ combina tecnología de automatización (IA, captación y gestión de leads) con operación legal y logística en terreno. Buscamos aliados en Santa Marta, Cartagena y Barranquilla para expandir la red bajo un esquema de comisión compartida.</span></p>
+                <ul class="space-y-2 text-sm text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point1">Tecnología de captación y automatización ya operativa</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point2">Soporte legal y logístico en terreno a cargo del aliado local</span></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <span data-key="partner_point3">Modelo freemium con comisión del 1% sobre transacciones cerradas</span></li>
+                </ul>
+                <button onclick="contactarWhatsApp('Hola, quiero información sobre la Alianza Estratégica de StaySmart.')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3.5 rounded-xl transition inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> <span data-key="btn_partner">Conversemos (WhatsApp)</span>
+                </button>
+            </div>
+            <div class="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur-sm space-y-4">
+                <h3 class="font-bold text-lg"><span data-key="partner_box_title">Cómo funciona la alianza</span></h3>
+                <div class="flex gap-3 text-sm text-slate-200">
+                    <span class="font-black text-blue-400">01</span>
+                    <p><span data-key="partner_step1">StaySmart™ capta y califica clientes vía web, IA y redes.</span></p>
+                </div>
+                <div class="flex gap-3 text-sm text-slate-200">
+                    <span class="font-black text-blue-400">02</span>
+                    <p><span data-key="partner_step2">El aliado local gestiona la visita, el cierre legal y la entrega.</span></p>
+                </div>
+                <div class="flex gap-3 text-sm text-slate-200">
+                    <span class="font-black text-blue-400">03</span>
+                    <p><span data-key="partner_step3">La comisión se distribuye conforme al acuerdo de alianza firmado.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="journal" class="max-w-6xl mx-auto py-16 px-4">
         <div class="mb-10">
             <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">StaySmart™ Journal</span>
@@ -214,6 +241,53 @@
             </div>
         </div>
     </section>
+
+    <div id="modalMandato" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-contract text-purple-400"></i>
+                    <h3 class="font-bold text-sm"><span data-key="mandato_modal_title">Contrato de Mandato para Venta</span></h3>
+                </div>
+                <button onclick="cerrarModal('modalMandato')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto leading-relaxed text-sm text-slate-700 space-y-3">
+                <p><span data-key="mandato_p1">Este documento autoriza a StaySmart™ y a su aliado operativo en Colombia a promocionar, mostrar y gestionar la venta de tu inmueble ante interesados, actuando en tu representación durante el proceso comercial.</span></p>
+                <p><span data-key="mandato_p2">Incluye: publicación en canales digitales, coordinación de visitas presenciales, negociación de oferta y acompañamiento legal hasta la firma de la escritura pública.</span></p>
+                <p><span data-key="mandato_p3">La comisión pactada es del 2% sobre el valor final de venta, exigible únicamente al cierre efectivo de la transacción.</span></p>
+                <p class="text-xs text-slate-500 italic"><span data-key="mandato_p4">Solicita el documento completo en PDF, listo para firma, por WhatsApp.</span></p>
+            </div>
+            <div class="p-4 bg-slate-100 border-t border-slate-200 flex justify-end gap-3">
+                <button onclick="cerrarModal('modalMandato')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-5 py-2 rounded-xl text-xs"><span data-key="btn_close">Cerrar</span></button>
+                <button onclick="contactarWhatsApp('Hola, quiero solicitar el Contrato de Mandato de Venta en PDF.')" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-5 py-2 rounded-xl text-xs inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> <span data-key="btn_request_doc">Solicitar Documento</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalPromesa" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                    <h3 class="font-bold text-sm"><span data-key="promesa_modal_title">Modelo de Promesa de Compraventa</span></h3>
+                </div>
+                <button onclick="cerrarModal('modalPromesa')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto leading-relaxed text-sm text-slate-700 space-y-3">
+                <p><span data-key="promesa_p1">Documento marco que protege al propietario dentro del esquema de Administración Turística Integral (25%), estableciendo los términos de entrega, uso, y responsabilidad del inmueble durante la gestión de renta vacacional.</span></p>
+                <p><span data-key="promesa_p2">Incluye: póliza de respaldo ante daños, condiciones de terminación anticipada, y periodicidad de la rendición de cuentas al propietario.</span></p>
+                <p class="text-xs text-slate-500 italic"><span data-key="promesa_p3">Solicita el documento completo en PDF, listo para firma, por WhatsApp.</span></p>
+            </div>
+            <div class="p-4 bg-slate-100 border-t border-slate-200 flex justify-end gap-3">
+                <button onclick="cerrarModal('modalPromesa')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-5 py-2 rounded-xl text-xs"><span data-key="btn_close">Cerrar</span></button>
+                <button onclick="contactarWhatsApp('Hola, quiero solicitar el Modelo de Promesa de Compraventa en PDF.')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2 rounded-xl text-xs inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> <span data-key="btn_request_doc">Solicitar Documento</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div id="modalBlog" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
@@ -283,7 +357,28 @@
                 art3_title: "Rentabilidad Inmobiliaria en Colombia",
                 art3_desc: "Análisis financiero: Maximiza el ROI de tu propiedad en el modelo de Renta Vacacional al 25%.",
                 read_more: "Leer Artículo Completo ➔",
-                btn_close: "Cerrar"
+                btn_close: "Cerrar",
+                partner_badge: "Alianza Estratégica Colombia-Canadá",
+                partner_title: "¿Eres Agente Inmobiliario o Gestor Local en el Caribe Colombiano?",
+                partner_desc: "StaySmart™ combina tecnología de automatización (IA, captación y gestión de leads) con operación legal y logística en terreno. Buscamos aliados en Santa Marta, Cartagena y Barranquilla para expandir la red bajo un esquema de comisión compartida.",
+                partner_point1: "Tecnología de captación y automatización ya operativa",
+                partner_point2: "Soporte legal y logístico en terreno a cargo del aliado local",
+                partner_point3: "Modelo freemium con comisión del 1% sobre transacciones cerradas",
+                btn_partner: "Conversemos (WhatsApp)",
+                partner_box_title: "Cómo funciona la alianza",
+                partner_step1: "StaySmart™ capta y califica clientes vía web, IA y redes.",
+                partner_step2: "El aliado local gestiona la visita, el cierre legal y la entrega.",
+                partner_step3: "La comisión se distribuye conforme al acuerdo de alianza firmado.",
+                mandato_modal_title: "Contrato de Mandato para Venta",
+                mandato_p1: "Este documento autoriza a StaySmart™ y a su aliado operativo en Colombia a promocionar, mostrar y gestionar la venta de tu inmueble ante interesados, actuando en tu representación durante el proceso comercial.",
+                mandato_p2: "Incluye: publicación en canales digitales, coordinación de visitas presenciales, negociación de oferta y acompañamiento legal hasta la firma de la escritura pública.",
+                mandato_p3: "La comisión pactada es del 2% sobre el valor final de venta, exigible únicamente al cierre efectivo de la transacción.",
+                mandato_p4: "Solicita el documento completo en PDF, listo para firma, por WhatsApp.",
+                promesa_modal_title: "Modelo de Promesa de Compraventa",
+                promesa_p1: "Documento marco que protege al propietario dentro del esquema de Administración Turística Integral (25%), estableciendo los términos de entrega, uso, y responsabilidad del inmueble durante la gestión de renta vacacional.",
+                promesa_p2: "Incluye: póliza de respaldo ante daños, condiciones de terminación anticipada, y periodicidad de la rendición de cuentas al propietario.",
+                promesa_p3: "Solicita el documento completo en PDF, listo para firma, por WhatsApp.",
+                btn_request_doc: "Solicitar Documento"
             },
             en: {
                 nav_viajes: "Global Travel",
@@ -333,7 +428,28 @@
                 art3_title: "Real Estate Profitability in Colombia",
                 art3_desc: "Financial analysis: Maximize your ROI with the 25% Vacation Rental model.",
                 read_more: "Read Full Article ➔",
-                btn_close: "Close"
+                btn_close: "Close",
+                partner_badge: "Colombia-Canada Strategic Alliance",
+                partner_title: "Are You a Real Estate Agent or Local Manager on the Colombian Caribbean Coast?",
+                partner_desc: "StaySmart™ combines automation technology (AI, lead capture and management) with legal and on-ground logistics operations. We're looking for partners in Santa Marta, Cartagena and Barranquilla to expand the network under a shared-commission model.",
+                partner_point1: "Lead capture and automation technology already operating",
+                partner_point2: "On-ground legal and logistics support handled by the local partner",
+                partner_point3: "Freemium model with a 1% commission on closed transactions",
+                btn_partner: "Let's Talk (WhatsApp)",
+                partner_box_title: "How the alliance works",
+                partner_step1: "StaySmart™ captures and qualifies clients via web, AI and social media.",
+                partner_step2: "The local partner handles the showing, legal closing and delivery.",
+                partner_step3: "Commission is split according to the signed alliance agreement.",
+                mandato_modal_title: "Sales Mandate Agreement",
+                mandato_p1: "This document authorizes StaySmart™ and its operating partner in Colombia to promote, show, and manage the sale of your property to interested buyers, acting on your behalf during the commercial process.",
+                mandato_p2: "Includes: listing across digital channels, coordinating in-person showings, offer negotiation, and legal support through the signing of the public deed.",
+                mandato_p3: "The agreed commission is 2% of the final sale value, payable only upon effective closing of the transaction.",
+                mandato_p4: "Request the full signable PDF document via WhatsApp.",
+                promesa_modal_title: "Purchase Agreement Template",
+                promesa_p1: "Framework document that protects the owner under the Full Vacation Rental Management (25%) model, setting out the terms of handover, use, and liability for the property during rental management.",
+                promesa_p2: "Includes: damage-coverage policy, early-termination conditions, and the frequency of financial reporting to the owner.",
+                promesa_p3: "Request the full signable PDF document via WhatsApp.",
+                btn_request_doc: "Request Document"
             }
         };
 
@@ -363,12 +479,48 @@
             window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        const AVIASALES_MARKER = "524108";
+
         function ejecutarBusquedaViaje() {
-            document.getElementById('resViajes').classList.remove('hidden');
+            const destino = document.getElementById('destViaje').value.trim();
+            const tipo = document.getElementById('tipoViaje').value;
+            const lang = document.getElementById('langSelect').value;
+
+            if (!destino) {
+                document.getElementById('destViaje').focus();
+                return;
+            }
+
+            if (tipo === 'vuelo') {
+                // Conecta con Aviasales (Travelpayouts) usando el marker real de StaySmart
+                const url = `https://www.aviasales.com/?marker=${AVIASALES_MARKER}&locale=${lang === 'en' ? 'en' : 'es'}&destination=${encodeURIComponent(destino)}`;
+                window.open(url, '_blank');
+            } else {
+                // Hoteles y tours: sin catálogo de afiliados en vivo todavía (Hotellook cerró,
+                // Booking.com en trámite) -> se atiende por WhatsApp con el destino ya incluido
+                const msg = (lang === 'en')
+                    ? `Hi, I'm looking for ${tipo === 'hotel' ? 'a hotel' : 'a tour/experience'} in ${destino}.`
+                    : `Hola, estoy buscando ${tipo === 'hotel' ? 'hotel' : 'un tour/experiencia'} en ${destino}.`;
+                contactarWhatsApp(msg);
+            }
         }
 
         function ejecutarBusquedaInmueble() {
-            document.getElementById('resInmuebles').classList.remove('hidden');
+            const ubicacion = document.getElementById('ubicInmueble').value.trim();
+            const tipo = document.getElementById('tipoInmueble').value;
+            const lang = document.getElementById('langSelect').value;
+
+            if (!ubicacion) {
+                document.getElementById('ubicInmueble').focus();
+                return;
+            }
+
+            // El catálogo autogestionado (Tally -> Airtable) aún no expone búsqueda pública en vivo,
+            // así que la consulta se enruta a un asesor por WhatsApp con los criterios ya incluidos
+            const msg = (lang === 'en')
+                ? `Hi, I'm interested in ${tipo === 'venta' ? 'buying' : 'renting'} a property in ${ubicacion}.`
+                : `Hola, estoy interesado en ${tipo === 'venta' ? 'comprar' : 'alquilar'} un inmueble en ${ubicacion}.`;
+            contactarWhatsApp(msg);
         }
 
         function switchTab(tab) {
@@ -412,15 +564,61 @@
                     <p>Santa Marta offers options for every traveler profile:</p>
                     <h3 class="font-bold text-blue-600 mt-4">1. El Rodadero</h3>
                     <p>Ideal for families and traditional tourism. Great dining options and boat access to Playa Blanca.</p>
-                    <h3 class="font-bold text-blue-600 mt-4">2. Pozos Colorados & Bello Horizonte</h3>
-                    <p>The most exclusive area. Luxury condos, wide beaches, and total tranquility.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">2. Historic Center (Centro Histórico)</h3>
+                    <p>Colonial streets, boutique hotels, and the city's best nightlife and restaurant scene, all within walking distance.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">3. Pozos Colorados & Bello Horizonte</h3>
+                    <p>The most exclusive area. Luxury condos, wide beaches, and total tranquility just outside the city.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">4. Minca</h3>
+                    <p>A mountain escape in the Sierra Nevada foothills, perfect for travelers seeking nature, coffee farms, and cooler weather.</p>
                 ` : `
                     <h2 class="text-xl font-bold text-slate-900">Las 4 Mejores Zonas para Hospedarse en Santa Marta</h2>
                     <p>Santa Marta ofrece opciones para todos los perfiles de viajero:</p>
                     <h3 class="font-bold text-blue-600 mt-4">1. El Rodadero</h3>
                     <p>Ideal para familias y turismo tradicional. Gran oferta gastronómica y acceso a lanchas a Playa Blanca.</p>
-                    <h3 class="font-bold text-blue-600 mt-4">2. Pozos Colorados y Bello Horizonte</h3>
-                    <p>La zona de mayor exclusividad. Condominios de lujo, playas amplias y tranquilidad absoluta.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">2. Centro Histórico</h3>
+                    <p>Calles coloniales, hoteles boutique y la mejor vida nocturna y gastronómica de la ciudad, todo a poca distancia caminando.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">3. Pozos Colorados y Bello Horizonte</h3>
+                    <p>La zona de mayor exclusividad. Condominios de lujo, playas amplias y tranquilidad absoluta, a las afueras de la ciudad.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">4. Minca</h3>
+                    <p>Un escape de montaña en las estribaciones de la Sierra Nevada, ideal para quienes buscan naturaleza, fincas cafeteras y clima fresco.</p>
+                `;
+            } else if (id === 'articulo2') {
+                titleHeader.innerText = (lang === 'en') ? "Tayrona National Park Guide 2026" : "Guía Parque Nacional Tayrona 2026";
+                container.innerHTML = (lang === 'en') ? `
+                    <h2 class="text-xl font-bold text-slate-900">Tayrona National Park: 2026 Essentials</h2>
+                    <h3 class="font-bold text-blue-600 mt-4">Main trails and beaches</h3>
+                    <p>The classic route runs from Cañaveral to Cabo San Juan (roughly 2 hours on foot, or by horse). Arrecifes has strong currents and is not recommended for swimming; Cabo San Juan and Playa Cristal are the safer, most popular spots.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">Conservation closures</h3>
+                    <p>The park follows an annual conservation closure (typically part of the year) to allow the ecosystem and indigenous sacred sites to recover; always check the official calendar before planning your trip.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">Essential tips</h3>
+                    <p>Bring cash (card access is limited inside the park), arrive early to beat the heat and the crowds, and book eco-hammocks or tents in advance during high season.</p>
+                ` : `
+                    <h2 class="text-xl font-bold text-slate-900">Parque Nacional Tayrona: Lo Esencial para 2026</h2>
+                    <h3 class="font-bold text-blue-600 mt-4">Senderos y playas principales</h3>
+                    <p>La ruta clásica va de Cañaveral a Cabo San Juan (unas 2 horas caminando, o a caballo). Arrecifes tiene corrientes fuertes y no se recomienda para nadar; Cabo San Juan y Playa Cristal son las opciones más seguras y populares.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">Cierres de conservación</h3>
+                    <p>El parque tiene un cierre anual de conservación (generalmente parte del año) para permitir la recuperación del ecosistema y de los sitios sagrados indígenas; verifica siempre el calendario oficial antes de planear tu viaje.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">Recomendaciones clave</h3>
+                    <p>Lleva efectivo (el acceso a datáfono es limitado dentro del parque), llega temprano para evitar el calor y las multitudes, y reserva hamacas ecológicas o carpas con anticipación en temporada alta.</p>
+                `;
+            } else if (id === 'articulo3') {
+                titleHeader.innerText = (lang === 'en') ? "Real Estate Profitability in Colombia" : "Rentabilidad Inmobiliaria en Colombia";
+                container.innerHTML = (lang === 'en') ? `
+                    <h2 class="text-xl font-bold text-slate-900">Maximizing ROI on Colombia's Caribbean Coast</h2>
+                    <h3 class="font-bold text-blue-600 mt-4">Why Santa Marta, Cartagena & Barranquilla</h3>
+                    <p>Growing international tourism demand, competitive property prices versus other Caribbean destinations, and improving infrastructure make the region attractive for vacation-rental investment.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">The 25% full-management model</h3>
+                    <p>Under StaySmart's Vacation Rental Management plan, the owner delegates listing, guest communication, check-in/out, and damage coverage in exchange for a 25% management fee, freeing the owner from day-to-day operations.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">What to evaluate before buying</h3>
+                    <p>Occupancy seasonality, proximity to the beach and airport, HOA (administración) fees, and the strength of the local operating partner all directly affect net returns.</p>
+                ` : `
+                    <h2 class="text-xl font-bold text-slate-900">Cómo Maximizar el ROI en el Caribe Colombiano</h2>
+                    <h3 class="font-bold text-blue-600 mt-4">Por qué Santa Marta, Cartagena y Barranquilla</h3>
+                    <p>La creciente demanda de turismo internacional, precios de propiedad competitivos frente a otros destinos del Caribe, y una infraestructura en mejora constante hacen atractiva la región para inversión en renta vacacional.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">El modelo de administración integral al 25%</h3>
+                    <p>Bajo el plan de Administración Turística de StaySmart, el propietario delega la publicación, comunicación con huéspedes, check-in/out y póliza ante daños a cambio de una comisión del 25%, liberándose de la operación diaria.</p>
+                    <h3 class="font-bold text-blue-600 mt-4">Qué evaluar antes de comprar</h3>
+                    <p>La estacionalidad de ocupación, cercanía a playa y aeropuerto, cuotas de administración, y la solidez del aliado operativo local inciden directamente en la rentabilidad neta.</p>
                 `;
             }
             abrirModal('modalBlog');
