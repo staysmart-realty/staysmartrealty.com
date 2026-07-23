@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +9,53 @@
      crossorigin="anonymous"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .accent-gradient { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .partner-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
+                              url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Protección para evitar la selección de texto en los visores legales */
+        .no-copy {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <span class="text-2xl font-black tracking-tight text-slate-900">StaySmart<span class="text-blue-600">™</span></span>
+            <a href="#hero" class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-tight text-white">StaySmart<span class="text-blue-500">™</span></span>
             </a>
             
-            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-600">
-                <a href="#viajes" class="hover:text-blue-600">Viajes Globales</a>
-                <a href="#inmuebles" class="hover:text-blue-600">Comprar / Alquilar</a>
-                <a href="#vender" class="hover:text-blue-600">Publicar ($2/mes)</a>
-                <a href="#gestion" class="hover:text-blue-600">Gestión VIP (25%)</a>
-                <a href="#journal" class="hover:text-blue-600">Journal & Guías</a>
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-300">
+                <a href="#viajes" class="hover:text-blue-400 transition">Viajes Globales</a>
+                <a href="#inmuebles" class="hover:text-blue-400 transition">Comprar / Alquilar</a>
+                <a href="#vender" class="hover:text-blue-400 transition">Publicar ($2/mes)</a>
+                <a href="#gestion" class="hover:text-blue-400 transition">Gestión VIP (25%)</a>
+                <a href="#partner" class="hover:text-blue-400 transition">Socio Estratégico</a>
+                <a href="#journal" class="hover:text-blue-400 transition">Journal & Guías</a>
             </nav>
 
-            <div class="flex items-center gap-4 text-xs font-semibold">
-                <select class="bg-slate-100 border border-slate-300 rounded-lg px-2 py-1">
+            <div class="flex items-center gap-3 text-xs font-semibold">
+                <select id="langSelect" onchange="changeLanguage()" class="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-blue-500 cursor-pointer">
                     <option value="es">🌐 ES</option>
                     <option value="en">🌐 EN</option>
                 </select>
-                <select class="bg-slate-100 border border-slate-300 rounded-lg px-2 py-1">
+                <select id="currSelect" onchange="changeCurrency()" class="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-blue-500 cursor-pointer">
                     <option value="usd">💲 USD</option>
                     <option value="cop">💲 COP</option>
                 </select>
@@ -43,27 +63,45 @@
         </div>
     </header>
 
-    <section class="hero-gradient text-white py-16 px-4">
-        <div class="max-w-6xl mx-auto text-center space-y-6">
-            <span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+    <section id="hero" class="hero-bg text-white py-20 px-4 min-h-[85vh] flex items-center justify-center relative">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <span class="bg-blue-500/30 text-blue-300 border border-blue-400/40 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
                 Ecosistema Inteligente de Turismo e Inmuebles
             </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
                 Gestión Inmobiliaria Premium y Viajes Globales
             </h1>
-            <p class="text-slate-300 max-w-2xl mx-auto text-lg">
-                Reserva vuelos, hoteles y experiencias en cualquier parte del mundo. Publica o gestiona tu propiedad en Colombia con la tecnología de StaySmart™.
+            <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+                Reserva vuelos, hoteles y experiencias en todo el mundo. Publica o gestiona tu propiedad en Colombia con la tecnología autogestionada de StaySmart™.
             </p>
 
-            <div id="viajes" class="bg-white text-slate-900 rounded-2xl p-6 shadow-2xl max-w-4xl mx-auto text-left mt-8">
+            <div id="viajes" class="bg-white text-slate-900 rounded-2xl p-6 shadow-2xl max-w-4xl mx-auto text-left mt-10">
                 <div class="flex gap-4 border-b border-slate-200 pb-3 mb-4 text-sm font-bold">
-                    <button class="text-blue-600 border-b-2 border-blue-600 pb-1">🏨 Hoteles y Vuelos (Global)</button>
-                    <button class="text-slate-500 hover:text-slate-800 pb-1">🏡 Inmuebles (Colombia)</button>
+                    <button id="tabHotelesBtn" onclick="switchTab('hoteles')" class="text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-hotel"></i> Hoteles y Vuelos (Global)
+                    </button>
+                    <button id="tabInmueblesBtn" onclick="switchTab('inmuebles')" class="text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-house-user"></i> Inmuebles (Colombia)
+                    </button>
                 </div>
                 
-                <div class="bg-slate-100 border border-dashed border-slate-300 rounded-xl p-8 text-center text-slate-500">
-                    <p class="font-semibold">[ Widget / Buscador Multitab de Travelpayouts ]</p>
-                    <p class="text-xs">Buscador global integrado con Booking, GetYourGuide y Rentcars.</p>
+                <div id="tabHotelesContent" class="bg-slate-50 border border-dashed border-slate-300 rounded-xl p-8 text-center text-slate-600">
+                    <i class="fa-solid fa-plane-departure text-3xl text-blue-600 mb-2"></i>
+                    <p class="font-semibold text-base">[ Buscador Multitab de Travelpayouts ]</p>
+                    <p class="text-xs text-slate-500 mt-1">Integrado con Booking.com, GetYourGuide, Rentcars y aerolíneas globales.</p>
+                </div>
+
+                <div id="tabInmueblesContent" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-6 text-slate-700">
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <input type="text" placeholder="Ubicación (ej: Santa Marta, Cartagena)" class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
+                        <select class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
+                            <option>Tipo: Alquiler Vacacional</option>
+                            <option>Venta de Inmueble</option>
+                        </select>
+                        <button onclick="alert('Buscando inmuebles disponibles...')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg p-2.5 text-sm transition">
+                            <i class="fa-solid fa-magnifying-glass mr-1"></i> Buscar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,34 +117,112 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <section id="vender" class="max-w-6xl mx-auto py-12 px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Soluciones para Propietarios en Colombia</h2>
+    <section id="vender" class="max-w-6xl mx-auto py-16 px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-3">Soluciones para Propietarios en Colombia</h2>
+        <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12">Elige el esquema que mejor se adapte a tus metas financieras y de administración.</p>
         
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Toda Colombia</span>
-                <h3 class="text-2xl font-bold mt-2">Publicación Directa</h3>
-                <p class="text-slate-600 mt-2 text-sm">Publica tu inmueble en nuestro portal y recibe contactos directos a tu WhatsApp o correo.</p>
-                <div class="text-3xl font-black my-4 text-slate-900">$2 USD <span class="text-xs font-normal text-slate-500">/ mes</span></div>
-                <a href="#" class="block text-center bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">Publicar Mi Inmueble</a>
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest">Toda Colombia</span>
+                    <h3 class="text-2xl font-bold mt-4">Publicación Directa</h3>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Publica tu inmueble en nuestro portal y recibe contactos directos a tu WhatsApp o correo sin intermediarios.</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-black my-6 text-slate-900"><span class="priceVal">$2 USD</span> <span class="text-xs font-normal text-slate-500">/ mes</span></div>
+                    <button onclick="solicitarServicio('Publicación Directa ($2/mes)')" class="w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition">
+                        Publicar Mi Inmueble
+                    </button>
+                </div>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
-                <span class="text-xs font-bold text-purple-600 uppercase tracking-widest">Exclusivo Santa Marta</span>
-                <h3 class="text-2xl font-bold mt-2">Corretaje de Venta VIP</h3>
-                <p class="text-slate-600 mt-2 text-sm">Nos encargamos de fotos profesionales, promoción, muestras y cierre legal sin costos anticipados.</p>
-                <div class="text-3xl font-black my-4 text-slate-900">2% <span class="text-xs font-normal text-slate-500">de comisión al vender</span></div>
-                <a href="#" class="block text-center bg-purple-600 text-white font-bold py-3 rounded-xl hover:bg-purple-700">Solicitar Gestión de Venta</a>
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-widest">Exclusivo Santa Marta</span>
+                    <h3 class="text-2xl font-bold mt-4">Corretaje de Venta VIP</h3>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Promoción, muestras y acompañamiento legal hasta la escritura pública con un modelo transparente del 1% al 2% de comisión[cite: 12, 19, 26].</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-black my-4 text-slate-900">2% <span class="text-xs font-normal text-slate-500">de comisión al vender</span></div>
+                    
+                    <button onclick="abrirModal('modalMandato')" class="w-full mb-3 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 rounded-xl border border-slate-300 text-xs transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-contract text-purple-600"></i> Ver Modelo de Contrato de Mandato
+                    </button>
+
+                    <button onclick="solicitarServicio('Corretaje VIP 2%')" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3.5 rounded-xl transition">
+                        Solicitar Gestión de Venta
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div id="gestion" class="mt-8 bg-slate-900 text-white rounded-2xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="space-y-2 max-w-xl">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Santa Marta · Renta Vacacional</span>
+        <div id="gestion" class="mt-8 bg-slate-900 text-white rounded-2xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
+            <div class="space-y-3 max-w-xl">
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full uppercase tracking-widest">Santa Marta · Renta Vacacional</span>
                 <h3 class="text-2xl md:text-3xl font-bold">Administración Turística Integral (25%)</h3>
-                <p class="text-slate-400 text-sm">Gestión 360° en Airbnb, Booking y canales directos. Obligación de póliza/seguro para respaldo total contra daños o pérdidas dentro del inmueble.</p>
+                <p class="text-slate-300 text-sm leading-relaxed">Gestión 360° en Airbnb, Booking y venta directa. Incluye póliza/seguro para respaldo total ante daños o pérdidas dentro del inmueble.</p>
+                <div class="pt-2">
+                    <button onclick="abrirModal('modalPromesa')" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:underline">
+                        <i class="fa-solid fa-shield-halved"></i> Ver Modelo de Promesa de Compraventa de Referencia
+                    </button>
+                </div>
             </div>
-            <a href="#" class="bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 whitespace-nowrap">Delegar Mi Propiedad</a>
+            <button onclick="solicitarServicio('Administración Turística 25%')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl transition whitespace-nowrap shadow-lg">
+                Delegar Mi Propiedad
+            </button>
+        </div>
+    </section>
+
+    <section id="partner" class="partner-bg text-white py-20 px-4">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <span class="text-xs font-bold text-amber-400 bg-amber-950/80 border border-amber-800 px-4 py-1.5 rounded-full uppercase tracking-widest">
+                Alianza de Alto Nivel
+            </span>
+            <h2 class="text-3xl md:text-5xl font-extrabold">Socio Estratégico: Luxury Vacation Rentals</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed">
+                Garantizamos estándares hoteleros de lujo en condominios y apartamentos exclusivos en Pozos Colorados, Bello Horizonte y El Rodadero[cite: 8, 9].
+            </p>
+            <button onclick="solicitarServicio('Contacto Luxury Vacation Rentals')" class="mt-4 bg-white text-slate-900 hover:bg-slate-100 font-bold px-8 py-3.5 rounded-xl transition shadow-xl">
+                Ver Catálogo VIP
+            </button>
+        </div>
+    </section>
+
+    <section id="journal" class="max-w-6xl mx-auto py-16 px-4">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">StaySmart™ Journal</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Guías de Viaje e Inversión</h2>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Santa Marta">
+                <div class="p-6">
+                    <span class="text-xs text-blue-600 font-bold uppercase">Santa Marta</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900">Dónde Hospedarse: Las 4 Mejores Zonas</h3>
+                    <p class="text-slate-600 text-xs line-clamp-3">El Rodadero, Centro Histórico, Pozos Colorados y Minca. Guía completa de alojamiento.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Parque Tayrona">
+                <div class="p-6">
+                    <span class="text-xs text-blue-600 font-bold uppercase">Ecoturismo</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900">Guía Parque Nacional Tayrona 2026</h3>
+                    <p class="text-slate-600 text-xs line-clamp-3">Senderos, playas permitidas, cierres ancestrales y mejores épocas para visitar.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Inversión Inmobiliaria">
+                <div class="p-6">
+                    <span class="text-xs text-blue-600 font-bold uppercase">Inversión</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900">Rentabilidad Inmobiliaria en Colombia</h3>
+                    <p class="text-slate-600 text-xs line-clamp-3">Cómo maximizar el ROI operando bajo el esquema de renta vacacional al 25%.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -114,36 +230,166 @@
         <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
             
             <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
-                <div class="flex items-center gap-2">
-                    <span>🌐 [ ES / EN ]</span>
+                <div class="flex items-center gap-3">
+                    <span class="text-slate-300 font-semibold">🌐 ES / EN</span>
                     <span>|</span>
-                    <span>💲 [ USD / COP ]</span>
+                    <span class="text-slate-300 font-semibold">💲 USD / COP</span>
                 </div>
-                <a href="#" class="hover:text-white flex items-center gap-1">
+                <button onclick="window.history.back();" class="hover:text-white flex items-center gap-1.5 transition text-slate-300 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
                     ⬅️ Volver a la página anterior
-                </a>
+                </button>
             </div>
 
             <p class="text-slate-300 font-medium text-sm">
                 © 2025-2026 StaySmartrealty Inc. StaySmart™ is the trademark of StaySmartrealty Inc. All rights reserved.
             </p>
 
-            <div class="flex justify-center gap-6">
-                <a href="#" class="hover:text-white">Términos de Servicio</a>
+            <div class="flex justify-center gap-6 text-slate-400">
+                <a href="#" onclick="alert('Términos de Servicio StaySmart™'); return false;" class="hover:text-white">Términos de Servicio</a>
                 <span>|</span>
-                <a href="#" class="hover:text-white">Política de Privacidad</a>
+                <a href="#" onclick="alert('Política de Privacidad StaySmart™'); return false;" class="hover:text-white">Política de Privacidad</a>
                 <span>|</span>
-                <a href="#" class="hover:text-white">Centro de Ayuda</a>
+                <a href="#" onclick="alert('Centro de Ayuda StaySmart™'); return false;" class="hover:text-white">Centro de Ayuda</a>
             </div>
 
             <div class="pt-4 border-t border-slate-800/50 space-y-1">
                 <p class="text-slate-300 font-semibold">Created by CEO StaySmart & Gemini (AI Partner)</p>
-                <p class="text-slate-400">Socio Estratégico: <span class="text-white">Luxury Vacation Rentals</span></p>
+                <p class="text-slate-400">Socio Estratégico: <span class="text-white font-medium">Luxury Vacation Rentals</span></p>
                 <p class="text-slate-500 text-[10px]">Powered by Make, Airtable & GitHub</p>
             </div>
 
         </div>
     </footer>
 
+    <div id="modalMandato" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+            
+            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-purple-400"></i>
+                    <h3 class="font-bold text-sm">Vista Previa: Contrato de Mandato de Corretaje</h3>
+                </div>
+                <button onclick="cerrarModal('modalMandato')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
+            </div>
+
+            <div class="p-8 overflow-y-auto no-copy relative" oncontextmenu="return false;">
+                
+                <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-10 rotate-[-30deg] text-4xl md:text-5xl font-black text-slate-900 text-center leading-relaxed">
+                    STAYSMART™<br>SOLO LECTURA / NO DESCARGABLE
+                </div>
+
+                <div class="space-y-4 text-xs text-slate-700 font-sans leading-relaxed">
+                    <div class="text-center border-b border-slate-200 pb-4 mb-4">
+                        <h4 class="font-extrabold text-slate-900 text-base">STAYSMART MANAGEMENT & REAL ESTATE SOLUTIONS</h4>
+                        <p class="font-bold text-slate-600 mt-1">CONTRATO DE MANDATO DE CORRETAJE INMOBILIARIO PARA LA VENTA DE BIEN INMUEBLE</p>
+                        <p class="text-[10px] text-slate-400 mt-1">(Régimen Comercial Colombiano - Art. 1341 y ss. C.Co)</p>
+                    </div>
+
+                    <p><strong>PARTES:</strong> Confeccionado entre <strong>EL MANDANTE</strong> (Propietario) y <strong>EL MANDATARIO</strong> (Luxury Vacation Rentals en alianza estratégica con StaySmart)[cite: 5, 8].</p>
+                    
+                    <p><strong>CLÁUSULA PRIMERA — OBJETO:</strong> EL MANDANTE confiere a EL MANDATARIO autorización para promocionar, publicitar, mostrar y gestionar la venta del inmueble hasta la firma de la Promesa de Compraventa y Escritura Pública[cite: 12].</p>
+
+                    <p><strong>CLÁUSULA SEGUNDA — OBLIGACIONES:</strong> Publicación en la plataforma StaySmart y canales VIP de Luxury Vacation Rentals, coordinación de visitas con potenciales compradores calificados y asesoría en negociación[cite: 15, 16, 18].</p>
+
+                    <p><strong>CLÁUSULA CUARTA — COMISIÓN:</strong> EL MANDANTE reconocerá a EL MANDATARIO el equivalente al UNO POR CIENTO (1%) o porcentaje pactado sobre el valor final de venta, exigible desde la firma de la Promesa de Compraventa[cite: 26, 27].</p>
+
+                    <p><strong>CLÁUSULA SÉPTIMA — TERMINACIÓN:</strong> Por vencimiento del plazo, mutuo acuerdo o venta efectiva de la propiedad[cite: 36, 38].</p>
+                </div>
+            </div>
+
+            <div class="p-4 bg-slate-100 border-t border-slate-200 text-center text-[11px] text-slate-500 flex justify-between items-center">
+                <span>🔒 Documento protegido por propiedad intelectual StaySmart™.</span>
+                <button onclick="cerrarModal('modalMandato')" class="bg-slate-900 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Cerrar Visor</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalPromesa" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
+            
+            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-signature text-emerald-400"></i>
+                    <h3 class="font-bold text-sm">Vista Previa: Modelo Promesa de Compraventa</h3>
+                </div>
+                <button onclick="cerrarModal('modalPromesa')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
+            </div>
+
+            <div class="p-8 overflow-y-auto no-copy relative" oncontextmenu="return false;">
+                
+                <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-10 rotate-[-30deg] text-4xl md:text-5xl font-black text-slate-900 text-center leading-relaxed">
+                    STAYSMART™<br>SOLO LECTURA / NO DESCARGABLE
+                </div>
+
+                <div class="space-y-4 text-xs text-slate-700 font-sans leading-relaxed">
+                    <div class="text-center border-b border-slate-200 pb-4 mb-4">
+                        <h4 class="font-extrabold text-slate-900 text-base">STAYSMART MANAGEMENT & REAL ESTATE SOLUTIONS</h4>
+                        <p class="font-bold text-slate-600 mt-1">PROMESA DE COMPRAVENTA DE BIEN INMUEBLE (MODELO DE REFERENCIA)</p>
+                        <p class="text-[10px] text-slate-400 mt-1">(Sujeto al Art. 1611 del Código Civil Colombiano)</p>
+                    </div>
+
+                    <p><strong>MARCO LEGAL:</strong> Contrato preparatorio que formaliza el compromiso de suscribir en el futuro la Escritura Pública definitiva[cite: 54].</p>
+                    
+                    <p><strong>CLÁUSULA TERCERA — ARRAS DE RETRACTACIÓN:</strong> Reguladas bajo el Artículo 1859 del Código Civil. Si el comprador se retracta, perderá la suma entregada; si se retracta el vendedor, restituirá el doble[cite: 63, 64, 65].</p>
+
+                    <p><strong>CLÁUSULA QUINTA Y SEXTA — ENTREGA Y GASTOS:</strong> Entrega material libre de ocupantes, división de gastos notariales por partes iguales y retención en la fuente a cargo del vendedor[cite: 71, 73, 75].</p>
+
+                    <p><strong>CLÁUSULA OCTAVA — MEDIACIÓN INMOBILIARIA:</strong> Reconocimiento expreso de la gestión efectuada por StaySmart Realty en la concertación del negocio[cite: 81].</p>
+                </div>
+            </div>
+
+            <div class="p-4 bg-slate-100 border-t border-slate-200 text-center text-[11px] text-slate-500 flex justify-between items-center">
+                <span>🔒 Documento protegido por propiedad intelectual StaySmart™.</span>
+                <button onclick="cerrarModal('modalPromesa')" class="bg-slate-900 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Cerrar Visor</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const hotelesBtn = document.getElementById('tabHotelesBtn');
+            const inmueblesBtn = document.getElementById('tabInmueblesBtn');
+            const hotelesContent = document.getElementById('tabHotelesContent');
+            const inmueblesContent = document.getElementById('tabInmueblesContent');
+
+            if (tab === 'hoteles') {
+                hotelesBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
+                inmueblesBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
+                hotelesContent.classList.remove('hidden');
+                inmueblesContent.classList.add('hidden');
+            } else {
+                inmueblesBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
+                hotelesBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
+                inmueblesContent.classList.remove('hidden');
+                hotelesContent.classList.add('hidden');
+            }
+        }
+
+        function changeCurrency() {
+            const curr = document.getElementById('currSelect').value;
+            const priceElements = document.querySelectorAll('.priceVal');
+            priceElements.forEach(el => {
+                el.innerText = (curr === 'cop') ? "$8.000 COP" : "$2 USD";
+            });
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            alert(lang === 'en' ? 'Language set to English.' : 'Idioma configurado en Español.');
+        }
+
+        function solicitarServicio(servicio) {
+            alert('Solicitud iniciada para: ' + servicio + '.\nNos pondremos en contacto contigo de inmediato.');
+        }
+
+        // FUNCIONES DE CONTROL DE MODALES LEGALES
+        function abrirModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function cerrarModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
