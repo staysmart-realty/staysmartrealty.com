@@ -24,7 +24,7 @@
             background-size: cover;
             background-position: center;
         }
-        /* Protección para evitar la selección de texto en los visores legales */
+        /* Bloqueo de selección de texto dentro de visores legales */
         .no-copy {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -134,7 +134,7 @@
                 <div>
                     <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest">Toda Colombia</span>
                     <h3 class="text-2xl font-bold mt-4">Publicación Directa</h3>
-                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Publica tu inmueble en nuestro portal y recibe contactos directos a tu WhatsApp o correo sin intermediarios.</p>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Publica tu inmueble en nuestro portal y recibe contactos directos a tu WhatsApp sin intermediarios ni comisiones de venta.</p>
                 </div>
                 <div>
                     <div class="text-4xl font-black my-6 text-slate-900"><span class="priceVal">$2 USD</span> <span class="text-xs font-normal text-slate-500">/ mes</span></div>
@@ -148,13 +148,13 @@
                 <div>
                     <span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-widest">Exclusivo Santa Marta</span>
                     <h3 class="text-2xl font-bold mt-4">Corretaje de Venta VIP</h3>
-                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Promoción, muestras y acompañamiento legal hasta la escritura pública con un modelo transparente del 1% al 2% de comisión.</p>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed">Promoción, muestras presenciales y acompañamiento legal garantizado hasta la firma de la escritura pública.</p>
                 </div>
                 <div>
                     <div class="text-4xl font-black my-4 text-slate-900">2% <span class="text-xs font-normal text-slate-500">de comisión al vender</span></div>
                     
                     <button onclick="abrirModal('modalMandato')" class="w-full mb-3 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 rounded-xl border border-slate-300 text-xs transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-contract text-purple-600"></i> Ver Contrato de Mandato Completo
+                        <i class="fa-solid fa-file-contract text-purple-600"></i> Ver Contrato de Mandato de Corretaje
                     </button>
 
                     <button onclick="contactarWhatsApp('Hola, me interesa el servicio de Corretaje VIP (2%) para vender mi inmueble en Santa Marta.')" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
@@ -275,7 +275,7 @@
             <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-shield-halved text-purple-400"></i>
-                    <h3 class="font-bold text-sm">Vista Previa: Contrato de Mandato de Corretaje Inmobiliario</h3>
+                    <h3 class="font-bold text-sm">Visor Protegido: Contrato de Mandato de Corretaje Inmobiliario</h3>
                 </div>
                 <button onclick="cerrarModal('modalMandato')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
             </div>
@@ -290,40 +290,44 @@
                     <div class="text-center border-b border-slate-200 pb-4 mb-4">
                         <h4 class="font-extrabold text-slate-900 text-base">STAYSMART MANAGEMENT & REAL ESTATE SOLUTIONS</h4>
                         <p class="font-bold text-slate-800 mt-1">CONTRATO DE MANDATO DE CORRETAJE INMOBILIARIO PARA LA VENTA DE BIEN INMUEBLE</p>
-                        <p class="text-[10px] text-slate-500 mt-0.5">(Régimen Comercial Colombiano - Art. 1341 y ss. del Código de Comercio)</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">(Artículo 1341 y siguientes del Código de Comercio de Colombia)</p>
                     </div>
 
-                    <p><strong>PARTES INTERVINIENTES:</strong><br>
-                    De una parte, <strong>EL PROPIETARIO DEL INMUEBLE (EL MANDANTE)</strong>, persona natural o jurídica identificada según registro. De otra parte, <strong>EL VENDEDOR / CORREDOR (EL MANDATARIO)</strong>, que actúa como persona natural bajo el nombre comercial <em>Luxury Vacation Rentals</em>, en alianza estratégica con <em>StaySmart Realty</em> (WhatsApp/Atención: +57 302 4333959, Santa Marta, D.T.C.H., Colombia).</p>
+                    <p><strong>ENTRE LOS SUSCRITOS:</strong><br>
+                    1. <strong>EL MANDANTE (PROPIETARIO):</strong> Persona natural o jurídica titular del derecho de dominio sobre el inmueble.<br>
+                    2. <strong>EL MANDATARIO (CORREDOR):</strong> Quien actúa bajo el nombre comercial <em>Luxury Vacation Rentals</em> en alianza estratégica con <em>StaySmart</em> (Santa Marta, Colombia, Tel: +57 302 4333959).</p>
 
                     <p><strong>CLÁUSULA PRIMERA — OBJETO:</strong><br>
-                    EL MANDANTE confiere a EL MANDATARIO autorización no exclusiva (o exclusiva según se pacte expresamente) para promocionar, publicitar, mostrar, gestionar y adelantar todas las diligencias necesarias tendientes a conseguir un comprador para el inmueble de su propiedad, ubicado en la ciudad de Santa Marta / Colombia.</p>
+                    EL MANDANTE confiere a EL MANDATARIO autorización no exclusiva (o exclusiva si se especifica) para promocionar, publicitar, mostrar, gestionar y realizar todas las diligencias comerciales tendientes a conseguir un comprador para el inmueble ubicado en Santa Marta, Colombia.</p>
 
-                    <p><strong>CLÁUSULA SEGUNDA — PRECIO Y CONDICIONES DE VENTA:</strong><br>
-                    El precio inicial de venta del inmueble será el acordado formalmente entre las partes. Cualquier modificación, rebaja o aceptación de ofertas por debajo de dicho valor requerirá la aprobación previa y por escrito de EL MANDANTE.</p>
+                    <p><strong>CLÁUSULA SEGUNDA — PRECIO DE VENTA Y CONDICIONES:</strong><br>
+                    El precio comercial de venta del inmueble se establecerá por mutuo acuerdo entre las partes. Cualquier oferta inferior o modificación formal requerirá la aprobación expresa y por escrito de EL MANDANTE.</p>
 
                     <p><strong>CLÁUSULA TERCERA — OBLIGACIONES DE EL MANDATARIO:</strong><br>
-                    1. Diseñar y ejecutar estrategias de promoción comercial en la plataforma StaySmart, redes sociales y canales cerrados de Luxury Vacation Rentals.<br>
-                    2. Filtrar y coordinar las visitas de potenciales compradores calificados.<br>
-                    3. Mantener informado a EL MANDANTE sobre el estado de las gestiones e interés de los prospectos.<br>
-                    4. Asesorar y acompañar la elaboración del borrador de la Promesa de Compraventa y trámites notariales.</p>
+                    a) Diseñar y difundir las piezas publicitarias en los portales web de StaySmart y canales aliados de Luxury Vacation Rentals.<br>
+                    b) Filtrar, atemperar y coordinar la logística de visitas con compradores potenciales.<br>
+                    c) Rendir informes periódicos sobre el avance de las gestiones comerciales.<br>
+                    d) Acompañar la redacción de la Promesa de Compraventa y trámites ante Notaría y Registro.</p>
 
-                    <p><strong>CLÁUSULA CUARTA — COMISIÓN / REMUNERACIÓN:</strong><br>
-                    EL MANDANTE se obliga a pagar a EL MANDATARIO una comisión equivalente al <strong>DOS POR CIENTO (2%)</strong> (o el 1% según el plan acordado) sobre el valor total en que se concrete la venta del inmueble. Dicha comisión se devengará y será exigible a la firma de la Promesa de Compraventa entre EL MANDANTE y el comprador conseguido.</p>
+                    <p><strong>CLÁUSULA CUARTA — REMUNERACIÓN / COMISIÓN DE CORRETAJE:</strong><br>
+                    EL MANDANTE pagará a EL MANDATARIO una comisión de éxito equivalente al <strong>DOS POR CIENTO (2%)</strong> (o 1% pactado según el plan) sobre el valor total real de la venta. Dicha comisión se causará y será exigible al momento de firmarse la Promesa de Compraventa entre las partes.</p>
 
                     <p><strong>CLÁUSULA QUINTA — OBLIGACIONES DE EL MANDANTE:</strong><br>
-                    1. Suministrar información veraz, copia del Certificado de Tradición y Libertad, escrituras y paz y salvos del inmueble.<br>
-                    2. Permitir el acceso al inmueble para las visitas programadas con previo aviso.<br>
-                    3. Pagar oportunamente la comisión pactada a la firma de la promesa.</p>
+                    a) Entregar la documentación necesaria (Certificado de Tradición, copia de Escritura, Paz y Salvos de Administración e Impuestos).<br>
+                    b) Facilitar las visitas programadas al inmueble.<br>
+                    c) Cancelar oportunamente la comisión de intermediación convenida.</p>
 
                     <p><strong>CLÁUSULA SEXTA — EXONERACIÓN DE RESPONSABILIDAD:</strong><br>
-                    EL MANDATARIO actúa estrictamente como intermediario comercial y legal de enlace. No responde por el incumplimiento de las obligaciones del comprador ni por vicios ocultos o gravámenes no declarados por EL MANDANTE.</p>
+                    EL MANDATARIO actúa como mediador comercial. No asume responsabilidad por el posterior incumplimiento de pagos por parte del comprador, vicios ocultos del inmueble ni gravámenes omitidos por EL MANDANTE.</p>
 
-                    <p><strong>CLÁUSULA SÉPTIMA — TERMINACIÓN:</strong><br>
-                    El presente contrato finalizará por: (i) vencimiento del plazo fijado; (ii) venta efectiva del inmueble; (iii) mutuo acuerdo entre las partes; o (iv) incumplimiento de las obligaciones contractuales.</p>
+                    <p><strong>CLÁUSULA SÉPTIMA — TERMINACIÓN DEL CONTRATO:</strong><br>
+                    El contrato finalizará por: (i) Vencimiento del término legal/pactado; (ii) Perfeccionamiento de la venta efectiva del bien; (iii) Mutuo acuerdo expreso; o (iv) Incumplimiento de las obligaciones contractuales.</p>
+
+                    <p><strong>CLÁUSULA OCTAVA — LEY APLICABLE:</strong><br>
+                    El presente contrato se rige estrictamente por la legislación comercial de la República de Colombia.</p>
 
                     <p class="text-[10px] text-slate-400 italic text-center pt-4 border-t border-slate-100">
-                        Documento de referencia para lectura en plataforma. No constituye contrato firmado. La versión ejecutada requerirá validación de datos del inmueble y firmas de las partes.
+                        Documento borrador de referencia para consulta dentro del portal. La versión final ejecutable requerirá el diligenciamiento de datos específicos y la firma de ambas partes.
                     </p>
                 </div>
             </div>
@@ -341,7 +345,7 @@
             <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-file-signature text-emerald-400"></i>
-                    <h3 class="font-bold text-sm">Vista Previa: Modelo Promesa de Compraventa</h3>
+                    <h3 class="font-bold text-sm">Visor Protegido: Modelo Promesa de Compraventa</h3>
                 </div>
                 <button onclick="cerrarModal('modalPromesa')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
             </div>
@@ -355,24 +359,24 @@
                 <div class="space-y-4 text-xs text-slate-700 font-sans leading-relaxed">
                     <div class="text-center border-b border-slate-200 pb-4 mb-4">
                         <h4 class="font-extrabold text-slate-900 text-base">STAYSMART MANAGEMENT & REAL ESTATE SOLUTIONS</h4>
-                        <p class="font-bold text-slate-800 mt-1">PROMESA DE COMPRAVENTA DE BIEN INMUEBLE (DOCUMENTO DE ACOMPAÑAMIENTO)</p>
-                        <p class="text-[10px] text-slate-500 mt-0.5">(Artículo 1611 del Código Civil Colombiano)</p>
+                        <p class="font-bold text-slate-800 mt-1">PROMESA DE COMPRAVENTA DE BIEN INMUEBLE (DOCUMENTO GUÍA)</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">(Regido por el Artículo 1611 del Código Civil Colombiano)</p>
                     </div>
 
-                    <p><strong>SANEAMIENTO Y TRADICIÓN:</strong><br>
-                    EL PROMITENTE VENDEDOR garantiza que el inmueble objeto de la negociación se transferirá libre de pleitos pendientes, embargos, hipotecas, censos, anticresis, arrendamientos por escritura pública y cualquier otro tipo de gravamen o limitación al dominio.</p>
+                    <p><strong>CLÁUSULA PRIMERA — IDENTIFICACIÓN Y SANEAMIENTO:</strong><br>
+                    EL PROMITENTE VENDEDOR garantiza ser el único propietario del bien inmueble y se obliga a transferir el dominio libre de pleitos, embargos, hipotecas, arrendamientos por escritura pública, anticresis o condiciones resolutorias.</p>
 
                     <p><strong>CLÁUSULA TERCERA — ARRAS DE RETRACTACIÓN:</strong><br>
-                    Las partes acuerdan que la suma entregada como cuota inicial/separación se fija bajo el concepto de Arras de Retractación (Art. 1859 C.C.). Si el comprador se retratare del negocio, perderá la suma entregada; si el vendedor se retratare, la devolverá doblada.</p>
+                    Las sumas entregadas por el comprador se entienden fijadas como Arras de Retractación (Art. 1859 C.C.). Si el comprador desiste del negocio, perderá el monto entregado; si el vendedor se retracta, devolverá el doble del valor recibido.</p>
 
-                    <p><strong>CLÁUSULA QUINTA Y SEXTA — ENTREGA MATERIAL Y GASTOS:</strong><br>
-                    La entrega material del inmueble se realizará en la fecha estipulada a paz y salvo por concepto de impuestos, tasas, contribuciones de valorización y cuotas de administración. Los gastos notariales se pagarán por partes iguales entre Vendedor y Comprador. La Retención en la Fuente corresponderá al Vendedor.</p>
+                    <p><strong>CLÁUSULA QUINTA — GASTOS DE ESCRITURACIÓN E IMPUESTOS:</strong><br>
+                    Los derechos notariales que se causen con ocasión de la compraventa serán sufragados en partes iguales (50% Comprador y 50% Vendedor). El impuesto de Retención en la Fuente estará a cargo exclusivo del Vendedor.</p>
 
-                    <p><strong>CLÁUSULA OCTAVA — MEDIACIÓN INMOBILIARIA:</strong><br>
-                    Las partes dejan constancia explícita de que la presente negociación fue gestionada mediante la intermediación de <em>StaySmart Realty</em> y <em>Luxury Vacation Rentals</em> en virtud del mandato suscrito.</p>
+                    <p><strong>CLÁUSULA OCTAVA — RECONOCIMIENTO DE INTERMEDIACIÓN:</strong><br>
+                    Las partes declaran expresamente que la negociación fue gestionada mediante la mediación autorizada de <em>StaySmart Realty</em> y <em>Luxury Vacation Rentals</em> en virtud del mandato suscrito.</p>
 
                     <p class="text-[10px] text-slate-400 italic text-center pt-4 border-t border-slate-100">
-                        Documento borrador de referencia. Requiere ajuste de linderos, matrícula inmobiliaria y verificación notarial previa a la firma.
+                        Documento modelo de referencia. Requiere validación de linderos, paz y salvos y cédula catastral antes de su formalización notarial.
                     </p>
                 </div>
             </div>
