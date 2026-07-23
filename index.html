@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StaySmart™ | Global Travel & Colombian Real Estate</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsensescript.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsensescript.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -41,11 +40,11 @@
             </a>
             
             <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-300">
-                <a href="#viajes" data-key="nav_viajes" class="hover:text-blue-400 transition">Viajes Globales</a>
-                <a href="#vender" data-key="nav_vender" class="hover:text-blue-400 transition">Publicar / Vender</a>
-                <a href="#gestion" data-key="nav_gestion" class="hover:text-blue-400 transition">Gestión VIP (25%)</a>
-                <a href="#partner" data-key="nav_partner" class="hover:text-blue-400 transition">Socio Estratégico</a>
-                <a href="#journal" data-key="nav_journal" class="hover:text-blue-400 transition">Journal & Guías</a>
+                <a href="#viajes" class="hover:text-blue-400 transition"><span data-key="nav_viajes">Viajes Globales</span></a>
+                <a href="#vender" class="hover:text-blue-400 transition"><span data-key="nav_vender">Publicar / Vender</span></a>
+                <a href="#gestion" class="hover:text-blue-400 transition"><span data-key="nav_gestion">Gestión VIP (25%)</span></a>
+                <a href="#partner" class="hover:text-blue-400 transition"><span data-key="nav_partner">Socio Estratégico</span></a>
+                <a href="#journal" class="hover:text-blue-400 transition"><span data-key="nav_journal">Journal & Guías</span></a>
             </nav>
 
             <div class="flex items-center gap-3 text-xs font-semibold">
@@ -63,14 +62,14 @@
 
     <section id="hero" class="hero-bg text-white py-20 px-4 min-h-[85vh] flex items-center justify-center relative">
         <div class="max-w-5xl mx-auto text-center space-y-6">
-            <span data-key="hero_badge" class="bg-blue-500/30 text-blue-300 border border-blue-400/40 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-                Ecosistema Inteligente de Turismo e Inmuebles
+            <span class="bg-blue-500/30 text-blue-300 border border-blue-400/40 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                <span data-key="hero_badge">Ecosistema Inteligente de Turismo e Inmuebles</span>
             </span>
-            <h1 data-key="hero_title" class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Gestión Inmobiliaria Premium y Viajes Globales
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                <span data-key="hero_title">Gestión Inmobiliaria Premium y Viajes Globales</span>
             </h1>
-            <p data-key="hero_desc" class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
-                Reserva vuelos, hoteles y experiencias en todo el mundo. Publica o gestiona tu propiedad en Colombia con la tecnología autogestionada de StaySmart™.
+            <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+                <span data-key="hero_desc">Reserva vuelos, hoteles y experiencias en todo el mundo. Publica o gestiona tu propiedad en Colombia con la tecnología autogestionada de StaySmart™.</span>
             </p>
 
             <div id="viajes" class="bg-white text-slate-900 rounded-2xl p-6 shadow-2xl max-w-4xl mx-auto text-left mt-10">
@@ -87,9 +86,9 @@
                     <div class="grid md:grid-cols-3 gap-4 items-center">
                         <input type="text" id="destViaje" placeholder="¿A dónde quieres viajar?" class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
                         <select id="tipoViaje" class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
-                            <option value="hotel" data-key="opt_hotels">Hoteles y Alojamientos</option>
-                            <option value="vuelo" data-key="opt_flights">Vuelos Internacionales</option>
-                            <option value="tour" data-key="opt_tours">Tours y Experiencias</option>
+                            <option value="hotel"><span data-key="opt_hotels">Hoteles y Alojamientos</span></option>
+                            <option value="vuelo"><span data-key="opt_flights">Vuelos Internacionales</span></option>
+                            <option value="tour"><span data-key="opt_tours">Tours y Experiencias</span></option>
                         </select>
                         <button onclick="ejecutarBusquedaViaje()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg p-2.5 text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-plane-departure"></i> <span data-key="btn_search_travel">Buscar Ofertas</span>
@@ -97,7 +96,7 @@
                     </div>
                     <div id="resViajes" class="hidden mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900">
                         <p class="font-bold mb-1"><i class="fa-solid fa-circle-info"></i> <span data-key="res_travel_title">Buscando disponibilidad en red global...</span></p>
-                        <p data-key="res_travel_desc">Mostrando las mejores tarifas disponibles para la búsqueda ingresada.</p>
+                        <p><span data-key="res_travel_desc">Mostrando las mejores tarifas disponibles para la búsqueda ingresada.</span></p>
                     </div>
                 </div>
 
@@ -105,8 +104,8 @@
                     <div class="grid md:grid-cols-3 gap-4">
                         <input type="text" id="ubicInmueble" placeholder="Ubicación (ej: Santa Marta)" class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
                         <select id="tipoInmueble" class="border border-slate-300 rounded-lg p-2.5 text-sm w-full focus:outline-none focus:border-blue-600">
-                            <option value="alquiler" data-key="opt_rent">Alquiler Vacacional</option>
-                            <option value="venta" data-key="opt_sale">Venta de Inmueble</option>
+                            <option value="alquiler"><span data-key="opt_rent">Alquiler Vacacional</span></option>
+                            <option value="venta"><span data-key="opt_sale">Venta de Inmueble</span></option>
                         </select>
                         <button onclick="ejecutarBusquedaInmueble()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg p-2.5 text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-magnifying-glass"></i> <span data-key="btn_search_re">Consultar Portal</span>
@@ -114,32 +113,27 @@
                     </div>
                     <div id="resInmuebles" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
                         <p class="font-bold mb-1"><i class="fa-solid fa-building"></i> <span data-key="res_re_title">Propiedades disponibles encontradas:</span></p>
-                        <p data-key="res_re_desc">Filtrando listados activos en el catálogo autogestionado StaySmart.</p>
+                        <p><span data-key="res_re_desc">Filtrando listados activos en el catálogo autogestionado StaySmart.</span></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="max-w-6xl mx-auto my-8 px-4 text-center">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
     <section id="vender" class="max-w-6xl mx-auto py-16 px-4">
-        <h2 data-key="owners_title" class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-3">Soluciones para Propietarios en Colombia</h2>
-        <p data-key="owners_subtitle" class="text-slate-600 text-center max-w-2xl mx-auto mb-12">Elige el esquema que mejor se adapte a tus metas financieras y de administración.</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-3"><span data-key="owners_title">Soluciones para Propietarios en Colombia</span></h2>
+        <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12"><span data-key="owners_subtitle">Elige el esquema que mejor se adapte a tus metas financieras y de administración.</span></p>
         
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
                 <div>
-                    <span data-key="plan1_badge" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest">Toda Colombia</span>
-                    <h3 data-key="plan1_title" class="text-2xl font-bold mt-4">Publicación Directa</h3>
-                    <p data-key="plan1_desc" class="text-slate-600 mt-2 text-sm leading-relaxed">Publica tu inmueble en nuestro portal y recibe contactos directos sin intermediarios ni comisiones.</p>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest"><span data-key="plan1_badge">Toda Colombia</span></span>
+                    <h3 class="text-2xl font-bold mt-4"><span data-key="plan1_title">Publicación Directa</span></h3>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed"><span data-key="plan1_desc">Publica tu inmueble en nuestro portal y recibe contactos directos sin intermediarios ni comisiones.</span></p>
                 </div>
                 <div>
-                    <div class="text-4xl font-black my-6 text-slate-900"><span class="priceVal">$2 USD</span> <span data-key="per_month" class="text-xs font-normal text-slate-500">/ mes</span></div>
-                    <button onclick="contactarWhatsApp('Hola, deseo publicar mi inmueble por $2 USD/mes en StaySmart.')" class="w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+                    <div class="text-4xl font-black my-6 text-slate-900"><span class="priceVal">$2 USD</span> <span class="text-xs font-normal text-slate-500" data-key="per_month">/ mes</span></div>
+                    <button onclick="contactarWhatsApp('Hola, deseo publicar mi inmueble en StaySmart.')" class="w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> <span data-key="btn_plan1">Publicar Mi Inmueble (WhatsApp)</span>
                     </button>
                 </div>
@@ -147,18 +141,18 @@
 
             <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
                 <div>
-                    <span data-key="plan2_badge" class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-widest">Exclusivo Santa Marta</span>
-                    <h3 data-key="plan2_title" class="text-2xl font-bold mt-4">Corretaje de Venta VIP</h3>
-                    <p data-key="plan2_desc" class="text-slate-600 mt-2 text-sm leading-relaxed">Promoción, muestras presenciales y acompañamiento legal garantizado hasta la firma de la escritura pública.</p>
+                    <span class="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-widest"><span data-key="plan2_badge">Exclusivo Santa Marta</span></span>
+                    <h3 class="text-2xl font-bold mt-4"><span data-key="plan2_title">Corretaje de Venta VIP</span></h3>
+                    <p class="text-slate-600 mt-2 text-sm leading-relaxed"><span data-key="plan2_desc">Promoción, muestras presenciales y acompañamiento legal garantizado hasta la firma de la escritura pública.</span></p>
                 </div>
                 <div>
-                    <div class="text-4xl font-black my-4 text-slate-900">2% <span data-key="comm_sale" class="text-xs font-normal text-slate-500">de comisión al vender</span></div>
+                    <div class="text-4xl font-black my-4 text-slate-900">2% <span class="text-xs font-normal text-slate-500" data-key="comm_sale">de comisión al vender</span></div>
                     
                     <button onclick="abrirModal('modalMandato')" class="w-full mb-3 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 rounded-xl border border-slate-300 text-xs transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-contract text-purple-600"></i> <span data-key="btn_view_contract">Ver Contrato de Mandato de Corretaje</span>
+                        <i class="fa-solid fa-file-contract text-purple-600"></i> <span data-key="btn_view_contract">Ver Contrato de Mandato</span>
                     </button>
 
-                    <button onclick="contactarWhatsApp('Hola, me interesa el servicio de Corretaje VIP (2%) para vender mi inmueble en Santa Marta.')" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+                    <button onclick="contactarWhatsApp('Hola, me interesa el servicio de Corretaje VIP (2%).')" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-300 text-lg"></i> <span data-key="btn_plan2">Solicitar Gestión de Venta (WhatsApp)</span>
                     </button>
                 </div>
@@ -167,42 +161,25 @@
 
         <div id="gestion" class="mt-8 bg-slate-900 text-white rounded-2xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
             <div class="space-y-3 max-w-xl">
-                <span data-key="plan3_badge" class="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full uppercase tracking-widest">Santa Marta · Renta Vacacional</span>
-                <h3 data-key="plan3_title" class="text-2xl md:text-3xl font-bold">Administración Turística Integral (25%)</h3>
-                <p data-key="plan3_desc" class="text-slate-300 text-sm leading-relaxed">Gestión 360° con Luxury Vacation Rentals. Incluye comercialización en Airbnb/Booking, recepción de huéspedes y póliza de respaldo ante daños.</p>
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full uppercase tracking-widest"><span data-key="plan3_badge">Santa Marta · Renta Vacacional</span></span>
+                <h3 class="text-2xl md:text-3xl font-bold"><span data-key="plan3_title">Administración Turística Integral (25%)</span></h3>
+                <p class="text-slate-300 text-sm leading-relaxed"><span data-key="plan3_desc">Gestión 360° con Luxury Vacation Rentals. Incluye comercialización en Airbnb/Booking, recepción de huéspedes y póliza de respaldo ante daños.</span></p>
                 <div class="pt-2">
                     <button onclick="abrirModal('modalPromesa')" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:underline">
                         <i class="fa-solid fa-shield-halved"></i> <span data-key="btn_view_promesa">Ver Modelo Promesa de Compraventa</span>
                     </button>
                 </div>
             </div>
-            <button onclick="contactarWhatsApp('Hola, deseo información sobre la Administración Turística (25%) con Luxury Vacation Rentals.')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl transition whitespace-nowrap shadow-lg flex items-center gap-2">
+            <button onclick="contactarWhatsApp('Hola, deseo información sobre la Administración Turística (25%).')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl transition whitespace-nowrap shadow-lg flex items-center gap-2">
                 <i class="fa-brands fa-whatsapp text-xl"></i> <span data-key="btn_plan3">Delegar Propiedad (WhatsApp)</span>
             </button>
         </div>
     </section>
 
-    <section id="partner" class="partner-bg text-white py-20 px-4">
-        <div class="max-w-5xl mx-auto text-center space-y-6">
-            <span data-key="partner_badge" class="text-xs font-bold text-amber-400 bg-amber-950/80 border border-amber-800 px-4 py-1.5 rounded-full uppercase tracking-widest">
-                Alianza de Alto Nivel
-            </span>
-            <h2 data-key="partner_title" class="text-3xl md:text-5xl font-extrabold">Socio Estratégico: Luxury Vacation Rentals</h2>
-            <p data-key="partner_desc" class="text-slate-300 max-w-2xl mx-auto text-base leading-relaxed">
-                Estándares hoteleros de lujo en condominios y apartamentos exclusivos en Pozos Colorados, Bello Horizonte y El Rodadero.
-            </p>
-            <button onclick="contactarWhatsApp('Hola, deseo consultar el Catálogo VIP con Luxury Vacation Rentals.')" class="mt-4 bg-white text-slate-900 hover:bg-slate-100 font-bold px-8 py-3.5 rounded-xl transition shadow-xl inline-flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i> <span data-key="btn_partner">Consultar Catálogo VIP (WhatsApp)</span>
-            </button>
-        </div>
-    </section>
-
     <section id="journal" class="max-w-6xl mx-auto py-16 px-4">
-        <div class="flex justify-between items-end mb-10">
-            <div>
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">StaySmart™ Journal</span>
-                <h2 data-key="blog_heading" class="text-3xl font-extrabold text-slate-900 mt-1">Guías de Viaje e Inversión</h2>
-            </div>
+        <div class="mb-10">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">StaySmart™ Journal</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-1"><span data-key="blog_heading">Guías de Viaje e Inversión</span></h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -210,48 +187,33 @@
                 <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Santa Marta">
                 <div class="p-6">
                     <span class="text-xs text-blue-600 font-bold uppercase">Santa Marta</span>
-                    <h3 data-key="art1_title" class="font-bold text-lg mt-1 mb-2 text-slate-900">Dónde Hospedarse: Las 4 Mejores Zonas</h3>
-                    <p data-key="art1_desc" class="text-slate-600 text-xs line-clamp-3">El Rodadero, Centro Histórico, Pozos Colorados y Minca. Comparativa completa para viajeros.</p>
-                    <span data-key="read_more" class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline">Leer Artículo Completo ➔</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900"><span data-key="art1_title">Dónde Hospedarse: Las 4 Mejores Zonas</span></h3>
+                    <p class="text-slate-600 text-xs line-clamp-3"><span data-key="art1_desc">El Rodadero, Centro Histórico, Pozos Colorados y Minca. Comparativa completa para viajeros.</span></p>
+                    <span class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline"><span data-key="read_more">Leer Artículo Completo ➔</span></span>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer" onclick="abrirBlog('articulo2')">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Parque Tayrona">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Tayrona">
                 <div class="p-6">
                     <span class="text-xs text-blue-600 font-bold uppercase">Ecoturismo</span>
-                    <h3 data-key="art2_title" class="font-bold text-lg mt-1 mb-2 text-slate-900">Guía Parque Nacional Tayrona 2026</h3>
-                    <p data-key="art2_desc" class="text-slate-600 text-xs line-clamp-3">Senderos, playas permitidas, cierres de conservación y recomendaciones imprescindibles.</p>
-                    <span data-key="read_more" class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline">Leer Artículo Completo ➔</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900"><span data-key="art2_title">Guía Parque Nacional Tayrona 2026</span></h3>
+                    <p class="text-slate-600 text-xs line-clamp-3"><span data-key="art2_desc">Senderos, playas permitidas, cierres de conservación y recomendaciones imprescindibles.</span></p>
+                    <span class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline"><span data-key="read_more">Leer Artículo Completo ➔</span></span>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer" onclick="abrirBlog('articulo3')">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Inversión Inmobiliaria">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" class="h-48 w-full object-cover" alt="Inversión">
                 <div class="p-6">
                     <span class="text-xs text-blue-600 font-bold uppercase">Inversión</span>
-                    <h3 data-key="art3_title" class="font-bold text-lg mt-1 mb-2 text-slate-900">Rentabilidad Inmobiliaria en Colombia</h3>
-                    <p data-key="art3_desc" class="text-slate-600 text-xs line-clamp-3">Análisis financiero: Maximiza el ROI de tu propiedad en el modelo de Renta Vacacional al 25%.</p>
-                    <span data-key="read_more" class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline">Leer Artículo Completo ➔</span>
+                    <h3 class="font-bold text-lg mt-1 mb-2 text-slate-900"><span data-key="art3_title">Rentabilidad Inmobiliaria en Colombia</span></h3>
+                    <p class="text-slate-600 text-xs line-clamp-3"><span data-key="art3_desc">Análisis financiero: Maximiza el ROI de tu propiedad en el modelo de Renta Vacacional al 25%.</span></p>
+                    <span class="inline-block mt-4 text-xs font-bold text-blue-600 hover:underline"><span data-key="read_more">Leer Artículo Completo ➔</span></span>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800 mt-16">
-        <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
-            <p class="text-slate-300 font-medium text-sm">
-                © 2025-2026 StaySmartrealty Inc. StaySmart™ is the trademark of StaySmartrealty Inc. All rights reserved.
-            </p>
-            <div class="flex justify-center gap-6 text-slate-400">
-                <a href="#hero" data-key="ft_home" class="hover:text-white">Inicio</a>
-                <span>|</span>
-                <a href="#vender" data-key="ft_terms" class="hover:text-white">Términos de Servicio</a>
-                <span>|</span>
-                <a href="#gestion" data-key="ft_privacy" class="hover:text-white">Política de Privacidad</a>
-            </div>
-        </div>
-    </footer>
 
     <div id="modalBlog" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
@@ -264,53 +226,7 @@
             </div>
             <div id="blogContentBody" class="p-8 overflow-y-auto leading-relaxed text-sm text-slate-700 space-y-4"></div>
             <div class="p-4 bg-slate-100 border-t border-slate-200 text-right">
-                <button onclick="cerrarModal('modalBlog')" data-key="btn_close" class="bg-slate-900 text-white font-bold px-5 py-2 rounded-xl text-xs">Cerrar Artículo</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalMandato" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
-            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-purple-400"></i>
-                    <h3 class="font-bold text-sm">Visor Protegido: Contrato de Mandato de Corretaje Inmobiliario</h3>
-                </div>
-                <button onclick="cerrarModal('modalMandato')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
-            </div>
-            <div class="p-8 overflow-y-auto no-copy relative" oncontextmenu="return false;">
-                <div class="space-y-4 text-xs text-slate-700 font-sans leading-relaxed">
-                    <div class="text-center border-b border-slate-200 pb-4 mb-4">
-                        <h4 class="font-extrabold text-slate-900 text-base">STAYSMART MANAGEMENT & REAL ESTATE SOLUTIONS</h4>
-                        <p class="font-bold text-slate-800 mt-1">CONTRATO DE MANDATO DE CORRETAJE INMOBILIARIO</p>
-                    </div>
-                    <p><strong>OBJETO:</strong> Autorización formal para promover y negociar la venta del inmueble.</p>
-                    <p><strong>COMISIÓN:</strong> Estipulada entre el 1% y el 2% sobre el valor total acordado de la compraventa.</p>
-                </div>
-            </div>
-            <div class="p-4 bg-slate-100 border-t border-slate-200 text-right">
-                <button onclick="cerrarModal('modalMandato')" data-key="btn_close" class="bg-slate-900 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Cerrar Visor</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalPromesa" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden relative">
-            <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-file-signature text-emerald-400"></i>
-                    <h3 class="font-bold text-sm">Visor Protegido: Modelo Promesa de Compraventa</h3>
-                </div>
-                <button onclick="cerrarModal('modalPromesa')" class="text-slate-400 hover:text-white font-bold text-lg px-2">&times;</button>
-            </div>
-            <div class="p-8 overflow-y-auto no-copy relative" oncontextmenu="return false;">
-                <div class="space-y-4 text-xs text-slate-700 font-sans leading-relaxed">
-                    <h4 class="font-bold text-slate-900 text-sm border-b pb-2">PROMESA DE COMPRAVENTA DE BIEN INMUEBLE</h4>
-                    <p><strong>SANEAMIENTO Y TRADICIÓN:</strong> Garantía de inmueble libre de pleitos, embargos e hipotecas.</p>
-                </div>
-            </div>
-            <div class="p-4 bg-slate-100 border-t border-slate-200 text-right">
-                <button onclick="cerrarModal('modalPromesa')" data-key="btn_close" class="bg-slate-900 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Cerrar Visor</button>
+                <button onclick="cerrarModal('modalBlog')" class="bg-slate-900 text-white font-bold px-5 py-2 rounded-xl text-xs"><span data-key="btn_close">Cerrar Artículo</span></button>
             </div>
         </div>
     </div>
@@ -318,8 +234,7 @@
     <script>
         const TELEFONO_WHATSAPP = "573024333959";
 
-        // DICCIONARIO ES / EN
-        const translations = {
+        const i18n = {
             es: {
                 nav_viajes: "Viajes Globales",
                 nav_vender: "Publicar / Vender",
@@ -353,17 +268,13 @@
                 plan2_title: "Corretaje de Venta VIP",
                 plan2_desc: "Promoción, muestras presenciales y acompañamiento legal garantizado hasta la firma de la escritura pública.",
                 comm_sale: "de comisión al vender",
-                btn_view_contract: "Ver Contrato de Mandato de Corretaje",
+                btn_view_contract: "Ver Contrato de Mandato",
                 btn_plan2: "Solicitar Gestión de Venta (WhatsApp)",
                 plan3_badge: "Santa Marta · Renta Vacacional",
                 plan3_title: "Administración Turística Integral (25%)",
                 plan3_desc: "Gestión 360° con Luxury Vacation Rentals. Incluye comercialización en Airbnb/Booking, recepción de huéspedes y póliza de respaldo ante daños.",
                 btn_view_promesa: "Ver Modelo Promesa de Compraventa",
                 btn_plan3: "Delegar Propiedad (WhatsApp)",
-                partner_badge: "Alianza de Alto Nivel",
-                partner_title: "Socio Estratégico: Luxury Vacation Rentals",
-                partner_desc: "Estándares hoteleros de lujo en condominios y apartamentos exclusivos en Pozos Colorados, Bello Horizonte y El Rodadero.",
-                btn_partner: "Consultar Catálogo VIP (WhatsApp)",
                 blog_heading: "Guías de Viaje e Inversión",
                 art1_title: "Dónde Hospedarse: Las 4 Mejores Zonas",
                 art1_desc: "El Rodadero, Centro Histórico, Pozos Colorados y Minca. Comparativa completa para viajeros.",
@@ -372,9 +283,6 @@
                 art3_title: "Rentabilidad Inmobiliaria en Colombia",
                 art3_desc: "Análisis financiero: Maximiza el ROI de tu propiedad en el modelo de Renta Vacacional al 25%.",
                 read_more: "Leer Artículo Completo ➔",
-                ft_home: "Inicio",
-                ft_terms: "Términos de Servicio",
-                ft_privacy: "Política de Privacidad",
                 btn_close: "Cerrar"
             },
             en: {
@@ -383,9 +291,9 @@
                 nav_gestion: "VIP Management (25%)",
                 nav_partner: "Strategic Partner",
                 nav_journal: "Journal & Guides",
-                hero_badge: "Smart Ecosystem for Tourism & Real Estate",
+                hero_badge: "Smart Tourism & Real Estate Ecosystem",
                 hero_title: "Premium Real Estate & Global Travel",
-                hero_desc: "Book flights, hotels, and experiences worldwide. List or manage your property in Colombia with StaySmart™ self-managed technology.",
+                hero_desc: "Book flights, hotels, and experiences worldwide. List or manage your property in Colombia with StaySmart™ technology.",
                 tab_travel: "Hotels & Flights (Global)",
                 tab_realestate: "Real Estate (Colombia)",
                 opt_hotels: "Hotels & Accommodations",
@@ -398,64 +306,61 @@
                 opt_sale: "Property for Sale",
                 btn_search_re: "Search Portal",
                 res_re_title: "Available properties found:",
-                res_re_desc: "Filtering active listings in the StaySmart self-managed catalog.",
+                res_re_desc: "Filtering active listings in the StaySmart catalog.",
                 owners_title: "Solutions for Property Owners in Colombia",
-                owners_subtitle: "Choose the model that best fits your financial and management goals.",
+                owners_subtitle: "Choose the model that best fits your financial goals.",
                 plan1_badge: "All Colombia",
                 plan1_title: "Direct Listing",
-                plan1_desc: "List your property on our portal and receive direct inquiries without intermediaries or commissions.",
+                plan1_desc: "List your property on our portal and receive direct inquiries without commissions.",
                 per_month: "/ month",
                 btn_plan1: "List My Property (WhatsApp)",
                 plan2_badge: "Exclusive Santa Marta",
                 plan2_title: "VIP Brokerage Sale",
-                plan2_desc: "Promotion, in-person showings, and legal assistance guaranteed through deed signing.",
+                plan2_desc: "Promotion, showings, and legal support through deed signing.",
                 comm_sale: "commission upon sale",
                 btn_view_contract: "View Brokerage Agreement",
                 btn_plan2: "Request Sales Management (WhatsApp)",
                 plan3_badge: "Santa Marta · Vacation Rental",
                 plan3_title: "Full Vacation Rental Management (25%)",
-                plan3_desc: "360° management with Luxury Vacation Rentals. Includes listing on Airbnb/Booking, guest check-in, and damage protection policy.",
+                plan3_desc: "360° management with Luxury Vacation Rentals. Includes Airbnb/Booking listing and damage policy.",
                 btn_view_promesa: "View Purchase Agreement Template",
                 btn_plan3: "Delegate Property (WhatsApp)",
-                partner_badge: "High-Level Alliance",
-                partner_title: "Strategic Partner: Luxury Vacation Rentals",
-                partner_desc: "Luxury hotel standards in exclusive condos and apartments in Pozos Colorados, Bello Horizonte, and El Rodadero.",
-                btn_partner: "View VIP Catalog (WhatsApp)",
                 blog_heading: "Travel & Investment Guides",
                 art1_title: "Where to Stay: Top 4 Neighborhoods",
-                art1_desc: "El Rodadero, Historic Center, Pozos Colorados, and Minca. Complete comparison for travelers.",
+                art1_desc: "El Rodadero, Historic Center, Pozos Colorados, and Minca. Full comparison.",
                 art2_title: "Tayrona National Park Guide 2026",
-                art2_desc: "Trails, permitted beaches, conservation closures, and essential tips.",
+                art2_desc: "Trails, beaches, conservation closures, and essential tips.",
                 art3_title: "Real Estate Profitability in Colombia",
-                art3_desc: "Financial analysis: Maximize your property ROI using the 25% Vacation Rental model.",
+                art3_desc: "Financial analysis: Maximize your ROI with the 25% Vacation Rental model.",
                 read_more: "Read Full Article ➔",
-                ft_home: "Home",
-                ft_terms: "Terms of Service",
-                ft_privacy: "Privacy Policy",
                 btn_close: "Close"
             }
         };
 
-        // FUNCIÓN PRINCIPAL DE CAMBIO DE IDIOMA
         function changeLanguage() {
             const lang = document.getElementById('langSelect').value;
-            const elements = document.querySelectorAll('[data-key]');
             
+            // Reemplazo directo en todos los elementos marcados con data-key
+            const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerText = translations[lang][key];
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
                 }
             });
 
-            // Actualizar placeholders
-            document.getElementById('destViaje').placeholder = (lang === 'en') ? "Where do you want to travel?" : "¿A dónde quieres viajar?";
-            document.getElementById('ubicInmueble').placeholder = (lang === 'en') ? "Location (e.g. Santa Marta)" : "Ubicación (ej: Santa Marta)";
+            // Actualización de los placeholders en los buscadores
+            const inputViaje = document.getElementById('destViaje');
+            const inputInmueble = document.getElementById('ubicInmueble');
+            if (inputViaje) inputViaje.placeholder = (lang === 'en') ? "Where do you want to travel?" : "¿A dónde quieres viajar?";
+            if (inputInmueble) inputInmueble.placeholder = (lang === 'en') ? "Location (e.g. Santa Marta)" : "Ubicación (ej: Santa Marta)";
         }
 
-        function contactarWhatsApp(mensaje) {
-            const url = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
+        // Ejecutar al cargar la página para asegurar la sincronización inicial
+        document.addEventListener('DOMContentLoaded', changeLanguage);
+
+        function contactarWhatsApp(msg) {
+            window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function ejecutarBusquedaViaje() {
@@ -467,80 +372,55 @@
         }
 
         function switchTab(tab) {
-            const hotelesBtn = document.getElementById('tabHotelesBtn');
-            const inmueblesBtn = document.getElementById('tabInmueblesBtn');
-            const hotelesContent = document.getElementById('tabHotelesContent');
-            const inmueblesContent = document.getElementById('tabInmueblesContent');
+            const hBtn = document.getElementById('tabHotelesBtn');
+            const iBtn = document.getElementById('tabInmueblesBtn');
+            const hCont = document.getElementById('tabHotelesContent');
+            const iCont = document.getElementById('tabInmueblesContent');
 
             if (tab === 'hoteles') {
-                hotelesBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
-                inmueblesBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
-                hotelesContent.classList.remove('hidden');
-                inmueblesContent.classList.add('hidden');
+                hBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
+                iBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
+                hCont.classList.remove('hidden');
+                iCont.classList.add('hidden');
             } else {
-                inmueblesBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
-                hotelesBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
-                inmueblesContent.classList.remove('hidden');
-                hotelesContent.classList.add('hidden');
+                iBtn.className = "text-blue-600 border-b-2 border-blue-600 pb-2 flex items-center gap-2";
+                hBtn.className = "text-slate-500 hover:text-slate-800 pb-2 flex items-center gap-2";
+                iCont.classList.remove('hidden');
+                hCont.classList.add('hidden');
             }
         }
 
         function changeCurrency() {
             const curr = document.getElementById('currSelect').value;
-            const priceElements = document.querySelectorAll('.priceVal');
-            priceElements.forEach(el => {
+            document.querySelectorAll('.priceVal').forEach(el => {
                 el.innerText = (curr === 'cop') ? "$8.000 COP" : "$2 USD";
             });
         }
 
-        function abrirModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-        }
+        function abrirModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function cerrarModal(id) { document.getElementById(id).classList.add('hidden'); }
 
-        function cerrarModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        // LECTURA NATIVA DE BLOG
         function abrirBlog(id) {
             const container = document.getElementById('blogContentBody');
             const titleHeader = document.getElementById('blogTitleHeader');
             const lang = document.getElementById('langSelect').value;
 
-            if(id === 'articulo1') {
+            if (id === 'articulo1') {
                 titleHeader.innerText = (lang === 'en') ? "Guide: Where to Stay in Santa Marta" : "Guía: Dónde Hospedarse en Santa Marta";
                 container.innerHTML = (lang === 'en') ? `
                     <h2 class="text-xl font-bold text-slate-900">The 4 Best Areas to Stay in Santa Marta</h2>
-                    <p>Santa Marta offers options for every traveler profile. Here is our breakdown of each area:</p>
+                    <p>Santa Marta offers options for every traveler profile:</p>
                     <h3 class="font-bold text-blue-600 mt-4">1. El Rodadero</h3>
                     <p>Ideal for families and traditional tourism. Great dining options and boat access to Playa Blanca.</p>
                     <h3 class="font-bold text-blue-600 mt-4">2. Pozos Colorados & Bello Horizonte</h3>
-                    <p>The most exclusive area. Luxury condominiums, wide beaches, and total tranquility.</p>
+                    <p>The most exclusive area. Luxury condos, wide beaches, and total tranquility.</p>
                 ` : `
                     <h2 class="text-xl font-bold text-slate-900">Las 4 Mejores Zonas para Hospedarse en Santa Marta</h2>
-                    <p>Santa Marta ofrece opciones para todos los perfiles de viajero. A continuación analizamos cada sector:</p>
+                    <p>Santa Marta ofrece opciones para todos los perfiles de viajero:</p>
                     <h3 class="font-bold text-blue-600 mt-4">1. El Rodadero</h3>
-                    <p>Ideal para familias y turismo tradicional. Gran oferta gastronómica y acceso a lanchas hacia Playa Blanca.</p>
+                    <p>Ideal para familias y turismo tradicional. Gran oferta gastronómica y acceso a lanchas a Playa Blanca.</p>
                     <h3 class="font-bold text-blue-600 mt-4">2. Pozos Colorados y Bello Horizonte</h3>
                     <p>La zona de mayor exclusividad. Condominios de lujo, playas amplias y tranquilidad absoluta.</p>
-                `;
-            } else if(id === 'articulo2') {
-                titleHeader.innerText = (lang === 'en') ? "Tayrona National Park Guide 2026" : "Guía Parque Nacional Tayrona 2026";
-                container.innerHTML = (lang === 'en') ? `
-                    <h2 class="text-xl font-bold text-slate-900">Complete Guide to Visiting Tayrona Park</h2>
-                    <p>Plan your trek through one of the most iconic natural parks in the Colombian Caribbean.</p>
-                ` : `
-                    <h2 class="text-xl font-bold text-slate-900">Guía Completa para Visitar el Parque Tayrona</h2>
-                    <p>Planifica tu recorrido por uno de los parques naturales más emblemáticos del Caribe colombiano.</p>
-                `;
-            } else if(id === 'articulo3') {
-                titleHeader.innerText = (lang === 'en') ? "Real Estate Profitability in Colombia" : "Rentabilidad Inmobiliaria en Colombia";
-                container.innerHTML = (lang === 'en') ? `
-                    <h2 class="text-xl font-bold text-slate-900">How to Maximize Vacation Rental ROI</h2>
-                    <p>The short-term rental market in tourist destinations like Santa Marta offers higher returns than traditional long-term rentals.</p>
-                ` : `
-                    <h2 class="text-xl font-bold text-slate-900">Cómo Maximizar el ROI en Renta Vacacional</h2>
-                    <p>El mercado de arrendamientos temporales en zonas turísticas como Santa Marta ofrece retornos superiores al arrendamiento tradicional a largo plazo.</p>
                 `;
             }
             abrirModal('modalBlog');
